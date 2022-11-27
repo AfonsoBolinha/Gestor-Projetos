@@ -1,0 +1,315 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "class": "col-md-12",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "Nome",
+                              "name": "NomeLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Nome",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 50,
+                              "name": "Nome",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${investigador.Nome}",
+                              "valueType": "string"
+                            },
+                            {
+                              "component": "Nome",
+                              "name": "NomeRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "Nome is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "Num_Funcionario",
+                              "name": "Num_FuncionarioLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Num Funcionario",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "format": ".",
+                              "name": "Num_Funcionario",
+                              "showUpDown": false,
+                              "step": "",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "numeric",
+                              "value": "${investigador.Num_Funcionario}",
+                              "valueType": "int"
+                            },
+                            {
+                              "component": "Num_Funcionario",
+                              "name": "Num_FuncionarioRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "Num_Funcionario is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "ORCID",
+                              "name": "ORCIDLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Orcid",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 50,
+                              "name": "ORCID",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${investigador.ORCID}",
+                              "valueType": "string"
+                            },
+                            {
+                              "component": "ORCID",
+                              "name": "ORCIDRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "ORCID is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "ID_Instituicao",
+                              "name": "ID_InstituicaoLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Id Instituicao",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getInstituicaosResult}",
+                              "name": "ID_Instituicao",
+                              "style": {
+                                "display": "block"
+                              },
+                              "textProperty": "Nome",
+                              "type": "dropdown",
+                              "value": "${investigador.ID_Instituicao}",
+                              "valueProperty": "ID",
+                              "valueType": "int"
+                            },
+                            {
+                              "component": "ID_Instituicao",
+                              "name": "ID_InstituicaoRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "ID_Instituicao is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "buttonStyle": "primary",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "type": "button"
+                            },
+                            {
+                              "buttonStyle": "light",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "close-popup"
+                                  }
+                                ]
+                              },
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "type": "button"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "type": "row"
+                    }
+                  ],
+                  "data": "${investigador}",
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to create new Investigador!",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "Trabalho.createInvestigador",
+                        "parameters": [
+                          {
+                            "name": "Investigador",
+                            "value": "${investigador}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "result": "${investigador}",
+                            "type": "close-popup"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "itemType": "TrabalhoBd.Models.Trabalho.Investigador",
+                  "name": "form0",
+                  "type": "template-form",
+                  "visible": "${investigador != null}"
+                }
+              ],
+              "type": "col"
+            }
+          ],
+          "type": "row"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "investigador",
+        "type": "set",
+        "value": "new TrabalhoBd.Models.Trabalho.Investigador(){}",
+        "valueType": "TrabalhoBd.Models.Trabalho.Investigador"
+      },
+      {
+        "name": "Trabalho.getInstituicaos",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getInstituicaosResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.Instituicao>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Adicionar",
+  "name": "Add Investigador"
+}

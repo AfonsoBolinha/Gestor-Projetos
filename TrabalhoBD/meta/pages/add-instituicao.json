@@ -1,0 +1,311 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "class": "col-md-12",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "Nome",
+                              "name": "NomeLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Nome",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 50,
+                              "name": "Nome",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${instituicao.Nome}",
+                              "valueType": "string"
+                            },
+                            {
+                              "component": "Nome",
+                              "name": "NomeRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "Campo Obrigatório",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "Morada",
+                              "name": "MoradaLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Morada",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 50,
+                              "name": "Morada",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${instituicao.Morada}",
+                              "valueType": "string"
+                            },
+                            {
+                              "component": "Morada",
+                              "name": "MoradaRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "Campo Obrigatório",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "Email",
+                              "name": "EmailLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Email",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 50,
+                              "name": "Email",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${instituicao.Email}",
+                              "valueType": "string"
+                            },
+                            {
+                              "component": "Email",
+                              "name": "EmailRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "Campo Obrigatório",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "Tel",
+                              "name": "TelLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Tel",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "name": "Tel",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "numeric",
+                              "value": "${instituicao.Tel}",
+                              "valueType": "int"
+                            },
+                            {
+                              "component": "Tel",
+                              "name": "TelRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "Campo Obrigatório",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "buttonStyle": "primary",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "type": "button"
+                            },
+                            {
+                              "buttonStyle": "light",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "close-popup"
+                                  }
+                                ]
+                              },
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "type": "button"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "type": "row"
+                    }
+                  ],
+                  "data": "${instituicao}",
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to create new Instituicao!",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "Trabalho.createInstituicao",
+                        "parameters": [
+                          {
+                            "name": "Instituicao",
+                            "value": "${instituicao}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "result": "${instituicao}",
+                            "type": "close-popup"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "itemType": "TrabalhoBd.Models.Trabalho.Instituicao",
+                  "name": "form0",
+                  "type": "template-form",
+                  "visible": "${instituicao != null}"
+                }
+              ],
+              "type": "col"
+            }
+          ],
+          "type": "row"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "instituicao",
+        "type": "set",
+        "value": "new TrabalhoBd.Models.Trabalho.Instituicao(){}",
+        "valueType": "TrabalhoBd.Models.Trabalho.Instituicao"
+      },
+      {
+        "name": "Trabalho.getInstituicaos",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getInstituicaosResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.Instituicao>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Adicionar",
+  "name": "Add Instituicao"
+}

@@ -1,0 +1,2128 @@
+{
+  "info": {
+    "title": "Trabalho",
+    "x-type": "odata",
+    "x-connector": "mssql",
+    "x-connector-version": 15,
+    "x-infer-aspnet": false,
+    "x-infer-tables": true,
+    "x-infer-relations": true,
+    "x-infer-views": true,
+    "x-infer-sps": true
+  },
+  "definitions": {
+    "AreaCientifica": {
+      "x-table": "dbo.AreaCientifica",
+      "resource": "AreaCientificas",
+      "required": [
+        "Area",
+        "ID_Projeto"
+      ],
+      "properties": {
+        "Area": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "ID_Projeto": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      },
+      "x-view": true
+    },
+    "Contem": {
+      "x-table": "dbo.Contem",
+      "resource": "Contems",
+      "required": [
+        "ID_Projeto",
+        "ID_Investigador",
+        "Papel",
+        "Tempo_Gasto",
+        "Tempo_Limite"
+      ],
+      "properties": {
+        "ID_Projeto": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "ID_Investigador": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Papel": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Tempo_Gasto": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Tempo_Limite": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      },
+      "x-view": true
+    },
+    "Instituicao": {
+      "x-table": "dbo.Instituição",
+      "resource": "Instituicaos",
+      "required": [
+        "Nome",
+        "Morada",
+        "Email",
+        "Tel"
+      ],
+      "properties": {
+        "ID": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Nome": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Morada": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Email": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Tel": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      }
+    },
+    "Investigador": {
+      "x-table": "dbo.Investigador",
+      "resource": "Investigadors",
+      "required": [
+        "Nome",
+        "Num_Funcionario",
+        "ORCID",
+        "ID_Instituicao"
+      ],
+      "properties": {
+        "ID": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Nome": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Num_Funcionario": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "ORCID": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "ID_Instituicao": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Tempo_Total": {
+          "x-precision": 10,
+          "type": "integer"
+        }
+      }
+    },
+    "KeyWord": {
+      "x-table": "dbo.KeyWords",
+      "resource": "KeyWords",
+      "required": [
+        "PalavraChave",
+        "ID_Projeto"
+      ],
+      "properties": {
+        "PalavraChave": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 10,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "ID_Projeto": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      },
+      "x-view": true
+    },
+    "PatrocinaPrograma": {
+      "x-table": "dbo.Patrocina_Programa",
+      "resource": "PatrocinaProgramas",
+      "required": [
+        "ID_Programa_Patrocinador",
+        "ID_Projeto",
+        "Montante"
+      ],
+      "properties": {
+        "ID_Programa_Patrocinador": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "ID_Projeto": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Montante": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      },
+      "x-view": true
+    },
+    "Patrocinador": {
+      "x-table": "dbo.Patrocinador",
+      "resource": "Patrocinadors",
+      "required": [
+        "Nome",
+        "Descricao",
+        "Email",
+        "Tel",
+        "Designacao",
+        "Sigla",
+        "Morada",
+        "URL",
+        "Pais"
+      ],
+      "properties": {
+        "ID": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Nome": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Descricao": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Email": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Tel": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Designacao": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Sigla": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 10
+        },
+        "Morada": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "URL": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Pais": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        }
+      }
+    },
+    "PatrocinadorPrivado": {
+      "x-table": "dbo.Patrocinador_Privado",
+      "resource": "PatrocinadorPrivados",
+      "required": [
+        "ID_Patrocinador",
+        "ID_Projeto",
+        "Montante"
+      ],
+      "properties": {
+        "ID_Patrocinador": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "ID_Projeto": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Montante": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      },
+      "x-view": true
+    },
+    "PatrocinioPublico": {
+      "x-table": "dbo.PatrocinioPublico",
+      "resource": "PatrocinioPublicos",
+      "required": [
+        "Nome",
+        "Sigla",
+        "Email",
+        "Tel",
+        "Morada",
+        "URL",
+        "Pais"
+      ],
+      "properties": {
+        "ID": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Nome": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Sigla": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 10
+        },
+        "Email": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Tel": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Morada": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "URL": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Pais": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Designacao": {
+          "type": "string",
+          "length": 50
+        }
+      }
+    },
+    "Pertence1": {
+      "x-table": "dbo.Pertence1",
+      "resource": "Pertence1s",
+      "required": [
+        "ID_Investigador",
+        "ID_UC",
+        "ID_Projeto"
+      ],
+      "properties": {
+        "ID_Investigador": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "ID_UC": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "ID_Projeto": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      },
+      "x-view": true
+    },
+    "Pertence2": {
+      "x-table": "dbo.Pertence2",
+      "resource": "Pertence2s",
+      "required": [
+        "ID_UC",
+        "ID_Projeto"
+      ],
+      "properties": {
+        "ID_UC": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "ID_Projeto": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      },
+      "x-view": true
+    },
+    "ProjectState": {
+      "x-view": true,
+      "x-table": "dbo.Project_State",
+      "resource": "ProjectStates",
+      "required": [
+        "Nome",
+        "State",
+        "Total_Cost",
+        "Max_Cost"
+      ],
+      "properties": {
+        "Nome": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "State": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 10
+        },
+        "Total_Cost": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Max_Cost": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      }
+    },
+    "Projeto": {
+      "x-table": "dbo.Projeto",
+      "resource": "Projetos",
+      "required": [
+        "Nome",
+        "Short_Name",
+        "ID_UC",
+        "Max_Cost",
+        "Total_Cost",
+        "DOI",
+        "State",
+        "Data_Init",
+        "Cientific_Domain",
+        "ID_IR"
+      ],
+      "properties": {
+        "ID": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Nome": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Short_Name": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 10
+        },
+        "Descricao": {
+          "type": "string",
+          "length": 50
+        },
+        "ID_UC": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Max_Cost": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Total_Cost": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "DOI": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "State": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 10
+        },
+        "Data_Init": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "date"
+        },
+        "Data_Fin": {
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "date"
+        },
+        "Cientific_Domain": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "ID_IR": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      }
+    },
+    "Responsavel": {
+      "x-table": "dbo.Responsavel",
+      "resource": "Responsavels",
+      "required": [
+        "ID_Investigador",
+        "ID_Projeto",
+        "Tempo_Responsavel"
+      ],
+      "properties": {
+        "ID_Investigador": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "ID_Projeto": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Tempo_Responsavel": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      },
+      "x-view": true
+    },
+    "UnidadeCurricular": {
+      "x-table": "dbo.Unidade_Curricular",
+      "resource": "UnidadeCurriculars",
+      "required": [
+        "Nome",
+        "ID_Instituicao"
+      ],
+      "properties": {
+        "ID": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Nome": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "ID_Instituicao": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/AreaCientificas": {
+      "get": {
+        "operationId": "getAreaCientificas",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/AreaCientifica"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Contems": {
+      "get": {
+        "operationId": "getContems",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Contem"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Instituicaos": {
+      "get": {
+        "operationId": "getInstituicaos",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Instituicao"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createInstituicao",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Instituicao",
+            "schema": {
+              "$ref": "#/definitions/Instituicao"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Instituicao"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Investigadors": {
+      "get": {
+        "operationId": "getInvestigadors",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Investigador"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createInvestigador",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Investigador",
+            "schema": {
+              "$ref": "#/definitions/Investigador"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Investigador"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/KeyWords": {
+      "get": {
+        "operationId": "getKeyWords",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/KeyWord"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/PatrocinaProgramas": {
+      "get": {
+        "operationId": "getPatrocinaProgramas",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/PatrocinaPrograma"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Patrocinadors": {
+      "get": {
+        "operationId": "getPatrocinadors",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Patrocinador"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createPatrocinador",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Patrocinador",
+            "schema": {
+              "$ref": "#/definitions/Patrocinador"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Patrocinador"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/PatrocinadorPrivados": {
+      "get": {
+        "operationId": "getPatrocinadorPrivados",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/PatrocinadorPrivado"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/PatrocinioPublicos": {
+      "get": {
+        "operationId": "getPatrocinioPublicos",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/PatrocinioPublico"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createPatrocinioPublico",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "PatrocinioPublico",
+            "schema": {
+              "$ref": "#/definitions/PatrocinioPublico"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/PatrocinioPublico"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Pertence1s": {
+      "get": {
+        "operationId": "getPertence1s",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Pertence1"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Pertence2s": {
+      "get": {
+        "operationId": "getPertence2s",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Pertence2"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/ProjectStates": {
+      "get": {
+        "operationId": "getProjectStates",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/ProjectState"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Projetos": {
+      "get": {
+        "operationId": "getProjetos",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Projeto"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createProjeto",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Projeto",
+            "schema": {
+              "$ref": "#/definitions/Projeto"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Projeto"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Responsavels": {
+      "get": {
+        "operationId": "getResponsavels",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Responsavel"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/UnidadeCurriculars": {
+      "get": {
+        "operationId": "getUnidadeCurriculars",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/UnidadeCurricular"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createUnidadeCurricular",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "UnidadeCurricular",
+            "schema": {
+              "$ref": "#/definitions/UnidadeCurricular"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/UnidadeCurricular"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Instituicaos({ID})": {
+      "delete": {
+        "operationId": "deleteInstituicao",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getInstituicaoByID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Instituicao"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateInstituicao",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Instituicao",
+            "schema": {
+              "$ref": "#/definitions/Instituicao"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelInstituicaoChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Instituicao",
+            "schema": {
+              "$ref": "#/definitions/Instituicao"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Investigadors({ID})": {
+      "delete": {
+        "operationId": "deleteInvestigador",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getInvestigadorByID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Investigador"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateInvestigador",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Investigador",
+            "schema": {
+              "$ref": "#/definitions/Investigador"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelInvestigadorChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Investigador",
+            "schema": {
+              "$ref": "#/definitions/Investigador"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Patrocinadors({ID})": {
+      "delete": {
+        "operationId": "deletePatrocinador",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getPatrocinadorByID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Patrocinador"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updatePatrocinador",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Patrocinador",
+            "schema": {
+              "$ref": "#/definitions/Patrocinador"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelPatrocinadorChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Patrocinador",
+            "schema": {
+              "$ref": "#/definitions/Patrocinador"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/PatrocinioPublicos({ID})": {
+      "delete": {
+        "operationId": "deletePatrocinioPublico",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getPatrocinioPublicoByID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/PatrocinioPublico"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updatePatrocinioPublico",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "PatrocinioPublico",
+            "schema": {
+              "$ref": "#/definitions/PatrocinioPublico"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelPatrocinioPublicoChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "PatrocinioPublico",
+            "schema": {
+              "$ref": "#/definitions/PatrocinioPublico"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Projetos({ID})": {
+      "delete": {
+        "operationId": "deleteProjeto",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getProjetoByID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Projeto"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateProjeto",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Projeto",
+            "schema": {
+              "$ref": "#/definitions/Projeto"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelProjetoChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Projeto",
+            "schema": {
+              "$ref": "#/definitions/Projeto"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/UnidadeCurriculars({ID})": {
+      "delete": {
+        "operationId": "deleteUnidadeCurricular",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getUnidadeCurricularByID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/UnidadeCurricular"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateUnidadeCurricular",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "UnidadeCurricular",
+            "schema": {
+              "$ref": "#/definitions/UnidadeCurricular"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelUnidadeCurricularChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "UnidadeCurricular",
+            "schema": {
+              "$ref": "#/definitions/UnidadeCurricular"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "basePath": "/odata/Trabalho",
+  "host": "localhost:5000",
+  "schemes": [
+    "http"
+  ]
+}

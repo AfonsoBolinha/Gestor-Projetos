@@ -1,0 +1,36 @@
+{
+  "dataSources": [
+    "Trabalho"
+  ],
+  "generator": "@radzen/blazor-server",
+  "https": false,
+  "layouts": [
+    "Login",
+    "Mains",
+    "Welcome_Page",
+    "Edit",
+    "Adicionar"
+  ],
+  "logo": "",
+  "name": "TrabalhoBD",
+  "navigation": [
+    "Welcome",
+    "Stats",
+    "Add Patrocinador_Privado",
+    "Editar"
+  ],
+  "pages": [
+    "Add Instituicao",
+    "Welcome",
+    "Stats",
+    "Add Patrocinador_Privado",
+    "Editar",
+    "Add PatrocinioPublico",
+    "Add Investigador"
+  ],
+  "serverLang": "cs",
+  "serverProject": true,
+  "serverVersion": "6",
+  "startPage": "Welcome",
+  "theme": "standard"
+}

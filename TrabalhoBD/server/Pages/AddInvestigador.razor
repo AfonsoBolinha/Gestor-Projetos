@@ -1,0 +1,76 @@
+﻿@page "/add-investigador"
+@layout AdicionarLayout
+@inherits TrabalhoBd.Pages.AddInvestigadorComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TrabalhoBd.Models.Trabalho
+<PageTitle>Add Investigador</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm Data="@investigador" TItem="TrabalhoBd.Models.Trabalho.Investigador" Visible="@(investigador != null)" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="Nome" style="width: 100%" Text="Nome">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="50" style="display: block; width: 100%" @bind-Value="@(investigador.Nome)" Name="Nome">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="Nome" style="position: absolute" Text="Nome is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="Num_Funcionario" style="width: 100%" Text="Num Funcionario">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric Format="." ShowUpDown="false" style="display: block; width: 100%" @bind-Value="@(investigador.Num_Funcionario)" Name="Num_Funcionario">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="Num_Funcionario" style="position: absolute" Text="Num_Funcionario is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="ORCID" style="width: 100%" Text="Orcid">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="50" style="display: block; width: 100%" @bind-Value="@(investigador.ORCID)" Name="ORCID">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="ORCID" style="position: absolute" Text="ORCID is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="ID_Instituicao" style="width: 100%" Text="Id Instituicao">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown Data="@getInstituicaosResult" style="display: block" TextProperty="Nome" @bind-Value="@(investigador.ID_Instituicao)" ValueProperty="ID" Name="ID_Instituicao">
+                </RadzenDropDown>
+                <RadzenRequiredValidator Component="ID_Instituicao" style="position: absolute" Text="ID_Instituicao is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

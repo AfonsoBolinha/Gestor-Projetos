@@ -1,0 +1,122 @@
+﻿@page "/add-patrocinio-publico"
+@layout AdicionarLayout
+@inherits TrabalhoBd.Pages.AddPatrocinioPublicoComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TrabalhoBd.Models.Trabalho
+<PageTitle>Add Patrocinio Publico</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm Data="@patrociniopublico" TItem="TrabalhoBd.Models.Trabalho.PatrocinioPublico" Visible="@(patrociniopublico != null)" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="Nome" style="width: 100%" Text="Nome">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="50" style="display: block; width: 100%" @bind-Value="@(patrociniopublico.Nome)" Name="Nome">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="Nome" style="position: absolute" Text="Campo Obrigatório">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="Sigla" style="width: 100%" Text="Sigla">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="10" style="display: block; width: 100%" @bind-Value="@(patrociniopublico.Sigla)" Name="Sigla">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="Sigla" style="position: absolute" Text="Campo Obrigatório">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="Email" style="width: 100%" Text="Email">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="50" style="display: block; width: 100%" @bind-Value="@(patrociniopublico.Email)" Name="Email">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="Email" style="position: absolute" Text="Campo Obrigatório">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="Tel" style="width: 100%" Text="Tel">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric ShowUpDown="false" style="display: block; width: 100%" @bind-Value="@(patrociniopublico.Tel)" Name="Tel">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="Tel" style="position: absolute" Text="Campo Obrigatório">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="Morada" style="width: 100%" Text="Morada">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="50" style="display: block; width: 100%" @bind-Value="@(patrociniopublico.Morada)" Name="Morada">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="Morada" style="position: absolute" Text="Campo Obrigatório">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="URL" style="width: 100%" Text="Url">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="50" style="display: block; width: 100%" @bind-Value="@(patrociniopublico.URL)" Name="URL">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="URL" style="position: absolute" Text="Campo Obrigatório">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="Pais" style="width: 100%" Text="Pais">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="50" style="display: block; width: 100%" @bind-Value="@(patrociniopublico.Pais)" Name="Pais">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="Pais" style="position: absolute" Text="Campo Obrigatório">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="Designacao" style="width: 100%" Text="Designacao">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="50" style="width: 100%" @bind-Value="@(patrociniopublico.Designacao)" Name="Designacao">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>
