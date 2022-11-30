@@ -26,7 +26,8 @@
     "Add Patrocinador_Privado",
     "Editar",
     "Add PatrocinioPublico",
-    "Add Investigador"
+    "Add Investigador",
+    "Add Projeto"
   ],
   "serverLang": "cs",
   "serverProject": true,

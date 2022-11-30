@@ -37,7 +37,7 @@
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${patrociniopublico.Nome}",
+                              "value": "${projeto.Nome}",
                               "valueType": "string"
                             },
                             {
@@ -46,7 +46,7 @@
                               "style": {
                                 "position": "absolute"
                               },
-                              "text": "Campo Obrigatório",
+                              "text": "Nome is required",
                               "type": "required-validator"
                             }
                           ],
@@ -64,12 +64,12 @@
                           "class": "col-md-3",
                           "components": [
                             {
-                              "component": "Sigla",
-                              "name": "SiglaLabel",
+                              "component": "Short_Name",
+                              "name": "Short_NameLabel",
                               "style": {
                                 "width": "100%"
                               },
-                              "text": "Sigla",
+                              "text": "Short Name",
                               "type": "label"
                             }
                           ],
@@ -80,22 +80,22 @@
                           "components": [
                             {
                               "maxLength": 10,
-                              "name": "Sigla",
+                              "name": "Short_Name",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${patrociniopublico.Sigla}",
+                              "value": "${projeto.Short_Name}",
                               "valueType": "string"
                             },
                             {
-                              "component": "Sigla",
-                              "name": "SiglaRequiredValidator",
+                              "component": "Short_Name",
+                              "name": "Short_NameRequiredValidator",
                               "style": {
                                 "position": "absolute"
                               },
-                              "text": "Campo Obrigatório",
+                              "text": "Short_Name is required",
                               "type": "required-validator"
                             }
                           ],
@@ -113,12 +113,12 @@
                           "class": "col-md-3",
                           "components": [
                             {
-                              "component": "Email",
-                              "name": "EmailLabel",
+                              "component": "Descricao",
+                              "name": "DescricaoLabel",
                               "style": {
                                 "width": "100%"
                               },
-                              "text": "Email",
+                              "text": "Descricao",
                               "type": "label"
                             }
                           ],
@@ -129,23 +129,13 @@
                           "components": [
                             {
                               "maxLength": 50,
-                              "name": "Email",
+                              "name": "Descricao",
                               "style": {
-                                "display": "block",
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${patrociniopublico.Email}",
+                              "value": "${projeto.Descricao}",
                               "valueType": "string"
-                            },
-                            {
-                              "component": "Email",
-                              "name": "EmailRequiredValidator",
-                              "style": {
-                                "position": "absolute"
-                              },
-                              "text": "Campo Obrigatório",
-                              "type": "required-validator"
                             }
                           ],
                           "type": "col"
@@ -162,12 +152,12 @@
                           "class": "col-md-3",
                           "components": [
                             {
-                              "component": "Tel",
-                              "name": "TelLabel",
+                              "component": "ID_UC",
+                              "name": "ID_UCLabel",
                               "style": {
                                 "width": "100%"
                               },
-                              "text": "Tel",
+                              "text": "Id Uc",
                               "type": "label"
                             }
                           ],
@@ -177,25 +167,22 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "format": ".",
-                              "name": "Tel",
-                              "showUpDown": false,
-                              "step": "",
+                              "name": "ID_UC",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
                               },
                               "type": "numeric",
-                              "value": "${patrociniopublico.Tel}",
+                              "value": "${projeto.ID_UC}",
                               "valueType": "int"
                             },
                             {
-                              "component": "Tel",
-                              "name": "TelRequiredValidator",
+                              "component": "ID_UC",
+                              "name": "ID_UCRequiredValidator",
                               "style": {
                                 "position": "absolute"
                               },
-                              "text": "Campo Obrigatório",
+                              "text": "ID_UC is required",
                               "type": "required-validator"
                             }
                           ],
@@ -213,12 +200,60 @@
                           "class": "col-md-3",
                           "components": [
                             {
-                              "component": "Morada",
-                              "name": "MoradaLabel",
+                              "component": "Max_Cost",
+                              "name": "Max_CostLabel",
                               "style": {
                                 "width": "100%"
                               },
-                              "text": "Morada",
+                              "text": "Custo Máximo",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "name": "Max_Cost",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "numeric",
+                              "value": "${projeto.Max_Cost}",
+                              "valueType": "int"
+                            },
+                            {
+                              "component": "Max_Cost",
+                              "name": "Max_CostRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "Max_Cost is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "DOI",
+                              "name": "DOILabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "DOI",
                               "type": "label"
                             }
                           ],
@@ -229,22 +264,22 @@
                           "components": [
                             {
                               "maxLength": 50,
-                              "name": "Morada",
+                              "name": "DOI",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${patrociniopublico.Morada}",
+                              "value": "${projeto.DOI}",
                               "valueType": "string"
                             },
                             {
-                              "component": "Morada",
-                              "name": "MoradaRequiredValidator",
+                              "component": "DOI",
+                              "name": "DOIRequiredValidator",
                               "style": {
                                 "position": "absolute"
                               },
-                              "text": "Campo Obrigatório",
+                              "text": "DOI is required",
                               "type": "required-validator"
                             }
                           ],
@@ -262,12 +297,98 @@
                           "class": "col-md-3",
                           "components": [
                             {
-                              "component": "URL",
-                              "name": "URLLabel",
+                              "component": "Data_Init",
+                              "name": "Data_InitLabel",
                               "style": {
                                 "width": "100%"
                               },
-                              "text": "Url",
+                              "text": "Data Inicial",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "name": "Data_Init",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "datepicker",
+                              "value": "${projeto.Data_Init}",
+                              "valueType": "DateTime"
+                            },
+                            {
+                              "component": "Data_Init",
+                              "name": "Data_InitRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "Data_Init is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "Data_Fin",
+                              "name": "Data_FinLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Data Final ",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "name": "Data_Fin",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "type": "datepicker",
+                              "value": "${projeto.Data_Fin}",
+                              "valueType": "DateTime?"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "Cientific_Domain",
+                              "name": "Cientific_DomainLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Dominio Cientifico",
                               "type": "label"
                             }
                           ],
@@ -278,22 +399,22 @@
                           "components": [
                             {
                               "maxLength": 50,
-                              "name": "URL",
+                              "name": "Cientific_Domain",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${patrociniopublico.URL}",
+                              "value": "${projeto.Cientific_Domain}",
                               "valueType": "string"
                             },
                             {
-                              "component": "URL",
-                              "name": "URLRequiredValidator",
+                              "component": "Cientific_Domain",
+                              "name": "Cientific_DomainRequiredValidator",
                               "style": {
                                 "position": "absolute"
                               },
-                              "text": "Campo Obrigatório",
+                              "text": "Cientific_Domain is required",
                               "type": "required-validator"
                             }
                           ],
@@ -311,12 +432,12 @@
                           "class": "col-md-3",
                           "components": [
                             {
-                              "component": "Pais",
-                              "name": "PaisLabel",
+                              "component": "ID_IR",
+                              "name": "ID_IRLabel",
                               "style": {
                                 "width": "100%"
                               },
-                              "text": "Pais",
+                              "text": "Responsável",
                               "type": "label"
                             }
                           ],
@@ -326,63 +447,23 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "maxLength": 50,
-                              "name": "Pais",
+                              "name": "ID_IR",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
                               },
-                              "type": "textbox",
-                              "value": "${patrociniopublico.Pais}",
-                              "valueType": "string"
+                              "type": "numeric",
+                              "value": "${projeto.ID_IR}",
+                              "valueType": "int"
                             },
                             {
-                              "component": "Pais",
-                              "name": "PaisRequiredValidator",
+                              "component": "ID_IR",
+                              "name": "ID_IRRequiredValidator",
                               "style": {
                                 "position": "absolute"
                               },
-                              "text": "Campo Obrigatório",
+                              "text": "ID_IR is required",
                               "type": "required-validator"
-                            }
-                          ],
-                          "type": "col"
-                        }
-                      ],
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
-                      "type": "row"
-                    },
-                    {
-                      "components": [
-                        {
-                          "class": "col-md-3",
-                          "components": [
-                            {
-                              "component": "Designacao",
-                              "name": "DesignacaoLabel",
-                              "style": {
-                                "width": "100%"
-                              },
-                              "text": "Designacao",
-                              "type": "label"
-                            }
-                          ],
-                          "type": "col"
-                        },
-                        {
-                          "class": "col-md-9",
-                          "components": [
-                            {
-                              "maxLength": 50,
-                              "name": "Designacao",
-                              "style": {
-                                "width": "100%"
-                              },
-                              "type": "textbox",
-                              "value": "${patrociniopublico.Designacao}",
-                              "valueType": "string"
                             }
                           ],
                           "type": "col"
@@ -427,28 +508,28 @@
                       "type": "row"
                     }
                   ],
-                  "data": "${patrociniopublico}",
+                  "data": "${projeto}",
                   "events": {
                     "submit": [
                       {
                         "error": [
                           {
-                            "detail": "Unable to create new PatrocinioPublico!",
+                            "detail": "Unable to create new Projeto!",
                             "severity": "error",
                             "summary": "Error",
                             "type": "notify"
                           }
                         ],
-                        "name": "Trabalho.createPatrocinioPublico",
+                        "name": "Trabalho.createProjeto",
                         "parameters": [
                           {
-                            "name": "PatrocinioPublico",
-                            "value": "${patrociniopublico}"
+                            "name": "Projeto",
+                            "value": "${projeto}"
                           }
                         ],
                         "then": [
                           {
-                            "result": "${patrociniopublico}",
+                            "result": "${projeto}",
                             "type": "close-popup"
                           }
                         ],
@@ -456,10 +537,10 @@
                       }
                     ]
                   },
-                  "itemType": "TrabalhoBd.Models.Trabalho.PatrocinioPublico",
+                  "itemType": "TrabalhoBd.Models.Trabalho.Projeto",
                   "name": "form0",
                   "type": "template-form",
-                  "visible": "${patrociniopublico != null}"
+                  "visible": "${projeto != null}"
                 }
               ],
               "type": "col"
@@ -475,13 +556,13 @@
   "events": {
     "load": [
       {
-        "name": "patrociniopublico",
+        "name": "projeto",
         "type": "set",
-        "value": "new TrabalhoBd.Models.Trabalho.PatrocinioPublico(){}",
-        "valueType": "TrabalhoBd.Models.Trabalho.PatrocinioPublico"
+        "value": "new TrabalhoBd.Models.Trabalho.Projeto(){}",
+        "valueType": "TrabalhoBd.Models.Trabalho.Projeto"
       }
     ]
   },
   "layout": "Adicionar",
-  "name": "Add Patrocinio Publico"
+  "name": "Add Projeto"
 }

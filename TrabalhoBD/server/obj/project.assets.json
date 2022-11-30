@@ -2563,11 +2563,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\TrabalhoBd.csproj",
+      "projectUniqueName": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\TrabalhoBd.csproj",
       "projectName": "TrabalhoBd",
-      "projectPath": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\TrabalhoBd.csproj",
+      "projectPath": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\TrabalhoBd.csproj",
       "packagesPath": "C:\\Users\\afons\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\obj\\",
+      "outputPath": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\afons\\AppData\\Roaming\\NuGet\\NuGet.Config",

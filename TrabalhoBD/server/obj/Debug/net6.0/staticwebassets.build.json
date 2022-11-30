@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7q9qZyV6rE8Fnr9MWOTxcItVz89N9uFWBrDeF6lfEW0=",
+  "Hash": "QJxXOmSM1Q/BfGIVZvblj93QoozsyYK0cd2M7/mF2rY=",
   "Source": "TrabalhoBd",
   "BasePath": "_content/TrabalhoBd",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "TrabalhoBd\\wwwroot",
       "Source": "TrabalhoBd",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "Pattern": "**"
     }
@@ -578,10 +578,10 @@
       "OriginalItemSpec": "C:\\Users\\afons\\.nuget\\packages\\radzen.blazor\\4.3.8\\staticwebassets\\Radzen.Blazor.js"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\css\\standard.css",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\css\\standard.css",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/css/standard.css",
       "AssetKind": "All",
@@ -595,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\standard.css"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\css\\styles-generated.css",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\css\\styles-generated.css",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/css/styles-generated.css",
       "AssetKind": "All",
@@ -612,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\styles-generated.css"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\css\\styles.css",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\css\\styles.css",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/css/styles.css",
       "AssetKind": "All",
@@ -629,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\styles.css"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\MaterialIcons-Regular.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\MaterialIcons-Regular.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/MaterialIcons-Regular.woff",
       "AssetKind": "All",
@@ -646,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\MaterialIcons-Regular.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\roboto-regular.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\roboto-regular.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/roboto-regular.woff",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\roboto-regular.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\roboto-v15-latin-300.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\roboto-v15-latin-300.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/roboto-v15-latin-300.woff",
       "AssetKind": "All",
@@ -680,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\roboto-v15-latin-300.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\roboto-v15-latin-700.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\roboto-v15-latin-700.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/roboto-v15-latin-700.woff",
       "AssetKind": "All",
@@ -697,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\roboto-v15-latin-700.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\roboto-v15-latin-regular.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\roboto-v15-latin-regular.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/roboto-v15-latin-regular.woff",
       "AssetKind": "All",
@@ -714,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\roboto-v15-latin-regular.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\roboto-v30-latin-300.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\roboto-v30-latin-300.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/roboto-v30-latin-300.woff",
       "AssetKind": "All",
@@ -731,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\roboto-v30-latin-300.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\roboto-v30-latin-500.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\roboto-v30-latin-500.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/roboto-v30-latin-500.woff",
       "AssetKind": "All",
@@ -748,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\roboto-v30-latin-500.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\roboto-v30-latin-700.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\roboto-v30-latin-700.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/roboto-v30-latin-700.woff",
       "AssetKind": "All",
@@ -765,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\roboto-v30-latin-700.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\roboto-v30-latin-regular.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\roboto-v30-latin-regular.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/roboto-v30-latin-regular.woff",
       "AssetKind": "All",
@@ -782,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\roboto-v30-latin-regular.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Black.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Black.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/SourceSansPro-Black.woff",
       "AssetKind": "All",
@@ -799,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-Black.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-BlackIt.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-BlackIt.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/SourceSansPro-BlackIt.woff",
       "AssetKind": "All",
@@ -816,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-BlackIt.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Bold.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Bold.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/SourceSansPro-Bold.woff",
       "AssetKind": "All",
@@ -833,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-Bold.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-BoldIt.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-BoldIt.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/SourceSansPro-BoldIt.woff",
       "AssetKind": "All",
@@ -850,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-BoldIt.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-ExtraLight.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-ExtraLight.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/SourceSansPro-ExtraLight.woff",
       "AssetKind": "All",
@@ -867,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-ExtraLight.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-ExtraLightIt.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-ExtraLightIt.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/SourceSansPro-ExtraLightIt.woff",
       "AssetKind": "All",
@@ -884,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-ExtraLightIt.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-It.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-It.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/SourceSansPro-It.woff",
       "AssetKind": "All",
@@ -901,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-It.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Light.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Light.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/SourceSansPro-Light.woff",
       "AssetKind": "All",
@@ -918,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-Light.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-LightIt.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-LightIt.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/SourceSansPro-LightIt.woff",
       "AssetKind": "All",
@@ -935,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-LightIt.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Regular.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Regular.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/SourceSansPro-Regular.woff",
       "AssetKind": "All",
@@ -952,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-Regular.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Semibold.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-Semibold.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/SourceSansPro-Semibold.woff",
       "AssetKind": "All",
@@ -969,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-Semibold.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-SemiboldIt.woff",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\fonts\\SourceSansPro-SemiboldIt.woff",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/fonts/SourceSansPro-SemiboldIt.woff",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\SourceSansPro-SemiboldIt.woff"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\assets\\images\\Welcome_Page.png",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\assets\\images\\Welcome_Page.png",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "assets/images/Welcome_Page.png",
       "AssetKind": "All",
@@ -1003,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\Welcome_Page.png"
     },
     {
-      "Identity": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\favicon.ico",
       "SourceId": "TrabalhoBd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\wwwroot\\",
       "BasePath": "_content/TrabalhoBd",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",

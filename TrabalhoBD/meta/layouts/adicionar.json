@@ -73,6 +73,10 @@
                   "text": "Investigador"
                 },
                 {
+                  "path": "add-projeto",
+                  "text": "Projeto"
+                },
+                {
                   "path": "add-instituicao",
                   "target": "_self",
                   "text": "Instituição"
@@ -81,14 +85,14 @@
                   "expanded": false,
                   "items": [
                     {
-                      "path": "add-patrocinador-privado",
-                      "target": "_self",
-                      "text": "Privado"
-                    },
-                    {
                       "path": "add-patrocinio-publico",
                       "target": "_self",
                       "text": "Publico"
+                    },
+                    {
+                      "path": "add-patrocinador-privado",
+                      "target": "_self",
+                      "text": "Privado"
                     }
                   ],
                   "parameters": [],

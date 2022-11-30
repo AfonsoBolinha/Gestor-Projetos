@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zkTsACZ63LHBtvNPG8vxHb/V/i8n3zitUiuT1uNbY0tJ20hbn4uaB2LkwBgg/lW4ygKD6r9QY6ew5StdtUh2Mw==",
+  "dgSpecHash": "gp9jtLAWDT+Fl/wnHejPQVqDIBTSHmS6mhx/tFq5eIJsGkxhCSaO7KfiSsA/Ieq7vhF49s14jveRU/S3TxYZQQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\afons\\OneDrive\\Ambiente de Trabalho\\TrabalhoBD\\server\\TrabalhoBd.csproj",
+  "projectFilePath": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\TrabalhoBd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\afons\\.nuget\\packages\\documentformat.openxml\\2.11.3\\documentformat.openxml.2.11.3.nupkg.sha512",
     "C:\\Users\\afons\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
