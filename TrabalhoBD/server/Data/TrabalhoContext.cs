@@ -35,6 +35,15 @@ namespace TrabalhoBd.Data
         builder.Entity<TrabalhoBd.Models.Trabalho.Pertence2>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.ProjectState>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.Responsavel>().HasNoKey();
+        builder.Entity<TrabalhoBd.Models.Trabalho.Uc>().HasNoKey();
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.Projeto>()
+              .Property(p => p.Total_Cost)
+              .HasDefaultValueSql("((0))");
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.Projeto>()
+              .Property(p => p.State)
+              .HasDefaultValueSql("(N'Em Submissão')");
 
 
         builder.Entity<TrabalhoBd.Models.Trabalho.Projeto>()
@@ -71,7 +80,7 @@ namespace TrabalhoBd.Data
 
         builder.Entity<TrabalhoBd.Models.Trabalho.Instituicao>()
               .Property(p => p.Tel)
-              .HasPrecision(10, 0);
+              .HasPrecision(19, 0);
 
         builder.Entity<TrabalhoBd.Models.Trabalho.Investigador>()
               .Property(p => p.ID)
@@ -193,6 +202,10 @@ namespace TrabalhoBd.Data
               .Property(p => p.Tempo_Responsavel)
               .HasPrecision(10, 0);
 
+        builder.Entity<TrabalhoBd.Models.Trabalho.Uc>()
+              .Property(p => p.ID)
+              .HasPrecision(10, 0);
+
         builder.Entity<TrabalhoBd.Models.Trabalho.UnidadeCurricular>()
               .Property(p => p.ID)
               .HasPrecision(10, 0);
@@ -283,6 +296,12 @@ namespace TrabalhoBd.Data
     }
 
     public DbSet<TrabalhoBd.Models.Trabalho.Responsavel> Responsavels
+    {
+      get;
+      set;
+    }
+
+    public DbSet<TrabalhoBd.Models.Trabalho.Uc> Ucs
     {
       get;
       set;

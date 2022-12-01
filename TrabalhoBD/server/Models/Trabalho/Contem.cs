@@ -12,21 +12,25 @@ namespace TrabalhoBd.Models.Trabalho
       get;
       set;
     }
+    [ConcurrencyCheck]
     public int ID_Investigador
     {
       get;
       set;
     }
+    [ConcurrencyCheck]
     public string Papel
     {
       get;
       set;
     }
+    [ConcurrencyCheck]
     public int Tempo_Gasto
     {
       get;
       set;
     }
+    [ConcurrencyCheck]
     public int Tempo_Limite
     {
       get;

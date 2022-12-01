@@ -4,6 +4,7 @@
     "x-type": "odata",
     "x-connector": "mssql",
     "x-connector-version": 15,
+    "x-concurrency": true,
     "x-infer-aspnet": false,
     "x-infer-tables": true,
     "x-infer-relations": true,
@@ -109,8 +110,9 @@
         },
         "Tel": {
           "x-nullable": false,
-          "x-precision": 10,
-          "type": "integer"
+          "x-precision": 19,
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -463,9 +465,7 @@
         "Short_Name",
         "ID_UC",
         "Max_Cost",
-        "Total_Cost",
         "DOI",
-        "State",
         "Data_Init",
         "Cientific_Domain",
         "ID_IR"
@@ -490,7 +490,7 @@
         },
         "Descricao": {
           "type": "string",
-          "length": 50
+          "length": 255
         },
         "ID_UC": {
           "x-nullable": false,
@@ -503,6 +503,7 @@
           "type": "integer"
         },
         "Total_Cost": {
+          "x-default-sql": "((0))",
           "x-nullable": false,
           "x-precision": 10,
           "type": "integer"
@@ -513,9 +514,10 @@
           "length": 50
         },
         "State": {
+          "x-default-sql": "(N'Em Submissão')",
           "x-nullable": false,
           "type": "string",
-          "length": 10
+          "length": 50
         },
         "Data_Init": {
           "x-nullable": false,
@@ -568,6 +570,162 @@
         }
       },
       "x-view": true
+    },
+    "SpAlterdiagram": {
+      "x-view": "sp",
+      "x-table": "dbo.sp_alterdiagram",
+      "x-parameters": [
+        {
+          "name": "diagramname",
+          "type": "string",
+          "size": 256
+        },
+        {
+          "name": "owner_id",
+          "type": "integer"
+        },
+        {
+          "name": "version",
+          "type": "integer"
+        },
+        {
+          "name": "definition",
+          "type": "string",
+          "format": "binary",
+          "size": -1
+        }
+      ],
+      "resource": "SpAlterdiagrams",
+      "properties": {}
+    },
+    "SpCreatediagram": {
+      "x-view": "sp",
+      "x-table": "dbo.sp_creatediagram",
+      "x-parameters": [
+        {
+          "name": "diagramname",
+          "type": "string",
+          "size": 256
+        },
+        {
+          "name": "owner_id",
+          "type": "integer"
+        },
+        {
+          "name": "version",
+          "type": "integer"
+        },
+        {
+          "name": "definition",
+          "type": "string",
+          "format": "binary",
+          "size": -1
+        }
+      ],
+      "resource": "SpCreatediagrams",
+      "properties": {}
+    },
+    "SpDropdiagram": {
+      "x-view": "sp",
+      "x-table": "dbo.sp_dropdiagram",
+      "x-parameters": [
+        {
+          "name": "diagramname",
+          "type": "string",
+          "size": 256
+        },
+        {
+          "name": "owner_id",
+          "type": "integer"
+        }
+      ],
+      "resource": "SpDropdiagrams",
+      "properties": {}
+    },
+    "SpHelpdiagram": {
+      "x-view": "sp",
+      "x-table": "dbo.sp_helpdiagrams",
+      "x-parameters": [
+        {
+          "name": "diagramname",
+          "type": "string",
+          "size": 256
+        },
+        {
+          "name": "owner_id",
+          "type": "integer"
+        }
+      ],
+      "resource": "SpHelpdiagrams",
+      "properties": {}
+    },
+    "SpHelpdiagramdefinition": {
+      "x-view": "sp",
+      "x-table": "dbo.sp_helpdiagramdefinition",
+      "x-parameters": [
+        {
+          "name": "diagramname",
+          "type": "string",
+          "size": 256
+        },
+        {
+          "name": "owner_id",
+          "type": "integer"
+        }
+      ],
+      "resource": "SpHelpdiagramdefinitions",
+      "properties": {}
+    },
+    "SpRenamediagram": {
+      "x-view": "sp",
+      "x-table": "dbo.sp_renamediagram",
+      "x-parameters": [
+        {
+          "name": "diagramname",
+          "type": "string",
+          "size": 256
+        },
+        {
+          "name": "owner_id",
+          "type": "integer"
+        },
+        {
+          "name": "new_diagramname",
+          "type": "string",
+          "size": 256
+        }
+      ],
+      "resource": "SpRenamediagrams",
+      "properties": {}
+    },
+    "Uc": {
+      "x-view": true,
+      "x-table": "dbo.UC",
+      "resource": "Ucs",
+      "required": [
+        "ID",
+        "NomeInst",
+        "Nome"
+      ],
+      "properties": {
+        "ID": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "NomeInst": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Nome": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        }
+      }
     },
     "UnidadeCurricular": {
       "x-table": "dbo.Unidade_Curricular",
@@ -1501,6 +1659,312 @@
                 "value": {
                   "items": {
                     "$ref": "#/definitions/Responsavel"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/SpAlterdiagramsFunc(diagramname='{diagramname}',owner_id={owner_id},version={version},definition='{definition}')": {
+      "get": {
+        "operationId": "SpAlterdiagrams",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "diagramname",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "owner_id",
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "version",
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "definition",
+            "type": "string",
+            "format": "binary"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/SpAlterdiagram"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/SpCreatediagramsFunc(diagramname='{diagramname}',owner_id={owner_id},version={version},definition='{definition}')": {
+      "get": {
+        "operationId": "SpCreatediagrams",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "diagramname",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "owner_id",
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "version",
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "definition",
+            "type": "string",
+            "format": "binary"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/SpCreatediagram"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/SpDropdiagramsFunc(diagramname='{diagramname}',owner_id={owner_id})": {
+      "get": {
+        "operationId": "SpDropdiagrams",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "diagramname",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "owner_id",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/SpDropdiagram"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/SpHelpdiagramsFunc(diagramname='{diagramname}',owner_id={owner_id})": {
+      "get": {
+        "operationId": "SpHelpdiagrams",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "diagramname",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "owner_id",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/SpHelpdiagram"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/SpHelpdiagramdefinitionsFunc(diagramname='{diagramname}',owner_id={owner_id})": {
+      "get": {
+        "operationId": "SpHelpdiagramdefinitions",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "diagramname",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "owner_id",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/SpHelpdiagramdefinition"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/SpRenamediagramsFunc(diagramname='{diagramname}',owner_id={owner_id},new_diagramname='{new_diagramname}')": {
+      "get": {
+        "operationId": "SpRenamediagrams",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "diagramname",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "owner_id",
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "new_diagramname",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/SpRenamediagram"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Ucs": {
+      "get": {
+        "operationId": "getUcs",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Uc"
                   },
                   "type": "array"
                 }

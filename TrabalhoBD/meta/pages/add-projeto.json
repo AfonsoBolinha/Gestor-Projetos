@@ -46,7 +46,7 @@
                               "style": {
                                 "position": "absolute"
                               },
-                              "text": "Nome is required",
+                              "text": "Campo Obrigatorio",
                               "type": "required-validator"
                             }
                           ],
@@ -95,7 +95,7 @@
                               "style": {
                                 "position": "absolute"
                               },
-                              "text": "Short_Name is required",
+                              "text": "Campo Obrigatorio",
                               "type": "required-validator"
                             }
                           ],
@@ -157,7 +157,7 @@
                               "style": {
                                 "width": "100%"
                               },
-                              "text": "Id Uc",
+                              "text": "Unidade Curricular",
                               "type": "label"
                             }
                           ],
@@ -167,13 +167,39 @@
                           "class": "col-md-9",
                           "components": [
                             {
+                              "allowColumnResize": false,
+                              "allowFiltering": true,
+                              "allowSorting": true,
+                              "columns": [
+                                {
+                                  "format": "",
+                                  "property": "Nome",
+                                  "title": "Unidade Curricular",
+                                  "type": "string"
+                                },
+                                {
+                                  "format": "",
+                                  "property": "NomeInst",
+                                  "title": "Instituição",
+                                  "type": "string"
+                                }
+                              ],
+                              "count": "",
+                              "data": "${getUcsResult}",
+                              "disabled": false,
+                              "emptyTemplate": "",
+                              "itemType": "TrabalhoBd.Models.Trabalho.Uc",
+                              "maxSelectedLabels": 1,
                               "name": "ID_UC",
+                              "selectedValue": "${projeto.ID_UC}",
                               "style": {
-                                "display": "block",
-                                "width": "100%"
+                                "display": "block"
                               },
-                              "type": "numeric",
+                              "template": "",
+                              "textProperty": "Nome",
+                              "type": "dropdown-datagrid",
                               "value": "${projeto.ID_UC}",
+                              "valueProperty": "ID",
                               "valueType": "int"
                             },
                             {
@@ -182,7 +208,7 @@
                               "style": {
                                 "position": "absolute"
                               },
-                              "text": "ID_UC is required",
+                              "text": "Campo Obrigatorio",
                               "type": "required-validator"
                             }
                           ],
@@ -230,7 +256,7 @@
                               "style": {
                                 "position": "absolute"
                               },
-                              "text": "Max_Cost is required",
+                              "text": "Campo Obrigatorio",
                               "type": "required-validator"
                             }
                           ],
@@ -279,7 +305,7 @@
                               "style": {
                                 "position": "absolute"
                               },
-                              "text": "DOI is required",
+                              "text": "Campo Obrigatorio",
                               "type": "required-validator"
                             }
                           ],
@@ -312,6 +338,7 @@
                           "class": "col-md-9",
                           "components": [
                             {
+                              "dateFormat": "D",
                               "name": "Data_Init",
                               "style": {
                                 "display": "block",
@@ -327,7 +354,7 @@
                               "style": {
                                 "position": "absolute"
                               },
-                              "text": "Data_Init is required",
+                              "text": "Campo Obrigatorio",
                               "type": "required-validator"
                             }
                           ],
@@ -360,6 +387,7 @@
                           "class": "col-md-9",
                           "components": [
                             {
+                              "dateFormat": "D",
                               "name": "Data_Fin",
                               "style": {
                                 "width": "100%"
@@ -414,7 +442,7 @@
                               "style": {
                                 "position": "absolute"
                               },
-                              "text": "Cientific_Domain is required",
+                              "text": "Campo Obrigatorio",
                               "type": "required-validator"
                             }
                           ],
@@ -447,13 +475,17 @@
                           "class": "col-md-9",
                           "components": [
                             {
+                              "allowSelectAll": false,
+                              "data": "${getInvestigadorsResult}",
+                              "multiple": false,
                               "name": "ID_IR",
                               "style": {
-                                "display": "block",
-                                "width": "100%"
+                                "display": "block"
                               },
-                              "type": "numeric",
+                              "textProperty": "Nome",
+                              "type": "dropdown",
                               "value": "${projeto.ID_IR}",
+                              "valueProperty": "ID",
                               "valueType": "int"
                             },
                             {
@@ -462,7 +494,7 @@
                               "style": {
                                 "position": "absolute"
                               },
-                              "text": "ID_IR is required",
+                              "text": "Campo Obrigatorio",
                               "type": "required-validator"
                             }
                           ],
@@ -560,6 +592,32 @@
         "type": "set",
         "value": "new TrabalhoBd.Models.Trabalho.Projeto(){}",
         "valueType": "TrabalhoBd.Models.Trabalho.Projeto"
+      },
+      {
+        "name": "Trabalho.getUcs",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getUcsResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.Uc>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "Trabalho.getInvestigadors",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getInvestigadorsResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.Investigador>"
+          }
+        ],
+        "type": "invoke"
       }
     ]
   },

@@ -14,22 +14,26 @@ namespace TrabalhoBd.Models.Trabalho
       get;
       set;
     }
+    [ConcurrencyCheck]
     public string Nome
     {
       get;
       set;
     }
+    [ConcurrencyCheck]
     public string Morada
     {
       get;
       set;
     }
+    [ConcurrencyCheck]
     public string Email
     {
       get;
       set;
     }
-    public int Tel
+    [ConcurrencyCheck]
+    public Int64 Tel
     {
       get;
       set;
