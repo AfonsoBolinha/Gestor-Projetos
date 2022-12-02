@@ -33,7 +33,7 @@ namespace TrabalhoBd.Models.Trabalho
       set;
     }
     [ConcurrencyCheck]
-    public Int64 Tel
+    public int Tel
     {
       get;
       set;

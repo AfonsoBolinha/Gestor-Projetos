@@ -159,19 +159,6 @@ namespace TrabalhoBd
         {
             return ToExcel(ApplyQuery(await service.GetPertence2S(), Request.Query), fileName);
         }
-        [HttpGet("/export/Trabalho/projectstates/csv")]
-        [HttpGet("/export/Trabalho/projectstates/csv(fileName='{fileName}')")]
-        public async System.Threading.Tasks.Task<FileStreamResult> ExportProjectStatesToCSV(string fileName = null)
-        {
-            return ToCSV(ApplyQuery(await service.GetProjectStates(), Request.Query), fileName);
-        }
-
-        [HttpGet("/export/Trabalho/projectstates/excel")]
-        [HttpGet("/export/Trabalho/projectstates/excel(fileName='{fileName}')")]
-        public async System.Threading.Tasks.Task<FileStreamResult> ExportProjectStatesToExcel(string fileName = null)
-        {
-            return ToExcel(ApplyQuery(await service.GetProjectStates(), Request.Query), fileName);
-        }
         [HttpGet("/export/Trabalho/projetos/csv")]
         [HttpGet("/export/Trabalho/projetos/csv(fileName='{fileName}')")]
         public async System.Threading.Tasks.Task<FileStreamResult> ExportProjetosToCSV(string fileName = null)
@@ -197,19 +184,6 @@ namespace TrabalhoBd
         public async System.Threading.Tasks.Task<FileStreamResult> ExportResponsavelsToExcel(string fileName = null)
         {
             return ToExcel(ApplyQuery(await service.GetResponsavels(), Request.Query), fileName);
-        }
-        [HttpGet("/export/Trabalho/ucs/csv")]
-        [HttpGet("/export/Trabalho/ucs/csv(fileName='{fileName}')")]
-        public async System.Threading.Tasks.Task<FileStreamResult> ExportUcsToCSV(string fileName = null)
-        {
-            return ToCSV(ApplyQuery(await service.GetUcs(), Request.Query), fileName);
-        }
-
-        [HttpGet("/export/Trabalho/ucs/excel")]
-        [HttpGet("/export/Trabalho/ucs/excel(fileName='{fileName}')")]
-        public async System.Threading.Tasks.Task<FileStreamResult> ExportUcsToExcel(string fileName = null)
-        {
-            return ToExcel(ApplyQuery(await service.GetUcs(), Request.Query), fileName);
         }
         [HttpGet("/export/Trabalho/unidadecurriculars/csv")]
         [HttpGet("/export/Trabalho/unidadecurriculars/csv(fileName='{fileName}')")]

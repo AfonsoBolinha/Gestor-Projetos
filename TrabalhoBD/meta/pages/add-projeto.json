@@ -185,7 +185,6 @@
                                 }
                               ],
                               "count": "",
-                              "data": "${getUcsResult}",
                               "disabled": false,
                               "emptyTemplate": "",
                               "itemType": "TrabalhoBd.Models.Trabalho.Uc",
@@ -592,19 +591,6 @@
         "type": "set",
         "value": "new TrabalhoBd.Models.Trabalho.Projeto(){}",
         "valueType": "TrabalhoBd.Models.Trabalho.Projeto"
-      },
-      {
-        "name": "Trabalho.getUcs",
-        "parameters": [],
-        "then": [
-          {
-            "name": "getUcsResult",
-            "type": "set",
-            "value": "${result}",
-            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.Uc>"
-          }
-        ],
-        "type": "invoke"
       },
       {
         "name": "Trabalho.getInvestigadors",
