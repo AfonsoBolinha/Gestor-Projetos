@@ -8,89 +8,89 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TrabalhoBd
 build_property.RootNamespace = TrabalhoBd
-build_property.ProjectDir = C:\Users\afons\OneDrive\Documentos\GitHub\Gestor-Projetos\TrabalhoBD\server\
+build_property.ProjectDir = C:\Users\tigol\OneDrive\Documentos\GitHub\Gestor-Projetos\TrabalhoBD\server\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\afons\OneDrive\Documentos\GitHub\Gestor-Projetos\TrabalhoBD\server
+build_property.MSBuildProjectDirectory = C:\Users\tigol\OneDrive\Documentos\GitHub\Gestor-Projetos\TrabalhoBD\server
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/App.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/AddInstituicao.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/AddInstituicao.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkSW5zdGl0dWljYW8ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/AddInvestigador.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/AddInvestigador.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkSW52ZXN0aWdhZG9yLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/AddPatrocinadorPrivado.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/AddPatrocinadorPrivado.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUGF0cm9jaW5hZG9yUHJpdmFkby5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/AddPatrocinioPublico.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/AddPatrocinioPublico.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUGF0cm9jaW5pb1B1YmxpY28ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/AddProjeto.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/AddProjeto.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUHJvamV0by5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/Editar.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/Editar.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdGFyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/Stats.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/Stats.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RhdHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/Welcome.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/Welcome.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VsY29tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/_Imports.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Shared/AdicionarLayout.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Shared/AdicionarLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEFkaWNpb25hckxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Shared/EditLayout.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Shared/EditLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEVkaXRMYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Shared/LoginLayout.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Shared/LoginLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luTGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Shared/MainLayout.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Shared/MainsLayout.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Shared/MainsLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5zTGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Shared/TesteLayout.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Shared/TesteLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFRlc3RlTGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Shared/UpdatedLayout.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Shared/UpdatedLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFVwZGF0ZWRMYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Shared/WelcomePageLayout.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Shared/WelcomePageLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFdlbGNvbWVQYWdlTGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/_Imports.razor]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/afons/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/_Host.cshtml]
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

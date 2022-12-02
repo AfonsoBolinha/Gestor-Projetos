@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\TrabalhoBd.csproj": {}
+    "C:\\Users\\tigol\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\TrabalhoBd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\TrabalhoBd.csproj": {
+    "C:\\Users\\tigol\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\TrabalhoBd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\TrabalhoBd.csproj",
+        "projectUniqueName": "C:\\Users\\tigol\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\TrabalhoBd.csproj",
         "projectName": "TrabalhoBd",
-        "projectPath": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\TrabalhoBd.csproj",
-        "packagesPath": "C:\\Users\\afons\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\afons\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\obj\\",
+        "projectPath": "C:\\Users\\tigol\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\TrabalhoBd.csproj",
+        "packagesPath": "C:\\Users\\tigol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tigol\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\afons\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\tigol\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -66,7 +64,7 @@
             },
             "Radzen.Blazor": {
               "target": "Package",
-              "version": "[4.3.8, )"
+              "version": "[4.4.1, )"
             },
             "System.ComponentModel.Annotations": {
               "target": "Package",
@@ -91,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
