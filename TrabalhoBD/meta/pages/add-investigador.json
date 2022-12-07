@@ -216,6 +216,9 @@
                             {
                               "buttonStyle": "primary",
                               "buttonType": "submit",
+                              "events": {
+                                "click": []
+                              },
                               "icon": "save",
                               "text": "Save",
                               "type": "button"
@@ -307,6 +310,10 @@
           }
         ],
         "type": "invoke"
+      },
+      {
+        "path": "add-investigador",
+        "type": "navigate"
       }
     ]
   },

@@ -66,6 +66,44 @@ namespace TrabalhoBd.Pages
             }
         }
 
+        IEnumerable<TrabalhoBd.Models.Trabalho.Uc> _getUcsResult;
+        protected IEnumerable<TrabalhoBd.Models.Trabalho.Uc> getUcsResult
+        {
+            get
+            {
+                return _getUcsResult;
+            }
+            set
+            {
+                if (!object.Equals(_getUcsResult, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "getUcsResult", NewValue = value, OldValue = _getUcsResult };
+                    _getUcsResult = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
+        IEnumerable<TrabalhoBd.Models.Trabalho.Investigador> _getInvestigadorsResult;
+        protected IEnumerable<TrabalhoBd.Models.Trabalho.Investigador> getInvestigadorsResult
+        {
+            get
+            {
+                return _getInvestigadorsResult;
+            }
+            set
+            {
+                if (!object.Equals(_getInvestigadorsResult, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "getInvestigadorsResult", NewValue = value, OldValue = _getInvestigadorsResult };
+                    _getInvestigadorsResult = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
             await Load();
@@ -73,6 +111,12 @@ namespace TrabalhoBd.Pages
         protected async System.Threading.Tasks.Task Load()
         {
             projeto = new TrabalhoBd.Models.Trabalho.Projeto(){};
+
+            var trabalhoGetUcsResult = await Trabalho.GetUcs();
+            getUcsResult = trabalhoGetUcsResult;
+
+            var trabalhoGetInvestigadorsResult = await Trabalho.GetInvestigadors();
+            getInvestigadorsResult = trabalhoGetInvestigadorsResult;
         }
 
         protected async System.Threading.Tasks.Task Form0Submit(TrabalhoBd.Models.Trabalho.Projeto args)

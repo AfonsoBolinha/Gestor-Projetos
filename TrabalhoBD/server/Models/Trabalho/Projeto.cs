@@ -14,61 +14,73 @@ namespace TrabalhoBd.Models.Trabalho
       get;
       set;
     }
+    [ConcurrencyCheck]
     public string Nome
     {
       get;
       set;
     }
+    [ConcurrencyCheck]
     public string Short_Name
     {
       get;
       set;
     }
+    [ConcurrencyCheck]
     public string Descricao
     {
       get;
       set;
     }
+    [ConcurrencyCheck]
     public int ID_UC
     {
       get;
       set;
     }
+    [ConcurrencyCheck]
     public int Max_Cost
     {
       get;
       set;
     }
+    [ConcurrencyCheck]
     public int Total_Cost
     {
       get;
       set;
     }
+    [ConcurrencyCheck]
     public string DOI
     {
       get;
       set;
     }
+    [ConcurrencyCheck]
     public string State
     {
       get;
       set;
     }
+    [ConcurrencyCheck]
     public DateTime Data_Init
     {
       get;
       set;
     }
+    [ConcurrencyCheck]
     public DateTime? Data_Fin
     {
       get;
       set;
     }
+    [ConcurrencyCheck]
     public string Cientific_Domain
     {
       get;
       set;
     }
+    [ConcurrencyCheck]
     public int ID_IR
     {
       get;

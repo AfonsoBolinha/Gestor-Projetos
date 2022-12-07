@@ -95,6 +95,8 @@ namespace TrabalhoBd.Pages
 
             var trabalhoGetInstituicaosResult = await Trabalho.GetInstituicaos();
             getInstituicaosResult = trabalhoGetInstituicaosResult;
+
+            UriHelper.NavigateTo("add-investigador");
         }
 
         protected async System.Threading.Tasks.Task Form0Submit(TrabalhoBd.Models.Trabalho.Investigador args)

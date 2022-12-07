@@ -20,7 +20,7 @@
               <div class="col-md-9">
                 <RadzenTextBox MaxLength="50" style="display: block; width: 100%" @bind-Value="@(projeto.Nome)" Name="Nome">
                 </RadzenTextBox>
-                <RadzenRequiredValidator Component="Nome" style="position: absolute" Text="Nome is required">
+                <RadzenRequiredValidator Component="Nome" style="position: absolute" Text="Campo Obrigatorio">
                 </RadzenRequiredValidator>
               </div>
             </div>
@@ -32,7 +32,7 @@
               <div class="col-md-9">
                 <RadzenTextBox MaxLength="10" style="display: block; width: 100%" @bind-Value="@(projeto.Short_Name)" Name="Short_Name">
                 </RadzenTextBox>
-                <RadzenRequiredValidator Component="Short_Name" style="position: absolute" Text="Short_Name is required">
+                <RadzenRequiredValidator Component="Short_Name" style="position: absolute" Text="Campo Obrigatorio">
                 </RadzenRequiredValidator>
               </div>
             </div>
@@ -48,13 +48,19 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="ID_UC" style="width: 100%" Text="Id Uc">
+                <RadzenLabel Component="ID_UC" style="width: 100%" Text="Unidade Curricular">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(projeto.ID_UC)" Name="ID_UC">
-                </RadzenNumeric>
-                <RadzenRequiredValidator Component="ID_UC" style="position: absolute" Text="ID_UC is required">
+                <RadzenDropDownDataGrid AllowColumnResize="false" AllowFiltering="true" AllowSorting="true" Data="@getUcsResult" Disabled="false" MaxSelectedLabels="1" SelectedValue="@(projeto.ID_UC)" style="display: block" TextProperty="Nome" @bind-Value="@(projeto.ID_UC)" ValueProperty="ID" Name="ID_UC">
+                  <Columns>
+                    <RadzenDropDownDataGridColumn Property="Nome" Title="Unidade Curricular">
+                    </RadzenDropDownDataGridColumn>
+                    <RadzenDropDownDataGridColumn Property="NomeInst" Title="Instituição">
+                    </RadzenDropDownDataGridColumn>
+                  </Columns>
+                </RadzenDropDownDataGrid>
+                <RadzenRequiredValidator Component="ID_UC" style="position: absolute" Text="Campo Obrigatorio">
                 </RadzenRequiredValidator>
               </div>
             </div>
@@ -66,7 +72,7 @@
               <div class="col-md-9">
                 <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(projeto.Max_Cost)" Name="Max_Cost">
                 </RadzenNumeric>
-                <RadzenRequiredValidator Component="Max_Cost" style="position: absolute" Text="Max_Cost is required">
+                <RadzenRequiredValidator Component="Max_Cost" style="position: absolute" Text="Campo Obrigatorio">
                 </RadzenRequiredValidator>
               </div>
             </div>
@@ -78,7 +84,7 @@
               <div class="col-md-9">
                 <RadzenTextBox MaxLength="50" style="display: block; width: 100%" @bind-Value="@(projeto.DOI)" Name="DOI">
                 </RadzenTextBox>
-                <RadzenRequiredValidator Component="DOI" style="position: absolute" Text="DOI is required">
+                <RadzenRequiredValidator Component="DOI" style="position: absolute" Text="Campo Obrigatorio">
                 </RadzenRequiredValidator>
               </div>
             </div>
@@ -88,9 +94,9 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker style="display: block; width: 100%" @bind-Value="@(projeto.Data_Init)" Name="Data_Init">
+                <RadzenDatePicker DateFormat="D" style="display: block; width: 100%" @bind-Value="@(projeto.Data_Init)" Name="Data_Init">
                 </RadzenDatePicker>
-                <RadzenRequiredValidator Component="Data_Init" style="position: absolute" Text="Data_Init is required">
+                <RadzenRequiredValidator Component="Data_Init" style="position: absolute" Text="Campo Obrigatorio">
                 </RadzenRequiredValidator>
               </div>
             </div>
@@ -100,7 +106,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker style="width: 100%" @bind-Value="@(projeto.Data_Fin)" Name="Data_Fin">
+                <RadzenDatePicker DateFormat="D" style="width: 100%" @bind-Value="@(projeto.Data_Fin)" Name="Data_Fin">
                 </RadzenDatePicker>
               </div>
             </div>
@@ -112,7 +118,7 @@
               <div class="col-md-9">
                 <RadzenTextBox MaxLength="50" style="display: block; width: 100%" @bind-Value="@(projeto.Cientific_Domain)" Name="Cientific_Domain">
                 </RadzenTextBox>
-                <RadzenRequiredValidator Component="Cientific_Domain" style="position: absolute" Text="Cientific_Domain is required">
+                <RadzenRequiredValidator Component="Cientific_Domain" style="position: absolute" Text="Campo Obrigatorio">
                 </RadzenRequiredValidator>
               </div>
             </div>
@@ -122,9 +128,9 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(projeto.ID_IR)" Name="ID_IR">
-                </RadzenNumeric>
-                <RadzenRequiredValidator Component="ID_IR" style="position: absolute" Text="ID_IR is required">
+                <RadzenDropDown AllowSelectAll="false" Data="@getInvestigadorsResult" Multiple="false" style="display: block" TextProperty="Nome" @bind-Value="@(projeto.ID_IR)" ValueProperty="ID" Name="ID_IR">
+                </RadzenDropDown>
+                <RadzenRequiredValidator Component="ID_IR" style="position: absolute" Text="Campo Obrigatorio">
                 </RadzenRequiredValidator>
               </div>
             </div>
