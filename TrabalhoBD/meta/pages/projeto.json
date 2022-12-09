@@ -1,0 +1,284 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Projeto"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "icon": "add_circle_outline",
+                  "name": "button0",
+                  "style": {
+                    "marginBottom": "10px"
+                  },
+                  "text": "Add",
+                  "type": "button",
+                  "events": {
+                    "click": [
+                      {
+                        "path": "add-projeto",
+                        "type": "popup",
+                        "then": [
+                          {
+                            "code": "await grid0.Reload();",
+                            "type": "execute"
+                          },
+                          {
+                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                            "type": "execute"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "@oninput",
+                      "value": "@(async(args) => {search = $\"{args.Value}\";await grid0.GoToPage(0);await Load();})"
+                    }
+                  ],
+                  "name": "textbox0",
+                  "placeholder": "Search ...",
+                  "style": {
+                    "display": "block",
+                    "marginBottom": "10px",
+                    "width": "100%"
+                  },
+                  "type": "textbox",
+                  "value": ""
+                },
+                {
+                  "name": "grid0",
+                  "allowFiltering": true,
+                  "filterMode": "advanced",
+                  "allowPaging": true,
+                  "allowSorting": true,
+                  "data": "${getProjetosResult}",
+                  "events": {
+                    "loadData": [],
+                    "rowDoubleClick": [
+                      {
+                        "parameters": [
+                          {
+                            "name": "ID",
+                            "value": "${event.Data.ID}"
+                          }
+                        ],
+                        "path": "edit-projeto",
+                        "type": "popup",
+                        "then": [
+                          {
+                            "code": "await grid0.Reload();",
+                            "type": "execute"
+                          },
+                          {
+                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                            "type": "execute"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "title": "",
+                  "columns": [
+                    {
+                      "property": "ID",
+                      "title": "ID"
+                    },
+                    {
+                      "property": "Nome",
+                      "title": "Nome"
+                    },
+                    {
+                      "property": "Short_Name",
+                      "title": "Short Name"
+                    },
+                    {
+                      "property": "Descricao",
+                      "title": "Descricao"
+                    },
+                    {
+                      "property": "ID_UC",
+                      "title": "ID UC"
+                    },
+                    {
+                      "property": "Max_Cost",
+                      "title": "Max Cost"
+                    },
+                    {
+                      "property": "Total_Cost",
+                      "title": "Total Cost"
+                    },
+                    {
+                      "property": "DOI",
+                      "title": "DOI"
+                    },
+                    {
+                      "property": "State",
+                      "title": "State"
+                    },
+                    {
+                      "property": "Data_Init",
+                      "formatString": "{0:d}",
+                      "title": "Data Init"
+                    },
+                    {
+                      "property": "Data_Fin",
+                      "formatString": "{0:d}",
+                      "title": "Data Fin"
+                    },
+                    {
+                      "property": "Cientific_Domain",
+                      "title": "Cientific Domain"
+                    },
+                    {
+                      "property": "ID_IR",
+                      "title": "ID IR"
+                    },
+                    {
+                      "filterable": false,
+                      "sortable": false,
+                      "width": "70px",
+                      "textAlign": "center",
+                      "template": [
+                        {
+                          "attributes": [
+                            {
+                              "name": "@onclick:stopPropagation",
+                              "value": true
+                            }
+                          ],
+                          "buttonStyle": "danger",
+                          "icon": "close",
+                          "name": "gridDeleteButton",
+                          "text": "",
+                          "size": "sm",
+                          "type": "button",
+                          "events": {
+                            "click": [
+                              {
+                                "condition": "await DialogService.Confirm(\"Are you sure you want to delete this record?\") == true",
+                                "error": [
+                                  {
+                                    "detail": "Unable to delete Projeto",
+                                    "severity": "error",
+                                    "summary": "Error",
+                                    "type": "notify"
+                                  }
+                                ],
+                                "name": "Trabalho.deleteProjeto",
+                                "parameters": [
+                                  {
+                                    "name": "ID",
+                                    "value": "${data.ID}"
+                                  }
+                                ],
+                                "then": [
+                                  {
+                                    "code": "await grid0.Reload();",
+                                    "condition": "result != null",
+                                    "type": "execute"
+                                  }
+                                ],
+                                "type": "invoke"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "type": "datagrid",
+                  "itemType": "TrabalhoBd.Models.Trabalho.Projeto"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "condition": "string.IsNullOrEmpty(search)",
+        "name": "search",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "name": "Trabalho.getProjetos",
+        "parameters": [
+          {
+            "name": "$filter",
+            "operator": "or",
+            "value": [
+              {
+                "operation": "contains",
+                "property": "Nome",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "Short_Name",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "Descricao",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "DOI",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "State",
+                "type": "string",
+                "value": "\"${search}\""
+              },
+              {
+                "operation": "contains",
+                "property": "Cientific_Domain",
+                "type": "string",
+                "value": "\"${search}\""
+              }
+            ]
+          }
+        ],
+        "then": [
+          {
+            "name": "getProjetosResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.Projeto>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Projeto",
+  "layout": "Edit"
+}
