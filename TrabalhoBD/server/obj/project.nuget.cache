@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gulXr7zTLtYGgpy4kFpx0ZONlGxzuIhzvYW/cBM4ytd2zCMSC6LKyXONatqsvZnmN4BZy0byPo2q5yZycjBImw==",
+  "dgSpecHash": "rlDscEXNokwmMXeZMZJkP0KNBp69cg+2muuRfkl6L85WT+UeuJSf9v+VIDF7bO0IkQ6PtB3WwBh+83FTM75pyQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\tigol\\OneDrive\\Documentos\\GitHub\\Gestor-Projetos\\TrabalhoBD\\server\\TrabalhoBd.csproj",
   "expectedPackageFiles": [
@@ -46,7 +46,7 @@
     "C:\\Users\\tigol\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\tigol\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\tigol\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
-    "C:\\Users\\tigol\\.nuget\\packages\\radzen.blazor\\4.4.1\\radzen.blazor.4.4.1.nupkg.sha512",
+    "C:\\Users\\tigol\\.nuget\\packages\\radzen.blazor\\4.4.4\\radzen.blazor.4.4.4.nupkg.sha512",
     "C:\\Users\\tigol\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\tigol\\.nuget\\packages\\system.componentmodel.annotations\\6.0.0-preview.4.21253.7\\system.componentmodel.annotations.6.0.0-preview.4.21253.7.nupkg.sha512",
     "C:\\Users\\tigol\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",

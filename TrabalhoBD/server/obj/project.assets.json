@@ -553,7 +553,7 @@
           }
         }
       },
-      "Radzen.Blazor/4.4.1": {
+      "Radzen.Blazor/4.4.4": {
         "type": "package",
         "dependencies": {
           "LibSassBuilder": "2.0.1",
@@ -1809,10 +1809,10 @@
         "version.txt"
       ]
     },
-    "Radzen.Blazor/4.4.1": {
-      "sha512": "+nzHQXshx5VV0UBjVTSKyo+qBK/5I3WhocIk1AwAzSzKRzyLIsYkHhiWoW1j6Cj0HemIZMYzKS0r5O8Ymu1K6g==",
+    "Radzen.Blazor/4.4.4": {
+      "sha512": "8LYdcW3rAcX9UpXTccGPCVFrmUQDwJdjN1FShdMhna/Qr9HrPTjUGHoI4859r4ZdnJKcy7DBl6ge/4iKKPmp8A==",
       "type": "package",
-      "path": "radzen.blazor/4.4.1",
+      "path": "radzen.blazor/4.4.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1831,7 +1831,7 @@
         "lib/net7.0/Radzen.Blazor.xml",
         "lib/netstandard2.1/Radzen.Blazor.dll",
         "lib/netstandard2.1/Radzen.Blazor.xml",
-        "radzen.blazor.4.4.1.nupkg.sha512",
+        "radzen.blazor.4.4.4.nupkg.sha512",
         "radzen.blazor.nuspec",
         "staticwebassets/Radzen.Blazor.js",
         "staticwebassets/css/dark-base.css",
@@ -2553,7 +2553,7 @@
       "Microsoft.EntityFrameworkCore >= 6.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.0",
-      "Radzen.Blazor >= 4.4.1",
+      "Radzen.Blazor >= 4.4.4",
       "System.ComponentModel.Annotations >= 6.0.0-preview.4.21253.7"
     ]
   },
@@ -2620,7 +2620,7 @@
           },
           "Radzen.Blazor": {
             "target": "Package",
-            "version": "[4.4.1, )"
+            "version": "[4.4.4, )"
           },
           "System.ComponentModel.Annotations": {
             "target": "Package",

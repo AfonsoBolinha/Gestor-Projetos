@@ -17,8 +17,7 @@
     "Welcome",
     "Stats",
     "Add Patrocinador_Privado",
-    "Editar",
-    "Projeto"
+    "Editar"
   ],
   "pages": [
     "Add Instituicao",
@@ -29,7 +28,6 @@
     "Add PatrocinioPublico",
     "Add Investigador",
     "Add Projeto",
-    "Projeto",
     "Edit Projeto"
   ],
   "serverLang": "cs",

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
 using TrabalhoBd.Models.Trabalho;
+using Microsoft.EntityFrameworkCore;
 
 namespace TrabalhoBd.Pages
 {
@@ -45,9 +46,6 @@ namespace TrabalhoBd.Pages
 
         [Inject]
         protected TrabalhoService Trabalho { get; set; }
-
-        [Parameter]
-        public dynamic ID { get; set; }
 
         bool _hasChanges;
         protected bool hasChanges
@@ -116,7 +114,7 @@ namespace TrabalhoBd.Pages
 
             canEdit = true;
 
-            var trabalhoGetProjetoByIdResult = await Trabalho.GetProjetoById(int.Parse($"{ID}"));
+            var trabalhoGetProjetoByIdResult = await Trabalho.GetProjetoById(ID);
             projeto = trabalhoGetProjetoByIdResult;
         }
 
@@ -136,7 +134,7 @@ namespace TrabalhoBd.Pages
         {
             try
             {
-                var trabalhoUpdateProjetoResult = await Trabalho.UpdateProjeto(int.Parse($"{ID}"), projeto);
+                var trabalhoUpdateProjetoResult = await Trabalho.UpdateProjeto(ID, projeto);
                 DialogService.Close(projeto);
             }
             catch (System.Exception trabalhoUpdateProjetoException)
