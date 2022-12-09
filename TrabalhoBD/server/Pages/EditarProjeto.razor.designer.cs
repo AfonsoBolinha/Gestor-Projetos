@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace TrabalhoBd.Pages
 {
-    public partial class EditProjetoComponent : ComponentBase
+    public partial class EditarProjetoComponent : ComponentBase
     {
         [Parameter(CaptureUnmatchedValues = true)]
         public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
@@ -114,13 +114,13 @@ namespace TrabalhoBd.Pages
 
             canEdit = true;
 
-            var trabalhoGetProjetoByIdResult = await Trabalho.GetProjetoById(ID);
+            var trabalhoGetProjetoByIdResult = await Trabalho.GetProjetoById(Convert.ChangeType(ID, Type.GetTypeCode(typeof(int))));
             projeto = trabalhoGetProjetoByIdResult;
         }
 
         protected async System.Threading.Tasks.Task CloseButtonClick(MouseEventArgs args)
         {
-            DialogService.Close(null);
+            UriHelper.NavigateTo("mostrar-projetos");
         }
 
         protected async System.Threading.Tasks.Task Button0Click(MouseEventArgs args)
@@ -134,8 +134,10 @@ namespace TrabalhoBd.Pages
         {
             try
             {
-                var trabalhoUpdateProjetoResult = await Trabalho.UpdateProjeto(ID, projeto);
-                DialogService.Close(projeto);
+                var trabalhoUpdateProjetoResult = await Trabalho.UpdateProjeto(Convert.ChangeType(ID, Type.GetTypeCode(typeof(int))), projeto);
+                if (trabalhoUpdateProjetoResult.StatusCode != System.Net.HttpStatusCode.PreconditionFailed) {
+                UriHelper.NavigateTo("mostrar-projetos");
+                }
             }
             catch (System.Exception trabalhoUpdateProjetoException)
             {
@@ -151,7 +153,7 @@ namespace TrabalhoBd.Pages
 
         protected async System.Threading.Tasks.Task Button4Click(MouseEventArgs args)
         {
-            DialogService.Close(null);
+            UriHelper.NavigateTo("mostrar-projetos");
         }
     }
 }

@@ -1,36 +1,18 @@
-﻿@page "/edit-projeto"
+﻿@page "/add-editar-projeto"
 @layout EditLayout
-@inherits TrabalhoBd.Pages.EditProjetoComponent
+@inherits TrabalhoBd.Pages.AddEditarProjetoComponent
 
 @using Radzen
 @using Radzen.Blazor
 @using TrabalhoBd.Models.Trabalho
-<PageTitle>Edit Projeto</PageTitle>
+<PageTitle>Add Editar Projeto</PageTitle>
 <RadzenContent Container="main">
   <ChildContent>
-    <div  class="row">
-      <div class="col-md-9">
-        <RadzenLabel style="font-weight: bold" Text="Item no longer available." Visible="@(!canEdit)">
-        </RadzenLabel>
-      </div>
-      <div class="col-md-3">
-        <RadzenButton ButtonStyle="ButtonStyle.Secondary" style="margin-bottom: 20px" Text="Close" Visible="@(!canEdit)" Click="@CloseButtonClick">
-        </RadzenButton>
-      </div>
-    </div>
-    <div  class="row">
-      <div class="col-md-9">
-        <RadzenLabel style="font-weight: bold" Text="Another user has made conflicting changes to one or more of the fields you have modified. Please reload." Visible="@hasChanges">
-        </RadzenLabel>
-      </div>
-      <div class="col-md-3">
-        <RadzenButton ButtonStyle="ButtonStyle.Secondary" Icon="autorenew" style="margin-bottom: 20px" Text="Reload" Visible="@hasChanges" Click="@Button0Click">
-        </RadzenButton>
-      </div>
-    </div>
+    <RadzenHeading Size="H1" Text="Add Editar Projeto">
+    </RadzenHeading>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm TItem="TrabalhoBd.Models.Trabalho.Projeto" Data="@projeto" Visible="@(projeto != null && canEdit)" Submit="@Form0Submit">
+        <RadzenTemplateForm Data="@projeto" Visible="@(projeto != null)" TItem="TrabalhoBd.Models.Trabalho.Projeto" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
@@ -176,7 +158,7 @@
               <div class="col offset-sm-3">
                 <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
                 </RadzenButton>
-                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@Button4Click">
+                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@Button2Click">
                 </RadzenButton>
               </div>
             </div>

@@ -36,13 +36,21 @@
       <ChildContent>
         <RadzenPanelMenu style="height: 100%">
           <ChildContent>
-            <RadzenPanelMenuItem Text="Welcome" Path="welcome">
+            <RadzenPanelMenuItem Path="welcome" Target="_self" Text="Bem-Vindo">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="Stats" Path="stats">
+            <RadzenPanelMenuItem Path="add-investigador" Target="_self" Text="Investigador">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="Add Patrocinador_Privado" Path="add-patrocinador-privado">
+            <RadzenPanelMenuItem Path="add-projeto" Text="Projeto">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="Editar" Path="editar">
+            <RadzenPanelMenuItem Path="add-instituicao" Target="_self" Text="Instituição">
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Expanded="false" Target="_self" Text="Patrocinador">
+              <ChildContent>
+                <RadzenPanelMenuItem Path="add-patrocinio-publico" Target="_self" Text="Publico">
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Path="add-patrocinador-privado" Target="_self" Text="Privado">
+                </RadzenPanelMenuItem>
+              </ChildContent>
             </RadzenPanelMenuItem>
           </ChildContent>
         </RadzenPanelMenu>

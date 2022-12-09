@@ -56,15 +56,19 @@
         {
           "components": [
             {
+              "events": {
+                "click": []
+              },
               "items": [
                 {
-                  "path": "add-investigador",
-                  "text": "Add Investigador"
+                  "parameters": [],
+                  "path": "mostrar-projetos",
+                  "text": "Editar Projetos"
                 },
                 {
                   "path": "add-instituicao",
                   "target": "_self",
-                  "text": "Add Instituicao"
+                  "text": "Editar Investigadores"
                 }
               ],
               "name": "panelmenu0",

@@ -5,105 +5,10 @@
       "container": "main",
       "components": [
         {
-          "components": [
-            {
-              "class": "col-md-9",
-              "components": [
-                {
-                  "name": "closeLabel",
-                  "style": {
-                    "fontWeight": "bold"
-                  },
-                  "text": "Item no longer available.",
-                  "type": "label",
-                  "visible": "${!canEdit}"
-                }
-              ],
-              "name": "col0",
-              "type": "col"
-            },
-            {
-              "class": "col-md-3",
-              "components": [
-                {
-                  "buttonStyle": "secondary",
-                  "events": {
-                    "click": [
-                      {
-                        "type": "close-popup"
-                      }
-                    ]
-                  },
-                  "icon": "",
-                  "name": "closeButton",
-                  "style": {
-                    "marginBottom": "20px"
-                  },
-                  "text": "Close",
-                  "type": "button",
-                  "visible": "${!canEdit}"
-                }
-              ],
-              "name": "col1",
-              "type": "col"
-            }
-          ],
-          "name": "row0",
-          "style": {},
-          "type": "row"
-        },
-        {
-          "components": [
-            {
-              "class": "col-md-9",
-              "components": [
-                {
-                  "name": "label0",
-                  "style": {
-                    "fontWeight": "bold"
-                  },
-                  "text": "Another user has made conflicting changes to one or more of the fields you have modified. Please reload.",
-                  "type": "label",
-                  "visible": "${hasChanges}"
-                }
-              ],
-              "name": "col0",
-              "type": "col"
-            },
-            {
-              "class": "col-md-3",
-              "components": [
-                {
-                  "buttonStyle": "secondary",
-                  "events": {
-                    "click": [
-                      {
-                        "code": "Trabalho.Reset()",
-                        "type": "execute"
-                      },
-                      {
-                        "code": "await this.Load()",
-                        "type": "execute"
-                      }
-                    ]
-                  },
-                  "icon": "autorenew",
-                  "name": "button0",
-                  "style": {
-                    "marginBottom": "20px"
-                  },
-                  "text": "Reload",
-                  "type": "button",
-                  "visible": "${hasChanges}"
-                }
-              ],
-              "name": "col1",
-              "type": "col"
-            }
-          ],
-          "name": "row0",
-          "style": {},
-          "type": "row"
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Add Editar Projeto"
         },
         {
           "type": "row",
@@ -702,7 +607,8 @@
                               "events": {
                                 "click": [
                                   {
-                                    "type": "close-popup"
+                                    "path": "mostrar-projetos",
+                                    "type": "navigate"
                                   }
                                 ]
                               }
@@ -717,31 +623,14 @@
                       {
                         "error": [
                           {
-                            "detail": "Unable to update Projeto",
+                            "detail": "Unable to create new Projeto!",
                             "severity": "error",
                             "summary": "Error",
                             "type": "notify"
-                          },
-                          {
-                            "name": "hasChanges",
-                            "type": "set",
-                            "value": "result is DbUpdateConcurrencyException",
-                            "valueType": "bool"
-                          },
-                          {
-                            "name": "canEdit",
-                            "type": "set",
-                            "condition": "!(result is DbUpdateConcurrencyException)",
-                            "value": "false",
-                            "valueType": "bool"
                           }
                         ],
-                        "name": "Trabalho.updateProjeto",
+                        "name": "Trabalho.createProjeto",
                         "parameters": [
-                          {
-                            "name": "ID",
-                            "value": "${parameters.ID}"
-                          },
                           {
                             "name": "Projeto",
                             "value": "${projeto}"
@@ -749,18 +638,17 @@
                         ],
                         "then": [
                           {
-                            "type": "close-popup",
-                            "result": "${projeto}",
-                            "condition": ""
+                            "path": "mostrar-projetos",
+                            "type": "navigate"
                           }
                         ],
                         "type": "invoke"
                       }
                     ]
                   },
-                  "itemType": "TrabalhoBd.Models.Trabalho.Projeto",
                   "data": "${projeto}",
-                  "visible": "${projeto != null && canEdit}"
+                  "visible": "${projeto != null}",
+                  "itemType": "TrabalhoBd.Models.Trabalho.Projeto"
                 }
               ]
             }
@@ -772,38 +660,13 @@
   "events": {
     "load": [
       {
-        "name": "hasChanges",
+        "name": "projeto",
         "type": "set",
-        "value": "false",
-        "valueType": "bool"
-      },
-      {
-        "name": "canEdit",
-        "type": "set",
-        "value": "true",
-        "valueType": "bool"
-      },
-      {
-        "name": "Trabalho.getProjetoByID",
-        "parameters": [
-          {
-            "name": "ID",
-            "value": "${parameters.ID}"
-          }
-        ],
-        "then": [
-          {
-            "name": "projeto",
-            "type": "set",
-            "value": "${result}",
-            "valueType": "TrabalhoBd.Models.Trabalho.Projeto"
-          }
-        ],
-        "error": [],
-        "type": "invoke"
+        "value": "new TrabalhoBd.Models.Trabalho.Projeto(){}",
+        "valueType": "TrabalhoBd.Models.Trabalho.Projeto"
       }
     ]
   },
-  "name": "Edit Projeto",
+  "name": "Add Editar Projeto",
   "layout": "Edit"
 }

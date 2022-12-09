@@ -76,6 +76,7 @@
                 },
                 {
                   "path": "editar",
+                  "target": "_self",
                   "text": "Editar"
                 }
               ],

@@ -7,7 +7,7 @@ using Radzen.Blazor;
 
 namespace TrabalhoBd.Pages
 {
-    public partial class EditProjetoComponent
+    public partial class EditarProjetoComponent
     {
 
     }
