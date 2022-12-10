@@ -80,7 +80,7 @@ namespace TrabalhoBd.Pages
             try
             {
                 var trabalhoCreateProjetoResult = await Trabalho.CreateProjeto(projeto);
-                UriHelper.NavigateTo("editar-projeto");
+                UriHelper.NavigateTo("mostrar-projetos");
             }
             catch (System.Exception trabalhoCreateProjetoException)
             {
@@ -90,7 +90,7 @@ namespace TrabalhoBd.Pages
 
         protected async System.Threading.Tasks.Task Button2Click(MouseEventArgs args)
         {
-            UriHelper.NavigateTo("editar-projeto");
+            UriHelper.NavigateTo("mostrar-projetos");
         }
     }
 }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace TrabalhoBd.Pages
 {
-    public partial class EditarProjetoComponent : ComponentBase
+    public partial class EditInvestigadorComponent : ComponentBase
     {
         [Parameter(CaptureUnmatchedValues = true)]
         public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
@@ -88,19 +88,19 @@ namespace TrabalhoBd.Pages
             }
         }
 
-        TrabalhoBd.Models.Trabalho.Projeto _projeto;
-        protected TrabalhoBd.Models.Trabalho.Projeto projeto
+        TrabalhoBd.Models.Trabalho.Investigador _investigador;
+        protected TrabalhoBd.Models.Trabalho.Investigador investigador
         {
             get
             {
-                return _projeto;
+                return _investigador;
             }
             set
             {
-                if (!object.Equals(_projeto, value))
+                if (!object.Equals(_investigador, value))
                 {
-                    var args = new PropertyChangedEventArgs(){ Name = "projeto", NewValue = value, OldValue = _projeto };
-                    _projeto = value;
+                    var args = new PropertyChangedEventArgs(){ Name = "investigador", NewValue = value, OldValue = _investigador };
+                    _investigador = value;
                     OnPropertyChanged(args);
                     Reload();
                 }
@@ -117,13 +117,13 @@ namespace TrabalhoBd.Pages
 
             canEdit = true;
 
-            var trabalhoGetProjetoByIdResult = await Trabalho.GetProjetoById(Convert.ChangeType(ID, Type.GetTypeCode(typeof(int))));
-            projeto = trabalhoGetProjetoByIdResult;
+            var trabalhoGetInvestigadorByIdResult = await Trabalho.GetInvestigadorById(Convert.ChangeType(ID, Type.GetTypeCode(typeof(int))));
+            investigador = trabalhoGetInvestigadorByIdResult;
         }
 
         protected async System.Threading.Tasks.Task CloseButtonClick(MouseEventArgs args)
         {
-            UriHelper.NavigateTo("mostrar-projetos");
+            UriHelper.NavigateTo("mostrar-investigador");
         }
 
         protected async System.Threading.Tasks.Task Button0Click(MouseEventArgs args)
@@ -133,22 +133,22 @@ namespace TrabalhoBd.Pages
             await this.Load();
         }
 
-        protected async System.Threading.Tasks.Task Form0Submit(TrabalhoBd.Models.Trabalho.Projeto args)
+        protected async System.Threading.Tasks.Task Form0Submit(TrabalhoBd.Models.Trabalho.Investigador args)
         {
             try
             {
-                var trabalhoUpdateProjetoResult = await Trabalho.UpdateProjeto(Convert.ChangeType(ID, Type.GetTypeCode(typeof(int))), projeto);
-                if (trabalhoUpdateProjetoResult.StatusCode != System.Net.HttpStatusCode.PreconditionFailed) {
-                UriHelper.NavigateTo("mostrar-projetos");
+                var trabalhoUpdateInvestigadorResult = await Trabalho.UpdateInvestigador(Convert.ChangeType(ID, Type.GetTypeCode(typeof(int))), investigador);
+                if (trabalhoUpdateInvestigadorResult.StatusCode != System.Net.HttpStatusCode.PreconditionFailed) {
+                UriHelper.NavigateTo("mostrar-investigador");
                 }
             }
-            catch (System.Exception trabalhoUpdateProjetoException)
+            catch (System.Exception trabalhoUpdateInvestigadorException)
             {
-                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Summary = $"Error",Detail = $"Unable to update Projeto" });
+                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Summary = $"Error",Detail = $"Unable to update Investigador" });
 
-            hasChanges = trabalhoUpdateProjetoException is DbUpdateConcurrencyException;
+            hasChanges = trabalhoUpdateInvestigadorException is DbUpdateConcurrencyException;
 
-            if (!(trabalhoUpdateProjetoException is DbUpdateConcurrencyException)) {
+            if (!(trabalhoUpdateInvestigadorException is DbUpdateConcurrencyException)) {
                 canEdit = false;
             }
             }
@@ -156,7 +156,7 @@ namespace TrabalhoBd.Pages
 
         protected async System.Threading.Tasks.Task Button4Click(MouseEventArgs args)
         {
-            UriHelper.NavigateTo("mostrar-projetos");
+            UriHelper.NavigateTo("mostrar-investigador");
         }
     }
 }

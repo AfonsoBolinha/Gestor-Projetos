@@ -51,8 +51,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdGFyUHJvamV0by5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/EditEditarProjeto.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEVkaXRhclByb2pldG8ucmF6b3I=
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/EditInvestigador.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEludmVzdGlnYWRvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/MostrarInvestigador.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9zdHJhckludmVzdGlnYWRvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/MostrarProjetos.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9zdHJhclByb2pldG9zLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/Stats.razor]

@@ -1,0 +1,42 @@
+﻿@page "/mostrar-investigador"
+@layout EditLayout
+@inherits TrabalhoBd.Pages.MostrarInvestigadorComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TrabalhoBd.Models.Trabalho
+<PageTitle>Mostrar Investigador</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Investigador">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenDataGrid @ref="grid0" AllowFiltering="true" FilterMode="Radzen.FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getInvestigadorsResult" TItem="TrabalhoBd.Models.Trabalho.Investigador" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Investigador" Property="ID" Title="ID">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Investigador" Property="Nome" Title="Nome">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Investigador" Property="Num_Funcionario" Title="Num Funcionario">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Investigador" Property="ORCID" Title="ORCID">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Investigador" Property="ID_Instituicao" Title="ID Instituicao">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Investigador" Property="Tempo_Total" Title="Tempo Total">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Investigador" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              <Template Context="trabalhoBdModelsTrabalhoInvestigador">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, trabalhoBdModelsTrabalhoInvestigador))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenDataGridColumn>
+          </Columns>
+        </RadzenDataGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>
