@@ -41,7 +41,6 @@
                   "filterMode": "advanced",
                   "allowPaging": true,
                   "allowSorting": true,
-                  "data": "${getInstituicaosResult}",
                   "events": {
                     "loadData": [],
                     "rowSelect": [
@@ -144,21 +143,7 @@
     }
   ],
   "events": {
-    "load": [
-      {
-        "name": "Trabalho.getInstituicaos",
-        "parameters": [],
-        "then": [
-          {
-            "name": "getInstituicaosResult",
-            "type": "set",
-            "value": "${result}",
-            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.Instituicao>"
-          }
-        ],
-        "type": "invoke"
-      }
-    ]
+    "load": []
   },
   "name": "Mostrar Instituicao",
   "layout": "Edit"

@@ -14,13 +14,11 @@ namespace TrabalhoBd.Models.Trabalho
       get;
       set;
     }
-    [ConcurrencyCheck]
     public string Nome
     {
       get;
       set;
     }
-    [ConcurrencyCheck]
     public int ID_Instituicao
     {
       get;

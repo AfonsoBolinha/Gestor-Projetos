@@ -179,7 +179,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "data": "${getInstituicaosResult}",
                               "name": "ID_Instituicao",
                               "style": {
                                 "display": "block"
@@ -247,32 +246,7 @@
                   ],
                   "data": "${investigador}",
                   "events": {
-                    "submit": [
-                      {
-                        "error": [
-                          {
-                            "detail": "Unable to create new Investigador!",
-                            "severity": "error",
-                            "summary": "Error",
-                            "type": "notify"
-                          }
-                        ],
-                        "name": "Trabalho.createInvestigador",
-                        "parameters": [
-                          {
-                            "name": "Investigador",
-                            "value": "${investigador}"
-                          }
-                        ],
-                        "then": [
-                          {
-                            "result": "${investigador}",
-                            "type": "close-popup"
-                          }
-                        ],
-                        "type": "invoke"
-                      }
-                    ]
+                    "submit": []
                   },
                   "itemType": "TrabalhoBd.Models.Trabalho.Investigador",
                   "name": "form0",
@@ -297,19 +271,6 @@
         "type": "set",
         "value": "new TrabalhoBd.Models.Trabalho.Investigador(){}",
         "valueType": "TrabalhoBd.Models.Trabalho.Investigador"
-      },
-      {
-        "name": "Trabalho.getInstituicaos",
-        "parameters": [],
-        "then": [
-          {
-            "name": "getInstituicaosResult",
-            "type": "set",
-            "value": "${result}",
-            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.Instituicao>"
-          }
-        ],
-        "type": "invoke"
       },
       {
         "path": "add-investigador",

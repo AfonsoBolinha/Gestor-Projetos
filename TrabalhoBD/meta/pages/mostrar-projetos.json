@@ -143,7 +143,6 @@
                       "width": "70px"
                     }
                   ],
-                  "data": "${getProjetosResult}",
                   "events": {
                     "loadData": [],
                     "rowSelect": [
@@ -178,21 +177,7 @@
     }
   ],
   "events": {
-    "load": [
-      {
-        "name": "Trabalho.getProjetos",
-        "parameters": [],
-        "then": [
-          {
-            "name": "getProjetosResult",
-            "type": "set",
-            "value": "${result}",
-            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.Projeto>"
-          }
-        ],
-        "type": "invoke"
-      }
-    ]
+    "load": []
   },
   "layout": "Edit",
   "name": "Mostrar Projetos"

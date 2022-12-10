@@ -354,53 +354,9 @@
                     }
                   ],
                   "events": {
-                    "submit": [
-                      {
-                        "error": [
-                          {
-                            "detail": "Unable to update Instituicao",
-                            "severity": "error",
-                            "summary": "Error",
-                            "type": "notify"
-                          },
-                          {
-                            "name": "hasChanges",
-                            "type": "set",
-                            "value": "result is DbUpdateConcurrencyException",
-                            "valueType": "bool"
-                          },
-                          {
-                            "name": "canEdit",
-                            "type": "set",
-                            "condition": "!(result is DbUpdateConcurrencyException)",
-                            "value": "false",
-                            "valueType": "bool"
-                          }
-                        ],
-                        "name": "Trabalho.updateInstituicao",
-                        "parameters": [
-                          {
-                            "name": "ID",
-                            "value": "Convert.ChangeType(${parameters.ID}, Type.GetTypeCode(typeof(int)))"
-                          },
-                          {
-                            "name": "Instituicao",
-                            "value": "${instituicao}"
-                          }
-                        ],
-                        "then": [
-                          {
-                            "path": "mostrar-instituicao",
-                            "type": "navigate",
-                            "condition": "result.StatusCode != System.Net.HttpStatusCode.PreconditionFailed"
-                          }
-                        ],
-                        "type": "invoke"
-                      }
-                    ]
+                    "submit": []
                   },
                   "itemType": "TrabalhoBd.Models.Trabalho.Instituicao",
-                  "data": "${instituicao}",
                   "visible": "${instituicao != null && canEdit}"
                 }
               ]
@@ -423,25 +379,6 @@
         "type": "set",
         "value": "true",
         "valueType": "bool"
-      },
-      {
-        "name": "Trabalho.getInstituicaoByID",
-        "parameters": [
-          {
-            "name": "ID",
-            "value": "Convert.ChangeType(${parameters.ID}, Type.GetTypeCode(typeof(int)))"
-          }
-        ],
-        "then": [
-          {
-            "name": "instituicao",
-            "type": "set",
-            "value": "${result}",
-            "valueType": "TrabalhoBd.Models.Trabalho.Instituicao"
-          }
-        ],
-        "error": [],
-        "type": "invoke"
       }
     ]
   },

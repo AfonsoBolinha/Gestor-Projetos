@@ -4,32 +4,30 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TrabalhoBd.Models.Trabalho
 {
-  [Table("Instituição", Schema = "dbo")]
-  public partial class Instituicao
+  [Table("Publicacao", Schema = "dbo")]
+  public partial class Publicacao
   {
-    [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int ID
+    public string Titulo
     {
       get;
       set;
     }
-    public string Nome
+    public string Descricao
     {
       get;
       set;
     }
-    public string Morada
+    public string URL_Publicacao
     {
       get;
       set;
     }
-    public string Email
+    public int ID_Projeto
     {
       get;
       set;
     }
-    public int Tel
+    public int ID_Investigador
     {
       get;
       set;

@@ -475,7 +475,6 @@
                           "components": [
                             {
                               "allowSelectAll": false,
-                              "data": "${getInvestigadorsResult}",
                               "multiple": false,
                               "name": "ID_IR",
                               "style": {
@@ -541,32 +540,7 @@
                   ],
                   "data": "${projeto}",
                   "events": {
-                    "submit": [
-                      {
-                        "error": [
-                          {
-                            "detail": "Unable to create new Projeto!",
-                            "severity": "error",
-                            "summary": "Error",
-                            "type": "notify"
-                          }
-                        ],
-                        "name": "Trabalho.createProjeto",
-                        "parameters": [
-                          {
-                            "name": "Projeto",
-                            "value": "${projeto}"
-                          }
-                        ],
-                        "then": [
-                          {
-                            "result": "${projeto}",
-                            "type": "close-popup"
-                          }
-                        ],
-                        "type": "invoke"
-                      }
-                    ]
+                    "submit": []
                   },
                   "itemType": "TrabalhoBd.Models.Trabalho.Projeto",
                   "name": "form0",
@@ -591,19 +565,6 @@
         "type": "set",
         "value": "new TrabalhoBd.Models.Trabalho.Projeto(){}",
         "valueType": "TrabalhoBd.Models.Trabalho.Projeto"
-      },
-      {
-        "name": "Trabalho.getInvestigadors",
-        "parameters": [],
-        "then": [
-          {
-            "name": "getInvestigadorsResult",
-            "type": "set",
-            "value": "${result}",
-            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.Investigador>"
-          }
-        ],
-        "type": "invoke"
       }
     ]
   },

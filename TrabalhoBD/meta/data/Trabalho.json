@@ -3,8 +3,7 @@
     "title": "Trabalho",
     "x-type": "odata",
     "x-connector": "mssql",
-    "x-connector-version": 16,
-    "x-concurrency": true,
+    "x-connector-version": 15,
     "x-infer-aspnet": false,
     "x-infer-tables": true,
     "x-infer-relations": true,
@@ -505,6 +504,41 @@
           "type": "integer"
         }
       }
+    },
+    "Publicacao": {
+      "x-table": "dbo.Publicacao",
+      "resource": "Publicacaos",
+      "required": [
+        "ID_Projeto",
+        "ID_Investigador"
+      ],
+      "properties": {
+        "Titulo": {
+          "type": "string",
+          "length": 40,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "Descricao": {
+          "type": "string",
+          "length": 100
+        },
+        "URL_Publicacao": {
+          "type": "string",
+          "length": 50
+        },
+        "ID_Projeto": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "ID_Investigador": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      },
+      "x-view": true
     },
     "Responsavel": {
       "x-table": "dbo.Responsavel",
@@ -1358,6 +1392,63 @@
           "201": {
             "schema": {
               "$ref": "#/definitions/Projeto"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Publicacaos": {
+      "get": {
+        "operationId": "getPublicacaos",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Publicacao"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
             }
           },
           "default": {

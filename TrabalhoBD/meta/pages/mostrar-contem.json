@@ -23,7 +23,6 @@
                   "filterMode": "advanced",
                   "allowPaging": true,
                   "allowSorting": true,
-                  "data": "${getContemsResult}",
                   "events": {
                     "loadData": []
                   },
@@ -61,21 +60,7 @@
     }
   ],
   "events": {
-    "load": [
-      {
-        "name": "Trabalho.getContems",
-        "parameters": [],
-        "then": [
-          {
-            "name": "getContemsResult",
-            "type": "set",
-            "value": "${result}",
-            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.Contem>"
-          }
-        ],
-        "type": "invoke"
-      }
-    ]
+    "load": []
   },
   "name": "Mostrar Contem",
   "layout": "Edit"

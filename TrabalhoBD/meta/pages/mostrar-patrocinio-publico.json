@@ -41,7 +41,6 @@
                   "filterMode": "advanced",
                   "allowPaging": true,
                   "allowSorting": true,
-                  "data": "${getPatrocinioPublicosResult}",
                   "events": {
                     "loadData": [],
                     "rowSelect": [
@@ -160,21 +159,7 @@
     }
   ],
   "events": {
-    "load": [
-      {
-        "name": "Trabalho.getPatrocinioPublicos",
-        "parameters": [],
-        "then": [
-          {
-            "name": "getPatrocinioPublicosResult",
-            "type": "set",
-            "value": "${result}",
-            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.PatrocinioPublico>"
-          }
-        ],
-        "type": "invoke"
-      }
-    ]
+    "load": []
   },
   "name": "Mostrar PatrocinioPublico",
   "layout": "Edit"

@@ -8,7 +8,7 @@
           "type": "heading",
           "name": "pageTitle",
           "size": "H1",
-          "text": "PatrocinadorPrivado"
+          "text": "Publicacao"
         },
         {
           "type": "row",
@@ -23,26 +23,35 @@
                   "filterMode": "advanced",
                   "allowPaging": true,
                   "allowSorting": true,
+                  "data": "${getPublicacaosResult}",
                   "events": {
                     "loadData": []
                   },
                   "title": "",
                   "columns": [
                     {
-                      "property": "ID_Patrocinador",
-                      "title": "ID Patrocinador"
+                      "property": "Titulo",
+                      "title": "Titulo"
+                    },
+                    {
+                      "property": "Descricao",
+                      "title": "Descricao"
+                    },
+                    {
+                      "property": "URL_Publicacao",
+                      "title": "URL Publicacao"
                     },
                     {
                       "property": "ID_Projeto",
                       "title": "ID Projeto"
                     },
                     {
-                      "property": "Montante",
-                      "title": "Montante"
+                      "property": "ID_Investigador",
+                      "title": "ID Investigador"
                     }
                   ],
                   "type": "datagrid",
-                  "itemType": "TrabalhoBd.Models.Trabalho.PatrocinadorPrivado"
+                  "itemType": "TrabalhoBd.Models.Trabalho.Publicacao"
                 }
               ]
             }
@@ -52,8 +61,22 @@
     }
   ],
   "events": {
-    "load": []
+    "load": [
+      {
+        "name": "Trabalho.getPublicacaos",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getPublicacaosResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.Publicacao>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
   },
-  "name": "Mostrar PatrocinadorPrivado",
+  "name": "Publicacao",
   "layout": "Edit"
 }

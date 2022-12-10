@@ -41,7 +41,6 @@
                   "filterMode": "advanced",
                   "allowPaging": true,
                   "allowSorting": true,
-                  "data": "${getInvestigadorsResult}",
                   "events": {
                     "loadData": [],
                     "rowSelect": [
@@ -148,21 +147,7 @@
     }
   ],
   "events": {
-    "load": [
-      {
-        "name": "Trabalho.getInvestigadors",
-        "parameters": [],
-        "then": [
-          {
-            "name": "getInvestigadorsResult",
-            "type": "set",
-            "value": "${result}",
-            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.Investigador>"
-          }
-        ],
-        "type": "invoke"
-      }
-    ]
+    "load": []
   },
   "name": "Mostrar Investigador",
   "layout": "Edit"

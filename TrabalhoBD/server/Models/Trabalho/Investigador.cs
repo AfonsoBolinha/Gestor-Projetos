@@ -14,31 +14,26 @@ namespace TrabalhoBd.Models.Trabalho
       get;
       set;
     }
-    [ConcurrencyCheck]
     public string Nome
     {
       get;
       set;
     }
-    [ConcurrencyCheck]
     public int Num_Funcionario
     {
       get;
       set;
     }
-    [ConcurrencyCheck]
     public string ORCID
     {
       get;
       set;
     }
-    [ConcurrencyCheck]
     public int ID_Instituicao
     {
       get;
       set;
     }
-    [ConcurrencyCheck]
     public int? Tempo_Total
     {
       get;

@@ -619,32 +619,7 @@
                     }
                   ],
                   "events": {
-                    "submit": [
-                      {
-                        "error": [
-                          {
-                            "detail": "Unable to create new Projeto!",
-                            "severity": "error",
-                            "summary": "Error",
-                            "type": "notify"
-                          }
-                        ],
-                        "name": "Trabalho.createProjeto",
-                        "parameters": [
-                          {
-                            "name": "Projeto",
-                            "value": "${projeto}"
-                          }
-                        ],
-                        "then": [
-                          {
-                            "path": "mostrar-projetos",
-                            "type": "navigate"
-                          }
-                        ],
-                        "type": "invoke"
-                      }
-                    ]
+                    "submit": []
                   },
                   "data": "${projeto}",
                   "visible": "${projeto != null}",

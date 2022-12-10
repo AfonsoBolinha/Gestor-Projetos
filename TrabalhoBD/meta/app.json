@@ -23,7 +23,8 @@
     "Mostrar Contem",
     "Mostrar Instituicao",
     "Mostrar PatrocinioPublico",
-    "Mostrar PatrocinadorPrivado"
+    "Mostrar PatrocinadorPrivado",
+    "Publicacao"
   ],
   "pages": [
     "Add Instituicao",
@@ -44,7 +45,8 @@
     "Edit Instituicao",
     "Mostrar PatrocinioPublico",
     "Edit PatrocinioPublico",
-    "Mostrar PatrocinadorPrivado"
+    "Mostrar PatrocinadorPrivado",
+    "Publicacao"
   ],
   "serverLang": "cs",
   "serverProject": true,

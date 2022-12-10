@@ -172,6 +172,19 @@ namespace TrabalhoBd
         {
             return ToExcel(ApplyQuery(await service.GetProjetos(), Request.Query), fileName);
         }
+        [HttpGet("/export/Trabalho/publicacaos/csv")]
+        [HttpGet("/export/Trabalho/publicacaos/csv(fileName='{fileName}')")]
+        public async System.Threading.Tasks.Task<FileStreamResult> ExportPublicacaosToCSV(string fileName = null)
+        {
+            return ToCSV(ApplyQuery(await service.GetPublicacaos(), Request.Query), fileName);
+        }
+
+        [HttpGet("/export/Trabalho/publicacaos/excel")]
+        [HttpGet("/export/Trabalho/publicacaos/excel(fileName='{fileName}')")]
+        public async System.Threading.Tasks.Task<FileStreamResult> ExportPublicacaosToExcel(string fileName = null)
+        {
+            return ToExcel(ApplyQuery(await service.GetPublicacaos(), Request.Query), fileName);
+        }
         [HttpGet("/export/Trabalho/responsavels/csv")]
         [HttpGet("/export/Trabalho/responsavels/csv(fileName='{fileName}')")]
         public async System.Threading.Tasks.Task<FileStreamResult> ExportResponsavelsToCSV(string fileName = null)

@@ -33,6 +33,7 @@ namespace TrabalhoBd.Data
         builder.Entity<TrabalhoBd.Models.Trabalho.PatrocinadorPrivado>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.Pertence1>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.Pertence2>().HasNoKey();
+        builder.Entity<TrabalhoBd.Models.Trabalho.Publicacao>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.Responsavel>().HasNoKey();
 
 
@@ -172,6 +173,14 @@ namespace TrabalhoBd.Data
               .Property(p => p.ID_IR)
               .HasPrecision(10, 0);
 
+        builder.Entity<TrabalhoBd.Models.Trabalho.Publicacao>()
+              .Property(p => p.ID_Projeto)
+              .HasPrecision(10, 0);
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.Publicacao>()
+              .Property(p => p.ID_Investigador)
+              .HasPrecision(10, 0);
+
         builder.Entity<TrabalhoBd.Models.Trabalho.Responsavel>()
               .Property(p => p.ID_Investigador)
               .HasPrecision(10, 0);
@@ -262,6 +271,12 @@ namespace TrabalhoBd.Data
     }
 
     public DbSet<TrabalhoBd.Models.Trabalho.Projeto> Projetos
+    {
+      get;
+      set;
+    }
+
+    public DbSet<TrabalhoBd.Models.Trabalho.Publicacao> Publicacaos
     {
       get;
       set;

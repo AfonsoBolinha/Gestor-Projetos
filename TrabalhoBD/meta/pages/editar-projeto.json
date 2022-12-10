@@ -721,53 +721,9 @@
                     }
                   ],
                   "events": {
-                    "submit": [
-                      {
-                        "error": [
-                          {
-                            "detail": "Unable to update Projeto",
-                            "severity": "error",
-                            "summary": "Error",
-                            "type": "notify"
-                          },
-                          {
-                            "name": "hasChanges",
-                            "type": "set",
-                            "value": "result is DbUpdateConcurrencyException",
-                            "valueType": "bool"
-                          },
-                          {
-                            "name": "canEdit",
-                            "type": "set",
-                            "condition": "!(result is DbUpdateConcurrencyException)",
-                            "value": "false",
-                            "valueType": "bool"
-                          }
-                        ],
-                        "name": "Trabalho.updateProjeto",
-                        "parameters": [
-                          {
-                            "name": "ID",
-                            "value": "Convert.ChangeType(${parameters.ID}, Type.GetTypeCode(typeof(int)))"
-                          },
-                          {
-                            "name": "Projeto",
-                            "value": "${projeto}"
-                          }
-                        ],
-                        "then": [
-                          {
-                            "path": "mostrar-projetos",
-                            "type": "navigate",
-                            "condition": "result.StatusCode != System.Net.HttpStatusCode.PreconditionFailed"
-                          }
-                        ],
-                        "type": "invoke"
-                      }
-                    ]
+                    "submit": []
                   },
                   "itemType": "TrabalhoBd.Models.Trabalho.Projeto",
-                  "data": "${projeto}",
                   "visible": "${projeto != null && canEdit}"
                 }
               ]
@@ -790,25 +746,6 @@
         "type": "set",
         "value": "true",
         "valueType": "bool"
-      },
-      {
-        "name": "Trabalho.getProjetoByID",
-        "parameters": [
-          {
-            "name": "ID",
-            "value": "Convert.ChangeType(${parameters.ID}, Type.GetTypeCode(typeof(int)))"
-          }
-        ],
-        "then": [
-          {
-            "name": "projeto",
-            "type": "set",
-            "value": "${result}",
-            "valueType": "TrabalhoBd.Models.Trabalho.Projeto"
-          }
-        ],
-        "error": [],
-        "type": "invoke"
       }
     ]
   },

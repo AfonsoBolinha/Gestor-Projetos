@@ -240,32 +240,7 @@
                   ],
                   "data": "${instituicao}",
                   "events": {
-                    "submit": [
-                      {
-                        "error": [
-                          {
-                            "detail": "Unable to create new Instituicao!",
-                            "severity": "error",
-                            "summary": "Error",
-                            "type": "notify"
-                          }
-                        ],
-                        "name": "Trabalho.createInstituicao",
-                        "parameters": [
-                          {
-                            "name": "Instituicao",
-                            "value": "${instituicao}"
-                          }
-                        ],
-                        "then": [
-                          {
-                            "result": "${instituicao}",
-                            "type": "close-popup"
-                          }
-                        ],
-                        "type": "invoke"
-                      }
-                    ]
+                    "submit": []
                   },
                   "itemType": "TrabalhoBd.Models.Trabalho.Instituicao",
                   "name": "form0",
@@ -290,19 +265,6 @@
         "type": "set",
         "value": "new TrabalhoBd.Models.Trabalho.Instituicao(){}",
         "valueType": "TrabalhoBd.Models.Trabalho.Instituicao"
-      },
-      {
-        "name": "Trabalho.getInstituicaos",
-        "parameters": [],
-        "then": [
-          {
-            "name": "getInstituicaosResult",
-            "type": "set",
-            "value": "${result}",
-            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.Instituicao>"
-          }
-        ],
-        "type": "invoke"
       }
     ]
   },

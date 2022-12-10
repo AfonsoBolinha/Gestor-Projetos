@@ -12,13 +12,11 @@ namespace TrabalhoBd.Models.Trabalho
       get;
       set;
     }
-    [ConcurrencyCheck]
     public int ID_UC
     {
       get;
       set;
     }
-    [ConcurrencyCheck]
     public int ID_Projeto
     {
       get;

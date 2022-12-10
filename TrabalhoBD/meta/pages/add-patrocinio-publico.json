@@ -429,32 +429,7 @@
                   ],
                   "data": "${patrociniopublico}",
                   "events": {
-                    "submit": [
-                      {
-                        "error": [
-                          {
-                            "detail": "Unable to create new PatrocinioPublico!",
-                            "severity": "error",
-                            "summary": "Error",
-                            "type": "notify"
-                          }
-                        ],
-                        "name": "Trabalho.createPatrocinioPublico",
-                        "parameters": [
-                          {
-                            "name": "PatrocinioPublico",
-                            "value": "${patrociniopublico}"
-                          }
-                        ],
-                        "then": [
-                          {
-                            "result": "${patrociniopublico}",
-                            "type": "close-popup"
-                          }
-                        ],
-                        "type": "invoke"
-                      }
-                    ]
+                    "submit": []
                   },
                   "itemType": "TrabalhoBd.Models.Trabalho.PatrocinioPublico",
                   "name": "form0",

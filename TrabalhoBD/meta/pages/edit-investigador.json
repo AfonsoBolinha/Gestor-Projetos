@@ -391,53 +391,9 @@
                     }
                   ],
                   "events": {
-                    "submit": [
-                      {
-                        "error": [
-                          {
-                            "detail": "Unable to update Investigador",
-                            "severity": "error",
-                            "summary": "Error",
-                            "type": "notify"
-                          },
-                          {
-                            "name": "hasChanges",
-                            "type": "set",
-                            "value": "result is DbUpdateConcurrencyException",
-                            "valueType": "bool"
-                          },
-                          {
-                            "name": "canEdit",
-                            "type": "set",
-                            "condition": "!(result is DbUpdateConcurrencyException)",
-                            "value": "false",
-                            "valueType": "bool"
-                          }
-                        ],
-                        "name": "Trabalho.updateInvestigador",
-                        "parameters": [
-                          {
-                            "name": "ID",
-                            "value": "Convert.ChangeType(${parameters.ID}, Type.GetTypeCode(typeof(int)))"
-                          },
-                          {
-                            "name": "Investigador",
-                            "value": "${investigador}"
-                          }
-                        ],
-                        "then": [
-                          {
-                            "path": "mostrar-investigador",
-                            "type": "navigate",
-                            "condition": "result.StatusCode != System.Net.HttpStatusCode.PreconditionFailed"
-                          }
-                        ],
-                        "type": "invoke"
-                      }
-                    ]
+                    "submit": []
                   },
                   "itemType": "TrabalhoBd.Models.Trabalho.Investigador",
-                  "data": "${investigador}",
                   "visible": "${investigador != null && canEdit}"
                 }
               ]
@@ -460,25 +416,6 @@
         "type": "set",
         "value": "true",
         "valueType": "bool"
-      },
-      {
-        "name": "Trabalho.getInvestigadorByID",
-        "parameters": [
-          {
-            "name": "ID",
-            "value": "Convert.ChangeType(${parameters.ID}, Type.GetTypeCode(typeof(int)))"
-          }
-        ],
-        "then": [
-          {
-            "name": "investigador",
-            "type": "set",
-            "value": "${result}",
-            "valueType": "TrabalhoBd.Models.Trabalho.Investigador"
-          }
-        ],
-        "error": [],
-        "type": "invoke"
       }
     ]
   },
