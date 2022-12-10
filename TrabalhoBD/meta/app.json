@@ -1,9 +1,15 @@
 {
+  "cssFiles": [],
   "dataSources": [
     "Trabalho"
   ],
   "generator": "@radzen/blazor-server",
   "https": false,
+  "ignore": [
+    "",
+    ""
+  ],
+  "javaScriptFiles": [],
   "layouts": [
     "Login",
     "Mains",
@@ -13,6 +19,7 @@
   ],
   "logo": "",
   "name": "TrabalhoBD",
+  "namespaces": [],
   "navigation": [
     "Welcome",
     "Stats",
@@ -27,11 +34,16 @@
     "Editar",
     "Add PatrocinioPublico",
     "Add Investigador",
-    "Add Projeto"
+    "Add Projeto",
+    "Add Contem",
+    "Add Publicacao"
   ],
+  "port": 8000,
   "serverLang": "cs",
+  "serverPort": 5000,
   "serverProject": true,
   "serverVersion": "6",
   "startPage": "Welcome",
-  "theme": "standard"
+  "theme": "standard",
+  "title": "TrabalhoBD"
 }

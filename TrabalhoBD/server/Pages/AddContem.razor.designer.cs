@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace TrabalhoBd.Pages
 {
-    public partial class AddProjetoComponent : ComponentBase
+    public partial class AddContemComponent : ComponentBase
     {
         [Parameter(CaptureUnmatchedValues = true)]
         public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
@@ -47,57 +47,57 @@ namespace TrabalhoBd.Pages
         [Inject]
         protected TrabalhoService Trabalho { get; set; }
 
-        TrabalhoBd.Models.Trabalho.Projeto _projeto;
-        protected TrabalhoBd.Models.Trabalho.Projeto projeto
+        TrabalhoBd.Models.Trabalho.Contem _contem;
+        protected TrabalhoBd.Models.Trabalho.Contem contem
         {
             get
             {
-                return _projeto;
+                return _contem;
             }
             set
             {
-                if (!object.Equals(_projeto, value))
+                if (!object.Equals(_contem, value))
                 {
-                    var args = new PropertyChangedEventArgs(){ Name = "projeto", NewValue = value, OldValue = _projeto };
-                    _projeto = value;
+                    var args = new PropertyChangedEventArgs(){ Name = "contem", NewValue = value, OldValue = _contem };
+                    _contem = value;
                     OnPropertyChanged(args);
                     Reload();
                 }
             }
         }
 
-        IEnumerable<TrabalhoBd.Models.Trabalho.Uc> _getUcsResult;
-        protected IEnumerable<TrabalhoBd.Models.Trabalho.Uc> getUcsResult
+        IEnumerable<TrabalhoBd.Models.Trabalho.Projeto> _getProjetosResult;
+        protected IEnumerable<TrabalhoBd.Models.Trabalho.Projeto> getProjetosResult
         {
             get
             {
-                return _getUcsResult;
+                return _getProjetosResult;
             }
             set
             {
-                if (!object.Equals(_getUcsResult, value))
+                if (!object.Equals(_getProjetosResult, value))
                 {
-                    var args = new PropertyChangedEventArgs(){ Name = "getUcsResult", NewValue = value, OldValue = _getUcsResult };
-                    _getUcsResult = value;
+                    var args = new PropertyChangedEventArgs(){ Name = "getProjetosResult", NewValue = value, OldValue = _getProjetosResult };
+                    _getProjetosResult = value;
                     OnPropertyChanged(args);
                     Reload();
                 }
             }
         }
 
-        IEnumerable<TrabalhoBd.Models.Trabalho.Investigador> _getInvestigadorsResult;
-        protected IEnumerable<TrabalhoBd.Models.Trabalho.Investigador> getInvestigadorsResult
+        IEnumerable<TrabalhoBd.Models.Trabalho.InvestigadorInstituicao> _getInvestigadorInstituicaosResult;
+        protected IEnumerable<TrabalhoBd.Models.Trabalho.InvestigadorInstituicao> getInvestigadorInstituicaosResult
         {
             get
             {
-                return _getInvestigadorsResult;
+                return _getInvestigadorInstituicaosResult;
             }
             set
             {
-                if (!object.Equals(_getInvestigadorsResult, value))
+                if (!object.Equals(_getInvestigadorInstituicaosResult, value))
                 {
-                    var args = new PropertyChangedEventArgs(){ Name = "getInvestigadorsResult", NewValue = value, OldValue = _getInvestigadorsResult };
-                    _getInvestigadorsResult = value;
+                    var args = new PropertyChangedEventArgs(){ Name = "getInvestigadorInstituicaosResult", NewValue = value, OldValue = _getInvestigadorInstituicaosResult };
+                    _getInvestigadorInstituicaosResult = value;
                     OnPropertyChanged(args);
                     Reload();
                 }
@@ -110,31 +110,26 @@ namespace TrabalhoBd.Pages
         }
         protected async System.Threading.Tasks.Task Load()
         {
-            projeto = new TrabalhoBd.Models.Trabalho.Projeto(){};
+            contem = new TrabalhoBd.Models.Trabalho.Contem(){};
 
-            var trabalhoGetUcsResult = await Trabalho.GetUcs();
-            getUcsResult = trabalhoGetUcsResult;
+            var trabalhoGetProjetosResult = await Trabalho.GetProjetos();
+            getProjetosResult = trabalhoGetProjetosResult;
 
-            var trabalhoGetInvestigadorsResult = await Trabalho.GetInvestigadors();
-            getInvestigadorsResult = trabalhoGetInvestigadorsResult;
+            var trabalhoGetInvestigadorInstituicaosResult = await Trabalho.GetInvestigadorInstituicaos();
+            getInvestigadorInstituicaosResult = trabalhoGetInvestigadorInstituicaosResult;
         }
 
-        protected async System.Threading.Tasks.Task Form0Submit(TrabalhoBd.Models.Trabalho.Projeto args)
+        protected async System.Threading.Tasks.Task Form0Submit(TrabalhoBd.Models.Trabalho.Contem args)
         {
             try
             {
-                var trabalhoCreateProjetoResult = await Trabalho.CreateProjeto(projeto);
-                DialogService.Close(projeto);
+                var trabalhoCreateContemResult = await Trabalho.CreateContem(contem);
+                DialogService.Close(contem);
             }
-            catch (System.Exception trabalhoCreateProjetoException)
+            catch (System.Exception trabalhoCreateContemException)
             {
-                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Summary = $"Error",Detail = $"Unable to create new Projeto!" });
+                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Summary = $"Error",Detail = $"Unable to create new Contem!" });
             }
-        }
-
-        protected async System.Threading.Tasks.Task Button1Click(MouseEventArgs args)
-        {
-            UriHelper.NavigateTo("add-contem");
         }
 
         protected async System.Threading.Tasks.Task Button2Click(MouseEventArgs args)

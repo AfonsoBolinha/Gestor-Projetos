@@ -1,6 +1,5 @@
 {
   "name": "Welcome",
-  "access": "Everybody",
   "layout": "Welcome_Page",
   "components": [
     {

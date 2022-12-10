@@ -68,6 +68,19 @@ namespace TrabalhoBd
         {
             return ToExcel(ApplyQuery(await service.GetInvestigadors(), Request.Query), fileName);
         }
+        [HttpGet("/export/Trabalho/investigadorinstituicaos/csv")]
+        [HttpGet("/export/Trabalho/investigadorinstituicaos/csv(fileName='{fileName}')")]
+        public async System.Threading.Tasks.Task<FileStreamResult> ExportInvestigadorInstituicaosToCSV(string fileName = null)
+        {
+            return ToCSV(ApplyQuery(await service.GetInvestigadorInstituicaos(), Request.Query), fileName);
+        }
+
+        [HttpGet("/export/Trabalho/investigadorinstituicaos/excel")]
+        [HttpGet("/export/Trabalho/investigadorinstituicaos/excel(fileName='{fileName}')")]
+        public async System.Threading.Tasks.Task<FileStreamResult> ExportInvestigadorInstituicaosToExcel(string fileName = null)
+        {
+            return ToExcel(ApplyQuery(await service.GetInvestigadorInstituicaos(), Request.Query), fileName);
+        }
         [HttpGet("/export/Trabalho/keywords/csv")]
         [HttpGet("/export/Trabalho/keywords/csv(fileName='{fileName}')")]
         public async System.Threading.Tasks.Task<FileStreamResult> ExportKeyWordsToCSV(string fileName = null)
@@ -184,6 +197,19 @@ namespace TrabalhoBd
         public async System.Threading.Tasks.Task<FileStreamResult> ExportProjetosToExcel(string fileName = null)
         {
             return ToExcel(ApplyQuery(await service.GetProjetos(), Request.Query), fileName);
+        }
+        [HttpGet("/export/Trabalho/publicacaos/csv")]
+        [HttpGet("/export/Trabalho/publicacaos/csv(fileName='{fileName}')")]
+        public async System.Threading.Tasks.Task<FileStreamResult> ExportPublicacaosToCSV(string fileName = null)
+        {
+            return ToCSV(ApplyQuery(await service.GetPublicacaos(), Request.Query), fileName);
+        }
+
+        [HttpGet("/export/Trabalho/publicacaos/excel")]
+        [HttpGet("/export/Trabalho/publicacaos/excel(fileName='{fileName}')")]
+        public async System.Threading.Tasks.Task<FileStreamResult> ExportPublicacaosToExcel(string fileName = null)
+        {
+            return ToExcel(ApplyQuery(await service.GetPublicacaos(), Request.Query), fileName);
         }
         [HttpGet("/export/Trabalho/responsavels/csv")]
         [HttpGet("/export/Trabalho/responsavels/csv(fileName='{fileName}')")]

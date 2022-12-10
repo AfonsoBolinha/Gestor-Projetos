@@ -4,12 +4,30 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TrabalhoBd.Models.Trabalho
 {
-  [Table("Contem", Schema = "dbo")]
-  public partial class Contem
+  [Table("Publicacao", Schema = "dbo")]
+  public partial class Publicacao
   {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int ID
+    {
+      get;
+      set;
+    }
+    [ConcurrencyCheck]
+    public string Titulo
+    {
+      get;
+      set;
+    }
+    [ConcurrencyCheck]
+    public string Descricao
+    {
+      get;
+      set;
+    }
+    [ConcurrencyCheck]
+    public string URL
     {
       get;
       set;
@@ -22,24 +40,6 @@ namespace TrabalhoBd.Models.Trabalho
     }
     [ConcurrencyCheck]
     public int ID_Investigador
-    {
-      get;
-      set;
-    }
-    [ConcurrencyCheck]
-    public string Papel
-    {
-      get;
-      set;
-    }
-    [ConcurrencyCheck]
-    public int Tempo_Gasto
-    {
-      get;
-      set;
-    }
-    [ConcurrencyCheck]
-    public int Tempo_Limite
     {
       get;
       set;

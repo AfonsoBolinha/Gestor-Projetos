@@ -1,0 +1,354 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "class": "col-md-12",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "ID_Projeto",
+                              "name": "ID_ProjetoLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Projeto",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "allowFiltering": true,
+                              "allowSorting": true,
+                              "columns": [
+                                {
+                                  "format": "",
+                                  "property": "Nome",
+                                  "title": "Nome",
+                                  "type": "string"
+                                }
+                              ],
+                              "data": "${getProjetosResult}",
+                              "itemType": "TrabalhoBd.Models.Trabalho.Projeto",
+                              "name": "ID_Projeto",
+                              "style": {
+                                "display": "block"
+                              },
+                              "textProperty": "Nome",
+                              "type": "dropdown-datagrid",
+                              "value": "${contem.ID_Projeto}",
+                              "valueProperty": "ID",
+                              "valueType": "int"
+                            },
+                            {
+                              "component": "ID_Projeto",
+                              "name": "ID_ProjetoRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "ID_Projeto is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "ID_Investigador",
+                              "name": "ID_InvestigadorLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Investigador",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "allowFiltering": true,
+                              "allowSorting": true,
+                              "columns": [
+                                {
+                                  "format": "",
+                                  "property": "Nome",
+                                  "title": "Nome",
+                                  "type": "string"
+                                },
+                                {
+                                  "format": "",
+                                  "property": "NomeInst",
+                                  "title": "Instituição",
+                                  "type": "string"
+                                }
+                              ],
+                              "data": "${getInvestigadorInstituicaosResult}",
+                              "itemType": "TrabalhoBd.Models.Trabalho.InvestigadorInstituicao",
+                              "name": "ID_Investigador",
+                              "style": {
+                                "display": "block"
+                              },
+                              "textProperty": "Nome",
+                              "type": "dropdown-datagrid",
+                              "value": "${contem.ID_Investigador}",
+                              "valueProperty": "ID",
+                              "valueType": "int"
+                            },
+                            {
+                              "component": "ID_Investigador",
+                              "name": "ID_InvestigadorRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "ID_Investigador is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "Papel",
+                              "name": "PapelLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Papel",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 50,
+                              "name": "Papel",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${contem.Papel}",
+                              "valueType": "string"
+                            },
+                            {
+                              "component": "Papel",
+                              "name": "PapelRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "Papel is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "Tempo_Limite",
+                              "name": "Tempo_LimiteLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Tempo Limite",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "name": "Tempo_Limite",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "numeric",
+                              "value": "${contem.Tempo_Limite}",
+                              "valueType": "int"
+                            },
+                            {
+                              "component": "Tempo_Limite",
+                              "name": "Tempo_LimiteRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "Tempo_Limite is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "buttonStyle": "primary",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "type": "button"
+                            },
+                            {
+                              "buttonStyle": "light",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "close-popup"
+                                  }
+                                ]
+                              },
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "type": "button"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "type": "row"
+                    }
+                  ],
+                  "data": "${contem}",
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to create new Contem!",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "Trabalho.createContem",
+                        "parameters": [
+                          {
+                            "name": "Contem",
+                            "value": "${contem}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "result": "${contem}",
+                            "type": "close-popup"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "itemType": "TrabalhoBd.Models.Trabalho.Contem",
+                  "name": "form0",
+                  "type": "template-form",
+                  "visible": "${contem != null}"
+                }
+              ],
+              "type": "col"
+            }
+          ],
+          "type": "row"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "contem",
+        "type": "set",
+        "value": "new TrabalhoBd.Models.Trabalho.Contem(){}",
+        "valueType": "TrabalhoBd.Models.Trabalho.Contem"
+      },
+      {
+        "name": "Trabalho.getProjetos",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getProjetosResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.Projeto>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "Trabalho.getInvestigadorInstituicaos",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getInvestigadorInstituicaosResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.InvestigadorInstituicao>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Adicionar",
+  "name": "Add Contem"
+}

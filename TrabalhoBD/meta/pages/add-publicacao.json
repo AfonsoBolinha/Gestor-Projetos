@@ -1,0 +1,383 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "class": "col-md-12",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "Titulo",
+                              "name": "TituloLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Titulo",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 50,
+                              "name": "Titulo",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${publicacao.Titulo}",
+                              "valueType": "string"
+                            },
+                            {
+                              "component": "Titulo",
+                              "name": "TituloRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "Titulo is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "Descricao",
+                              "name": "DescricaoLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Descricao",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 50,
+                              "name": "Descricao",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${publicacao.Descricao}",
+                              "valueType": "string"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "URL",
+                              "name": "URLLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Url",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 50,
+                              "name": "URL",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${publicacao.URL}",
+                              "valueType": "string"
+                            },
+                            {
+                              "component": "URL",
+                              "name": "URLRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "URL is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "ID_Projeto",
+                              "name": "ID_ProjetoLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Projeto",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getProjetosResult}",
+                              "name": "ID_Projeto",
+                              "style": {
+                                "display": "block"
+                              },
+                              "textProperty": "Nome",
+                              "type": "dropdown",
+                              "value": "${publicacao.ID_Projeto}",
+                              "valueProperty": "ID",
+                              "valueType": "int"
+                            },
+                            {
+                              "component": "ID_Projeto",
+                              "name": "ID_ProjetoRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "ID_Projeto is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "ID_Investigador",
+                              "name": "ID_InvestigadorLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Investigador ",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "allowFiltering": true,
+                              "allowSorting": true,
+                              "columns": [
+                                {
+                                  "format": "",
+                                  "property": "Nome",
+                                  "title": "Nome",
+                                  "type": "string"
+                                },
+                                {
+                                  "format": "",
+                                  "property": "NomeInst",
+                                  "title": "Instituicao",
+                                  "type": "string"
+                                }
+                              ],
+                              "data": "${getInvestigadorInstituicaosResult}",
+                              "itemType": "TrabalhoBd.Models.Trabalho.InvestigadorInstituicao",
+                              "name": "ID_Investigador",
+                              "style": {
+                                "display": "block"
+                              },
+                              "textProperty": "Nome",
+                              "type": "dropdown-datagrid",
+                              "value": "${publicacao.ID_Investigador}",
+                              "valueProperty": "ID",
+                              "valueType": "int"
+                            },
+                            {
+                              "component": "ID_Investigador",
+                              "name": "ID_InvestigadorRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "ID_Investigador is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "buttonStyle": "primary",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "type": "button"
+                            },
+                            {
+                              "buttonStyle": "light",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "close-popup"
+                                  }
+                                ]
+                              },
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "type": "button"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "type": "row"
+                    }
+                  ],
+                  "data": "${publicacao}",
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to create new Publicacao!",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "Trabalho.createPublicacao",
+                        "parameters": [
+                          {
+                            "name": "Publicacao",
+                            "value": "${publicacao}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "result": "${publicacao}",
+                            "type": "close-popup"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "itemType": "TrabalhoBd.Models.Trabalho.Publicacao",
+                  "name": "form0",
+                  "type": "template-form",
+                  "visible": "${publicacao != null}"
+                }
+              ],
+              "type": "col"
+            }
+          ],
+          "type": "row"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "publicacao",
+        "type": "set",
+        "value": "new TrabalhoBd.Models.Trabalho.Publicacao(){}",
+        "valueType": "TrabalhoBd.Models.Trabalho.Publicacao"
+      },
+      {
+        "name": "Trabalho.getProjetos",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getProjetosResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.Projeto>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "Trabalho.getInvestigadorInstituicaos",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getInvestigadorInstituicaosResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.InvestigadorInstituicao>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Adicionar",
+  "name": "Add Publicacao"
+}

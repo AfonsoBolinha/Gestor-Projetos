@@ -1,6 +1,5 @@
 {
   "name": "Editar",
-  "access": "Everybody",
   "layout": "Mains",
   "components": [
     {

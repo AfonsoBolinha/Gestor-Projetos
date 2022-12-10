@@ -1,6 +1,5 @@
 {
   "name": "Stats",
-  "access": "Everybody",
   "layout": "Mains",
   "components": [
     {

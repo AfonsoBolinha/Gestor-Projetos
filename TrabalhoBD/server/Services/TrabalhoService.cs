@@ -111,7 +111,6 @@ namespace TrabalhoBd
         public async Task<IQueryable<Models.Trabalho.Contem>> GetContems(Query query = null)
         {
             var items = Context.Contems.AsQueryable();
-            items = items.AsNoTracking();
 
             if (query != null)
             {
@@ -155,6 +154,38 @@ namespace TrabalhoBd
             OnContemsRead(ref items);
 
             return await Task.FromResult(items);
+        }
+
+        partial void OnContemCreated(Models.Trabalho.Contem item);
+        partial void OnAfterContemCreated(Models.Trabalho.Contem item);
+
+        public async Task<Models.Trabalho.Contem> CreateContem(Models.Trabalho.Contem contem)
+        {
+            OnContemCreated(contem);
+
+            var existingItem = Context.Contems
+                              .Where(i => i.ID == contem.ID)
+                              .FirstOrDefault();
+
+            if (existingItem != null)
+            {
+               throw new Exception("Item already available");
+            }            
+
+            try
+            {
+                Context.Contems.Add(contem);
+                Context.SaveChanges();
+            }
+            catch
+            {
+                Context.Entry(contem).State = EntityState.Detached;
+                throw;
+            }
+
+            OnAfterContemCreated(contem);
+
+            return contem;
         }
         public async Task ExportInstituicaosToExcel(Query query = null, string fileName = null)
         {
@@ -337,6 +368,66 @@ namespace TrabalhoBd
             OnAfterInvestigadorCreated(investigador);
 
             return investigador;
+        }
+        public async Task ExportInvestigadorInstituicaosToExcel(Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/trabalho/investigadorinstituicaos/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/trabalho/investigadorinstituicaos/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+
+        public async Task ExportInvestigadorInstituicaosToCSV(Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/trabalho/investigadorinstituicaos/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/trabalho/investigadorinstituicaos/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+
+        partial void OnInvestigadorInstituicaosRead(ref IQueryable<Models.Trabalho.InvestigadorInstituicao> items);
+
+        public async Task<IQueryable<Models.Trabalho.InvestigadorInstituicao>> GetInvestigadorInstituicaos(Query query = null)
+        {
+            var items = Context.InvestigadorInstituicaos.AsQueryable();
+            items = items.AsNoTracking();
+
+            if (query != null)
+            {
+                if (!string.IsNullOrEmpty(query.Expand))
+                {
+                    var propertiesToExpand = query.Expand.Split(',');
+                    foreach(var p in propertiesToExpand)
+                    {
+                        items = items.Include(p.Trim());
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(query.Filter))
+                {
+                    if (query.FilterParameters != null)
+                    {
+                        items = items.Where(query.Filter, query.FilterParameters);
+                    }
+                    else
+                    {
+                        items = items.Where(query.Filter);
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(query.OrderBy))
+                {
+                    items = items.OrderBy(query.OrderBy);
+                }
+
+                if (query.Skip.HasValue)
+                {
+                    items = items.Skip(query.Skip.Value);
+                }
+
+                if (query.Top.HasValue)
+                {
+                    items = items.Take(query.Top.Value);
+                }
+            }
+
+            OnInvestigadorInstituicaosRead(ref items);
+
+            return await Task.FromResult(items);
         }
         public async Task ExportKeyWordsToExcel(Query query = null, string fileName = null)
         {
@@ -971,6 +1062,97 @@ namespace TrabalhoBd
 
             return projeto;
         }
+        public async Task ExportPublicacaosToExcel(Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/trabalho/publicacaos/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/trabalho/publicacaos/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+
+        public async Task ExportPublicacaosToCSV(Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/trabalho/publicacaos/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/trabalho/publicacaos/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+
+        partial void OnPublicacaosRead(ref IQueryable<Models.Trabalho.Publicacao> items);
+
+        public async Task<IQueryable<Models.Trabalho.Publicacao>> GetPublicacaos(Query query = null)
+        {
+            var items = Context.Publicacaos.AsQueryable();
+
+            if (query != null)
+            {
+                if (!string.IsNullOrEmpty(query.Expand))
+                {
+                    var propertiesToExpand = query.Expand.Split(',');
+                    foreach(var p in propertiesToExpand)
+                    {
+                        items = items.Include(p.Trim());
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(query.Filter))
+                {
+                    if (query.FilterParameters != null)
+                    {
+                        items = items.Where(query.Filter, query.FilterParameters);
+                    }
+                    else
+                    {
+                        items = items.Where(query.Filter);
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(query.OrderBy))
+                {
+                    items = items.OrderBy(query.OrderBy);
+                }
+
+                if (query.Skip.HasValue)
+                {
+                    items = items.Skip(query.Skip.Value);
+                }
+
+                if (query.Top.HasValue)
+                {
+                    items = items.Take(query.Top.Value);
+                }
+            }
+
+            OnPublicacaosRead(ref items);
+
+            return await Task.FromResult(items);
+        }
+
+        partial void OnPublicacaoCreated(Models.Trabalho.Publicacao item);
+        partial void OnAfterPublicacaoCreated(Models.Trabalho.Publicacao item);
+
+        public async Task<Models.Trabalho.Publicacao> CreatePublicacao(Models.Trabalho.Publicacao publicacao)
+        {
+            OnPublicacaoCreated(publicacao);
+
+            var existingItem = Context.Publicacaos
+                              .Where(i => i.ID == publicacao.ID)
+                              .FirstOrDefault();
+
+            if (existingItem != null)
+            {
+               throw new Exception("Item already available");
+            }            
+
+            try
+            {
+                Context.Publicacaos.Add(publicacao);
+                Context.SaveChanges();
+            }
+            catch
+            {
+                Context.Entry(publicacao).State = EntityState.Detached;
+                throw;
+            }
+
+            OnAfterPublicacaoCreated(publicacao);
+
+            return publicacao;
+        }
         public async Task ExportResponsavelsToExcel(Query query = null, string fileName = null)
         {
             navigationManager.NavigateTo(query != null ? query.ToUrl($"export/trabalho/responsavels/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/trabalho/responsavels/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
@@ -1364,6 +1546,91 @@ namespace TrabalhoBd
             OnAfterUnidadeCurricularCreated(unidadeCurricular);
 
             return unidadeCurricular;
+        }
+
+        partial void OnContemDeleted(Models.Trabalho.Contem item);
+        partial void OnAfterContemDeleted(Models.Trabalho.Contem item);
+
+        public async Task<Models.Trabalho.Contem> DeleteContem(int? id)
+        {
+            var itemToDelete = Context.Contems
+                              .Where(i => i.ID == id)
+                              .FirstOrDefault();
+
+            if (itemToDelete == null)
+            {
+               throw new Exception("Item no longer available");
+            }
+
+            OnContemDeleted(itemToDelete);
+
+            Context.Contems.Remove(itemToDelete);
+
+            try
+            {
+                Context.SaveChanges();
+            }
+            catch
+            {
+                Context.Entry(itemToDelete).State = EntityState.Unchanged;
+                throw;
+            }
+
+            OnAfterContemDeleted(itemToDelete);
+
+            return itemToDelete;
+        }
+
+        partial void OnContemGet(Models.Trabalho.Contem item);
+
+        public async Task<Models.Trabalho.Contem> GetContemById(int? id)
+        {
+            var items = Context.Contems
+                              .AsNoTracking()
+                              .Where(i => i.ID == id);
+
+            var itemToReturn = items.FirstOrDefault();
+
+            OnContemGet(itemToReturn);
+
+            return await Task.FromResult(itemToReturn);
+        }
+
+        public async Task<Models.Trabalho.Contem> CancelContemChanges(Models.Trabalho.Contem item)
+        {
+            var entityToCancel = Context.Entry(item);
+            if (entityToCancel.State == EntityState.Modified)
+            {
+              entityToCancel.CurrentValues.SetValues(entityToCancel.OriginalValues);
+              entityToCancel.State = EntityState.Unchanged;
+            }
+
+            return item;
+        }
+
+        partial void OnContemUpdated(Models.Trabalho.Contem item);
+        partial void OnAfterContemUpdated(Models.Trabalho.Contem item);
+
+        public async Task<Models.Trabalho.Contem> UpdateContem(int? id, Models.Trabalho.Contem contem)
+        {
+            OnContemUpdated(contem);
+
+            var itemToUpdate = Context.Contems
+                              .Where(i => i.ID == id)
+                              .FirstOrDefault();
+            if (itemToUpdate == null)
+            {
+               throw new Exception("Item no longer available");
+            }
+
+            var entryToUpdate = Context.Entry(itemToUpdate);
+            entryToUpdate.CurrentValues.SetValues(contem);
+            entryToUpdate.State = EntityState.Modified;
+            Context.SaveChanges();       
+
+            OnAfterContemUpdated(contem);
+
+            return contem;
         }
 
         partial void OnInstituicaoDeleted(Models.Trabalho.Instituicao item);
@@ -1789,6 +2056,91 @@ namespace TrabalhoBd
             OnAfterProjetoUpdated(projeto);
 
             return projeto;
+        }
+
+        partial void OnPublicacaoDeleted(Models.Trabalho.Publicacao item);
+        partial void OnAfterPublicacaoDeleted(Models.Trabalho.Publicacao item);
+
+        public async Task<Models.Trabalho.Publicacao> DeletePublicacao(int? id)
+        {
+            var itemToDelete = Context.Publicacaos
+                              .Where(i => i.ID == id)
+                              .FirstOrDefault();
+
+            if (itemToDelete == null)
+            {
+               throw new Exception("Item no longer available");
+            }
+
+            OnPublicacaoDeleted(itemToDelete);
+
+            Context.Publicacaos.Remove(itemToDelete);
+
+            try
+            {
+                Context.SaveChanges();
+            }
+            catch
+            {
+                Context.Entry(itemToDelete).State = EntityState.Unchanged;
+                throw;
+            }
+
+            OnAfterPublicacaoDeleted(itemToDelete);
+
+            return itemToDelete;
+        }
+
+        partial void OnPublicacaoGet(Models.Trabalho.Publicacao item);
+
+        public async Task<Models.Trabalho.Publicacao> GetPublicacaoById(int? id)
+        {
+            var items = Context.Publicacaos
+                              .AsNoTracking()
+                              .Where(i => i.ID == id);
+
+            var itemToReturn = items.FirstOrDefault();
+
+            OnPublicacaoGet(itemToReturn);
+
+            return await Task.FromResult(itemToReturn);
+        }
+
+        public async Task<Models.Trabalho.Publicacao> CancelPublicacaoChanges(Models.Trabalho.Publicacao item)
+        {
+            var entityToCancel = Context.Entry(item);
+            if (entityToCancel.State == EntityState.Modified)
+            {
+              entityToCancel.CurrentValues.SetValues(entityToCancel.OriginalValues);
+              entityToCancel.State = EntityState.Unchanged;
+            }
+
+            return item;
+        }
+
+        partial void OnPublicacaoUpdated(Models.Trabalho.Publicacao item);
+        partial void OnAfterPublicacaoUpdated(Models.Trabalho.Publicacao item);
+
+        public async Task<Models.Trabalho.Publicacao> UpdatePublicacao(int? id, Models.Trabalho.Publicacao publicacao)
+        {
+            OnPublicacaoUpdated(publicacao);
+
+            var itemToUpdate = Context.Publicacaos
+                              .Where(i => i.ID == id)
+                              .FirstOrDefault();
+            if (itemToUpdate == null)
+            {
+               throw new Exception("Item no longer available");
+            }
+
+            var entryToUpdate = Context.Entry(itemToUpdate);
+            entryToUpdate.CurrentValues.SetValues(publicacao);
+            entryToUpdate.State = EntityState.Modified;
+            Context.SaveChanges();       
+
+            OnAfterPublicacaoUpdated(publicacao);
+
+            return publicacao;
         }
 
         partial void OnUnidadeCurricularDeleted(Models.Trabalho.UnidadeCurricular item);

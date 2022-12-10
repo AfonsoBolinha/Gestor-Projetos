@@ -514,6 +514,14 @@
                             {
                               "buttonStyle": "primary",
                               "buttonType": "submit",
+                              "events": {
+                                "click": [
+                                  {
+                                    "path": "add-contem",
+                                    "type": "navigate"
+                                  }
+                                ]
+                              },
                               "icon": "save",
                               "text": "Save",
                               "type": "button"

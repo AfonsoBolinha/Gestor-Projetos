@@ -1,0 +1,92 @@
+﻿@page "/add-publicacao"
+@layout AdicionarLayout
+@inherits TrabalhoBd.Pages.AddPublicacaoComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TrabalhoBd.Models.Trabalho
+<PageTitle>Add Publicacao</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm Data="@publicacao" TItem="TrabalhoBd.Models.Trabalho.Publicacao" Visible="@(publicacao != null)" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="Titulo" style="width: 100%" Text="Titulo">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="50" style="display: block; width: 100%" @bind-Value="@(publicacao.Titulo)" Name="Titulo">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="Titulo" style="position: absolute" Text="Titulo is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="Descricao" style="width: 100%" Text="Descricao">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="50" style="width: 100%" @bind-Value="@(publicacao.Descricao)" Name="Descricao">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="URL" style="width: 100%" Text="Url">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="50" style="display: block; width: 100%" @bind-Value="@(publicacao.URL)" Name="URL">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="URL" style="position: absolute" Text="URL is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="ID_Projeto" style="width: 100%" Text="Projeto">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown Data="@getProjetosResult" style="display: block" TextProperty="Nome" @bind-Value="@(publicacao.ID_Projeto)" ValueProperty="ID" Name="ID_Projeto">
+                </RadzenDropDown>
+                <RadzenRequiredValidator Component="ID_Projeto" style="position: absolute" Text="ID_Projeto is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="ID_Investigador" style="width: 100%" Text="Investigador ">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDownDataGrid AllowFiltering="true" AllowSorting="true" Data="@getInvestigadorInstituicaosResult" style="display: block" TextProperty="Nome" @bind-Value="@(publicacao.ID_Investigador)" ValueProperty="ID" Name="ID_Investigador">
+                  <Columns>
+                    <RadzenDropDownDataGridColumn Property="Nome" Title="Nome">
+                    </RadzenDropDownDataGridColumn>
+                    <RadzenDropDownDataGridColumn Property="NomeInst" Title="Instituicao">
+                    </RadzenDropDownDataGridColumn>
+                  </Columns>
+                </RadzenDropDownDataGrid>
+                <RadzenRequiredValidator Component="ID_Investigador" style="position: absolute" Text="ID_Investigador is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

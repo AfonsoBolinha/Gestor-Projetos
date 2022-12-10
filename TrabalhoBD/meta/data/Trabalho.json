@@ -42,16 +42,20 @@
         "ID_Projeto",
         "ID_Investigador",
         "Papel",
-        "Tempo_Gasto",
         "Tempo_Limite"
       ],
       "properties": {
+        "ID": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
         "ID_Projeto": {
           "x-nullable": false,
           "x-precision": 10,
-          "type": "integer",
-          "x-key": true,
-          "x-virtual": true
+          "type": "integer"
         },
         "ID_Investigador": {
           "x-nullable": false,
@@ -64,6 +68,7 @@
           "length": 50
         },
         "Tempo_Gasto": {
+          "x-default-sql": "((0))",
           "x-nullable": false,
           "x-precision": 10,
           "type": "integer"
@@ -73,8 +78,7 @@
           "x-precision": 10,
           "type": "integer"
         }
-      },
-      "x-view": true
+      }
     },
     "Instituicao": {
       "x-table": "dbo.Instituição",
@@ -154,6 +158,35 @@
           "type": "integer"
         },
         "Tempo_Total": {
+          "x-precision": 10,
+          "type": "integer"
+        }
+      }
+    },
+    "InvestigadorInstituicao": {
+      "x-view": true,
+      "x-table": "dbo.Investigador_Instituicao",
+      "resource": "InvestigadorInstituicaos",
+      "required": [
+        "Nome",
+        "NomeInst",
+        "ID"
+      ],
+      "properties": {
+        "Nome": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "NomeInst": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "ID": {
+          "x-nullable": false,
           "x-precision": 10,
           "type": "integer"
         }
@@ -542,6 +575,49 @@
         }
       }
     },
+    "Publicacao": {
+      "x-table": "dbo.Publicacao",
+      "resource": "Publicacaos",
+      "required": [
+        "Titulo",
+        "URL",
+        "ID_Projeto",
+        "ID_Investigador"
+      ],
+      "properties": {
+        "ID": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Titulo": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Descricao": {
+          "type": "string",
+          "length": 50
+        },
+        "URL": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "ID_Projeto": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "ID_Investigador": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      }
+    },
     "Responsavel": {
       "x-table": "dbo.Responsavel",
       "resource": "Responsavels",
@@ -868,6 +944,30 @@
             }
           }
         }
+      },
+      "post": {
+        "operationId": "createContem",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Contem",
+            "schema": {
+              "$ref": "#/definitions/Contem"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Contem"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/Instituicaos": {
@@ -1022,6 +1122,63 @@
           "201": {
             "schema": {
               "$ref": "#/definitions/Investigador"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/InvestigadorInstituicaos": {
+      "get": {
+        "operationId": "getInvestigadorInstituicaos",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/InvestigadorInstituicao"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
             }
           },
           "default": {
@@ -1617,6 +1774,87 @@
         }
       }
     },
+    "/Publicacaos": {
+      "get": {
+        "operationId": "getPublicacaos",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Publicacao"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createPublicacao",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Publicacao",
+            "schema": {
+              "$ref": "#/definitions/Publicacao"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Publicacao"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/Responsavels": {
       "get": {
         "operationId": "getResponsavels",
@@ -2061,6 +2299,93 @@
         }
       }
     },
+    "/Contems({ID})": {
+      "delete": {
+        "operationId": "deleteContem",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getContemByID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Contem"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateContem",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Contem",
+            "schema": {
+              "$ref": "#/definitions/Contem"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelContemChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Contem",
+            "schema": {
+              "$ref": "#/definitions/Contem"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/Instituicaos({ID})": {
       "delete": {
         "operationId": "deleteInstituicao",
@@ -2483,6 +2808,93 @@
             "name": "Projeto",
             "schema": {
               "$ref": "#/definitions/Projeto"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Publicacaos({ID})": {
+      "delete": {
+        "operationId": "deletePublicacao",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getPublicacaoByID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Publicacao"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updatePublicacao",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ID",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Publicacao",
+            "schema": {
+              "$ref": "#/definitions/Publicacao"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelPublicacaoChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Publicacao",
+            "schema": {
+              "$ref": "#/definitions/Publicacao"
             }
           }
         ],

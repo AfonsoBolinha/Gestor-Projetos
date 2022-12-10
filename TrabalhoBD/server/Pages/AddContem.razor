@@ -1,0 +1,86 @@
+﻿@page "/add-contem"
+@layout AdicionarLayout
+@inherits TrabalhoBd.Pages.AddContemComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TrabalhoBd.Models.Trabalho
+<PageTitle>Add Contem</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm Data="@contem" TItem="TrabalhoBd.Models.Trabalho.Contem" Visible="@(contem != null)" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="ID_Projeto" style="width: 100%" Text="Projeto">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDownDataGrid AllowFiltering="true" AllowSorting="true" Data="@getProjetosResult" style="display: block" TextProperty="Nome" @bind-Value="@(contem.ID_Projeto)" ValueProperty="ID" Name="ID_Projeto">
+                  <Columns>
+                    <RadzenDropDownDataGridColumn Property="Nome" Title="Nome">
+                    </RadzenDropDownDataGridColumn>
+                  </Columns>
+                </RadzenDropDownDataGrid>
+                <RadzenRequiredValidator Component="ID_Projeto" style="position: absolute" Text="ID_Projeto is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="ID_Investigador" style="width: 100%" Text="Investigador">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDownDataGrid AllowFiltering="true" AllowSorting="true" Data="@getInvestigadorInstituicaosResult" style="display: block" TextProperty="Nome" @bind-Value="@(contem.ID_Investigador)" ValueProperty="ID" Name="ID_Investigador">
+                  <Columns>
+                    <RadzenDropDownDataGridColumn Property="Nome" Title="Nome">
+                    </RadzenDropDownDataGridColumn>
+                    <RadzenDropDownDataGridColumn Property="NomeInst" Title="Instituição">
+                    </RadzenDropDownDataGridColumn>
+                  </Columns>
+                </RadzenDropDownDataGrid>
+                <RadzenRequiredValidator Component="ID_Investigador" style="position: absolute" Text="ID_Investigador is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="Papel" style="width: 100%" Text="Papel">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="50" style="display: block; width: 100%" @bind-Value="@(contem.Papel)" Name="Papel">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="Papel" style="position: absolute" Text="Papel is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="Tempo_Limite" style="width: 100%" Text="Tempo Limite">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(contem.Tempo_Limite)" Name="Tempo_Limite">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="Tempo_Limite" style="position: absolute" Text="Tempo_Limite is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

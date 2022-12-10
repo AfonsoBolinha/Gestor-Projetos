@@ -27,7 +27,7 @@ namespace TrabalhoBd.Data
         base.OnModelCreating(builder);
 
         builder.Entity<TrabalhoBd.Models.Trabalho.AreaCientifica>().HasNoKey();
-        builder.Entity<TrabalhoBd.Models.Trabalho.Contem>().HasNoKey();
+        builder.Entity<TrabalhoBd.Models.Trabalho.InvestigadorInstituicao>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.KeyWord>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.PatrocinaPrograma>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.PatrocinadorPrivado>().HasNoKey();
@@ -36,6 +36,10 @@ namespace TrabalhoBd.Data
         builder.Entity<TrabalhoBd.Models.Trabalho.ProjectState>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.Responsavel>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.Uc>().HasNoKey();
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.Contem>()
+              .Property(p => p.Tempo_Gasto)
+              .HasDefaultValueSql("((0))");
 
         builder.Entity<TrabalhoBd.Models.Trabalho.Projeto>()
               .Property(p => p.Total_Cost)
@@ -56,6 +60,10 @@ namespace TrabalhoBd.Data
 
         builder.Entity<TrabalhoBd.Models.Trabalho.AreaCientifica>()
               .Property(p => p.ID_Projeto)
+              .HasPrecision(10, 0);
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.Contem>()
+              .Property(p => p.ID)
               .HasPrecision(10, 0);
 
         builder.Entity<TrabalhoBd.Models.Trabalho.Contem>()
@@ -96,6 +104,10 @@ namespace TrabalhoBd.Data
 
         builder.Entity<TrabalhoBd.Models.Trabalho.Investigador>()
               .Property(p => p.Tempo_Total)
+              .HasPrecision(10, 0);
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.InvestigadorInstituicao>()
+              .Property(p => p.ID)
               .HasPrecision(10, 0);
 
         builder.Entity<TrabalhoBd.Models.Trabalho.KeyWord>()
@@ -190,6 +202,18 @@ namespace TrabalhoBd.Data
               .Property(p => p.ID_IR)
               .HasPrecision(10, 0);
 
+        builder.Entity<TrabalhoBd.Models.Trabalho.Publicacao>()
+              .Property(p => p.ID)
+              .HasPrecision(10, 0);
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.Publicacao>()
+              .Property(p => p.ID_Projeto)
+              .HasPrecision(10, 0);
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.Publicacao>()
+              .Property(p => p.ID_Investigador)
+              .HasPrecision(10, 0);
+
         builder.Entity<TrabalhoBd.Models.Trabalho.Responsavel>()
               .Property(p => p.ID_Investigador)
               .HasPrecision(10, 0);
@@ -236,6 +260,12 @@ namespace TrabalhoBd.Data
     }
 
     public DbSet<TrabalhoBd.Models.Trabalho.Investigador> Investigadors
+    {
+      get;
+      set;
+    }
+
+    public DbSet<TrabalhoBd.Models.Trabalho.InvestigadorInstituicao> InvestigadorInstituicaos
     {
       get;
       set;
@@ -290,6 +320,12 @@ namespace TrabalhoBd.Data
     }
 
     public DbSet<TrabalhoBd.Models.Trabalho.Projeto> Projetos
+    {
+      get;
+      set;
+    }
+
+    public DbSet<TrabalhoBd.Models.Trabalho.Publicacao> Publicacaos
     {
       get;
       set;

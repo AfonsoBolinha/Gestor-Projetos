@@ -82,6 +82,10 @@
                   "text": "Instituição"
                 },
                 {
+                  "path": "add-publicacao",
+                  "text": "Publicação"
+                },
+                {
                   "expanded": false,
                   "items": [
                     {
@@ -98,7 +102,7 @@
                   "parameters": [],
                   "path": "",
                   "target": "_self",
-                  "text": "Patrocinador"
+                  "text": "Financiador"
                 }
               ],
               "name": "panelmenu0",
