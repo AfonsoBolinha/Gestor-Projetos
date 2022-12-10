@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
 using TrabalhoBd.Models.Trabalho;
+using Microsoft.EntityFrameworkCore;
 
 namespace TrabalhoBd.Pages
 {
@@ -116,13 +117,13 @@ namespace TrabalhoBd.Pages
 
             canEdit = true;
 
-            var trabalhoGetInstituicaoByIdResult = await Trabalho.GetInstituicaoById(int.Parse($"{Convert.ChangeType(ID, Type.GetTypeCode(typeof(int)))}"));
+            var trabalhoGetInstituicaoByIdResult = await Trabalho.GetInstituicaoById(Convert.ChangeType(ID, Type.GetTypeCode(typeof(int))));
             instituicao = trabalhoGetInstituicaoByIdResult;
         }
 
         protected async System.Threading.Tasks.Task CloseButtonClick(MouseEventArgs args)
         {
-            UriHelper.NavigateTo("instituicao");
+            UriHelper.NavigateTo("mostrar-instituicao");
         }
 
         protected async System.Threading.Tasks.Task Button0Click(MouseEventArgs args)
@@ -136,9 +137,9 @@ namespace TrabalhoBd.Pages
         {
             try
             {
-                var trabalhoUpdateInstituicaoResult = await Trabalho.UpdateInstituicao(int.Parse($"{Convert.ChangeType(ID, Type.GetTypeCode(typeof(int)))}"), instituicao);
+                var trabalhoUpdateInstituicaoResult = await Trabalho.UpdateInstituicao(Convert.ChangeType(ID, Type.GetTypeCode(typeof(int))), instituicao);
                 if (trabalhoUpdateInstituicaoResult.StatusCode != System.Net.HttpStatusCode.PreconditionFailed) {
-                UriHelper.NavigateTo("instituicao");
+                UriHelper.NavigateTo("mostrar-instituicao");
                 }
             }
             catch (System.Exception trabalhoUpdateInstituicaoException)
@@ -155,7 +156,7 @@ namespace TrabalhoBd.Pages
 
         protected async System.Threading.Tasks.Task Button4Click(MouseEventArgs args)
         {
-            UriHelper.NavigateTo("instituicao");
+            UriHelper.NavigateTo("mostrar-instituicao");
         }
     }
 }

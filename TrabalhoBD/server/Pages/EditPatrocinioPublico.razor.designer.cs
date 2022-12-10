@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
 using TrabalhoBd.Models.Trabalho;
+using Microsoft.EntityFrameworkCore;
 
 namespace TrabalhoBd.Pages
 {
@@ -116,13 +117,13 @@ namespace TrabalhoBd.Pages
 
             canEdit = true;
 
-            var trabalhoGetPatrocinioPublicoByIdResult = await Trabalho.GetPatrocinioPublicoById(int.Parse($"{Convert.ChangeType(ID, Type.GetTypeCode(typeof(int)))}"));
+            var trabalhoGetPatrocinioPublicoByIdResult = await Trabalho.GetPatrocinioPublicoById(Convert.ChangeType(ID, Type.GetTypeCode(typeof(int))));
             patrociniopublico = trabalhoGetPatrocinioPublicoByIdResult;
         }
 
         protected async System.Threading.Tasks.Task CloseButtonClick(MouseEventArgs args)
         {
-            UriHelper.NavigateTo("patrocinio-publico");
+            UriHelper.NavigateTo("mostrar-patrocinio-publico");
         }
 
         protected async System.Threading.Tasks.Task Button0Click(MouseEventArgs args)
@@ -136,9 +137,9 @@ namespace TrabalhoBd.Pages
         {
             try
             {
-                var trabalhoUpdatePatrocinioPublicoResult = await Trabalho.UpdatePatrocinioPublico(int.Parse($"{Convert.ChangeType(ID, Type.GetTypeCode(typeof(int)))}"), patrociniopublico);
+                var trabalhoUpdatePatrocinioPublicoResult = await Trabalho.UpdatePatrocinioPublico(Convert.ChangeType(ID, Type.GetTypeCode(typeof(int))), patrociniopublico);
                 if (trabalhoUpdatePatrocinioPublicoResult.StatusCode != System.Net.HttpStatusCode.PreconditionFailed) {
-                UriHelper.NavigateTo("patrocinio-publico");
+                UriHelper.NavigateTo("mostrar-patrocinio-publico");
                 }
             }
             catch (System.Exception trabalhoUpdatePatrocinioPublicoException)
@@ -155,7 +156,7 @@ namespace TrabalhoBd.Pages
 
         protected async System.Threading.Tasks.Task Button4Click(MouseEventArgs args)
         {
-            UriHelper.NavigateTo("patrocinio-publico");
+            UriHelper.NavigateTo("mostrar-patrocinio-publico");
         }
     }
 }
