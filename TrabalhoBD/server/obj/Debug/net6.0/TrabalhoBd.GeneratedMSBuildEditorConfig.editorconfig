@@ -51,12 +51,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdGFyUHJvamV0by5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/EditInstituicao.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEluc3RpdHVpY2FvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/EditInvestigador.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEludmVzdGlnYWRvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/EditPatrocinioPublico.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFBhdHJvY2luaW9QdWJsaWNvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/MostrarContem.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9zdHJhckNvbnRlbS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/MostrarInstituicao.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9zdHJhckluc3RpdHVpY2FvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/MostrarInvestigador.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9zdHJhckludmVzdGlnYWRvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/MostrarPatrocinadorPrivado.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9zdHJhclBhdHJvY2luYWRvclByaXZhZG8ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/MostrarPatrocinioPublico.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9zdHJhclBhdHJvY2luaW9QdWJsaWNvLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/tigol/OneDrive/Documentos/GitHub/Gestor-Projetos/TrabalhoBD/server/Pages/MostrarProjetos.razor]
