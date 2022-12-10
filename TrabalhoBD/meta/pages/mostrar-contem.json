@@ -1,0 +1,82 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Contem"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "name": "grid0",
+                  "allowFiltering": true,
+                  "filterMode": "advanced",
+                  "allowPaging": true,
+                  "allowSorting": true,
+                  "data": "${getContemsResult}",
+                  "events": {
+                    "loadData": []
+                  },
+                  "title": "",
+                  "columns": [
+                    {
+                      "property": "ID_Projeto",
+                      "title": "ID Projeto"
+                    },
+                    {
+                      "property": "ID_Investigador",
+                      "title": "ID Investigador"
+                    },
+                    {
+                      "property": "Papel",
+                      "title": "Papel"
+                    },
+                    {
+                      "property": "Tempo_Gasto",
+                      "title": "Tempo Gasto"
+                    },
+                    {
+                      "property": "Tempo_Limite",
+                      "title": "Tempo Limite"
+                    }
+                  ],
+                  "type": "datagrid",
+                  "itemType": "TrabalhoBd.Models.Trabalho.Contem"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "Trabalho.getContems",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getContemsResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.Contem>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Mostrar Contem",
+  "layout": "Edit"
+}

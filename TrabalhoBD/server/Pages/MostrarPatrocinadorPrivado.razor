@@ -1,0 +1,28 @@
+﻿@page "/mostrar-patrocinador-privado"
+@layout EditLayout
+@inherits TrabalhoBd.Pages.MostrarPatrocinadorPrivadoComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TrabalhoBd.Models.Trabalho
+<PageTitle>Mostrar PatrocinadorPrivado</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="PatrocinadorPrivado">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenDataGrid @ref="grid0" AllowFiltering="true" FilterMode="Radzen.FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getPatrocinadorPrivadosResult" TItem="TrabalhoBd.Models.Trabalho.PatrocinadorPrivado">
+          <Columns>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.PatrocinadorPrivado" Property="ID_Patrocinador" Title="ID Patrocinador">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.PatrocinadorPrivado" Property="ID_Projeto" Title="ID Projeto">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.PatrocinadorPrivado" Property="Montante" Title="Montante">
+            </RadzenDataGridColumn>
+          </Columns>
+        </RadzenDataGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

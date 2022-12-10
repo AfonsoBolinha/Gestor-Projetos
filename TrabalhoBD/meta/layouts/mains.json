@@ -69,6 +69,30 @@
                   "path": "mostrar-investigador",
                   "target": "_self",
                   "text": "Editar Investigadores"
+                },
+                {
+                  "path": "mostrar-contem",
+                  "text": "Editar Investigadores do projeto"
+                },
+                {
+                  "path": "mostrar-instituicao",
+                  "text": "Editar Instituição"
+                },
+                {
+                  "text": "Editar Publicação"
+                },
+                {
+                  "items": [
+                    {
+                      "path": "mostrar-patrocinio-publico",
+                      "text": "Publico"
+                    },
+                    {
+                      "path": "mostrar-patrocinador-privado",
+                      "text": "Privado"
+                    }
+                  ],
+                  "text": "Editar Patrocinador"
                 }
               ],
               "name": "panelmenu0",

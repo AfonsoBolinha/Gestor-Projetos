@@ -1,0 +1,40 @@
+﻿@page "/mostrar-instituicao"
+@layout EditLayout
+@inherits TrabalhoBd.Pages.MostrarInstituicaoComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TrabalhoBd.Models.Trabalho
+<PageTitle>Mostrar Instituicao</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Instituicao">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenDataGrid @ref="grid0" AllowFiltering="true" FilterMode="Radzen.FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getInstituicaosResult" TItem="TrabalhoBd.Models.Trabalho.Instituicao" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Instituicao" Property="ID" Title="ID">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Instituicao" Property="Nome" Title="Nome">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Instituicao" Property="Morada" Title="Morada">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Instituicao" Property="Email" Title="Email">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Instituicao" Property="Tel" Title="Tel">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Instituicao" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              <Template Context="trabalhoBdModelsTrabalhoInstituicao">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, trabalhoBdModelsTrabalhoInstituicao))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenDataGridColumn>
+          </Columns>
+        </RadzenDataGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

@@ -19,7 +19,11 @@
     "Add Patrocinador_Privado",
     "Editar",
     "Mostrar Projetos",
-    "Mostrar Investigador"
+    "Mostrar Investigador",
+    "Mostrar Contem",
+    "Mostrar Instituicao",
+    "Mostrar PatrocinioPublico",
+    "Mostrar PatrocinadorPrivado"
   ],
   "pages": [
     "Add Instituicao",
@@ -34,7 +38,13 @@
     "Add Editar Projeto",
     "Editar Projeto",
     "Mostrar Investigador",
-    "Edit Investigador"
+    "Edit Investigador",
+    "Mostrar Contem",
+    "Mostrar Instituicao",
+    "Edit Instituicao",
+    "Mostrar PatrocinioPublico",
+    "Edit PatrocinioPublico",
+    "Mostrar PatrocinadorPrivado"
   ],
   "serverLang": "cs",
   "serverProject": true,

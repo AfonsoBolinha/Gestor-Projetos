@@ -1,0 +1,48 @@
+﻿@page "/mostrar-patrocinio-publico"
+@layout EditLayout
+@inherits TrabalhoBd.Pages.MostrarPatrocinioPublicoComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TrabalhoBd.Models.Trabalho
+<PageTitle>Mostrar PatrocinioPublico</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="PatrocinioPublico">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenDataGrid @ref="grid0" AllowFiltering="true" FilterMode="Radzen.FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getPatrocinioPublicosResult" TItem="TrabalhoBd.Models.Trabalho.PatrocinioPublico" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.PatrocinioPublico" Property="ID" Title="ID">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.PatrocinioPublico" Property="Nome" Title="Nome">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.PatrocinioPublico" Property="Sigla" Title="Sigla">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.PatrocinioPublico" Property="Email" Title="Email">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.PatrocinioPublico" Property="Tel" Title="Tel">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.PatrocinioPublico" Property="Morada" Title="Morada">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.PatrocinioPublico" Property="URL" Title="URL">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.PatrocinioPublico" Property="Pais" Title="Pais">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.PatrocinioPublico" Property="Designacao" Title="Designacao">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.PatrocinioPublico" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              <Template Context="trabalhoBdModelsTrabalhoPatrocinioPublico">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, trabalhoBdModelsTrabalhoPatrocinioPublico))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenDataGridColumn>
+          </Columns>
+        </RadzenDataGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

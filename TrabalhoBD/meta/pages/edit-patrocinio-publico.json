@@ -1,0 +1,636 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Edit Patrocinio Publico"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-9",
+              "components": [
+                {
+                  "name": "closeLabel",
+                  "style": {
+                    "fontWeight": "bold"
+                  },
+                  "text": "Item no longer available.",
+                  "type": "label",
+                  "visible": "${!canEdit}"
+                }
+              ],
+              "name": "col0",
+              "type": "col"
+            },
+            {
+              "class": "col-md-3",
+              "components": [
+                {
+                  "buttonStyle": "secondary",
+                  "events": {
+                    "click": [
+                      {
+                        "path": "mostrar-patrocinio-publico",
+                        "type": "navigate"
+                      }
+                    ]
+                  },
+                  "icon": "",
+                  "name": "closeButton",
+                  "style": {
+                    "marginBottom": "20px"
+                  },
+                  "text": "Close",
+                  "type": "button",
+                  "visible": "${!canEdit}"
+                }
+              ],
+              "name": "col1",
+              "type": "col"
+            }
+          ],
+          "name": "row0",
+          "style": {},
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-9",
+              "components": [
+                {
+                  "name": "label0",
+                  "style": {
+                    "fontWeight": "bold"
+                  },
+                  "text": "Another user has made conflicting changes to one or more of the fields you have modified. Please reload.",
+                  "type": "label",
+                  "visible": "${hasChanges}"
+                }
+              ],
+              "name": "col0",
+              "type": "col"
+            },
+            {
+              "class": "col-md-3",
+              "components": [
+                {
+                  "buttonStyle": "secondary",
+                  "events": {
+                    "click": [
+                      {
+                        "code": "Trabalho.Reset()",
+                        "type": "execute"
+                      },
+                      {
+                        "code": "await this.Load()",
+                        "type": "execute"
+                      }
+                    ]
+                  },
+                  "icon": "autorenew",
+                  "name": "button0",
+                  "style": {
+                    "marginBottom": "20px"
+                  },
+                  "text": "Reload",
+                  "type": "button",
+                  "visible": "${hasChanges}"
+                }
+              ],
+              "name": "col1",
+              "type": "col"
+            }
+          ],
+          "name": "row0",
+          "style": {},
+          "type": "row"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "type": "template-form",
+                  "name": "form0",
+                  "components": [
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Nome",
+                              "component": "Nome",
+                              "name": "NomeLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "Nome",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${patrociniopublico.Nome}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "NomeRequiredValidator",
+                              "component": "Nome",
+                              "text": "Nome is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Sigla",
+                              "component": "Sigla",
+                              "name": "SiglaLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 10,
+                              "type": "textbox",
+                              "name": "Sigla",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${patrociniopublico.Sigla}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "SiglaRequiredValidator",
+                              "component": "Sigla",
+                              "text": "Sigla is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Email",
+                              "component": "Email",
+                              "name": "EmailLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "Email",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${patrociniopublico.Email}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "EmailRequiredValidator",
+                              "component": "Email",
+                              "text": "Email is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Tel",
+                              "component": "Tel",
+                              "name": "TelLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "int",
+                              "type": "numeric",
+                              "name": "Tel",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${patrociniopublico.Tel}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "TelRequiredValidator",
+                              "component": "Tel",
+                              "text": "Tel is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Morada",
+                              "component": "Morada",
+                              "name": "MoradaLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "Morada",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${patrociniopublico.Morada}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "MoradaRequiredValidator",
+                              "component": "Morada",
+                              "text": "Morada is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Url",
+                              "component": "URL",
+                              "name": "URLLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "URL",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${patrociniopublico.URL}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "URLRequiredValidator",
+                              "component": "URL",
+                              "text": "URL is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Pais",
+                              "component": "Pais",
+                              "name": "PaisLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "Pais",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${patrociniopublico.Pais}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "PaisRequiredValidator",
+                              "component": "Pais",
+                              "text": "Pais is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Designacao",
+                              "component": "Designacao",
+                              "name": "DesignacaoLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 50,
+                              "type": "textbox",
+                              "name": "Designacao",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${patrociniopublico.Designacao}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "type": "button",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "buttonStyle": "primary"
+                            },
+                            {
+                              "type": "button",
+                              "buttonStyle": "light",
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "events": {
+                                "click": [
+                                  {
+                                    "path": "mostrar-patrocinio-publico",
+                                    "type": "navigate"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to update PatrocinioPublico",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          },
+                          {
+                            "name": "hasChanges",
+                            "type": "set",
+                            "value": "result is DbUpdateConcurrencyException",
+                            "valueType": "bool"
+                          },
+                          {
+                            "name": "canEdit",
+                            "type": "set",
+                            "condition": "!(result is DbUpdateConcurrencyException)",
+                            "value": "false",
+                            "valueType": "bool"
+                          }
+                        ],
+                        "name": "Trabalho.updatePatrocinioPublico",
+                        "parameters": [
+                          {
+                            "name": "ID",
+                            "value": "Convert.ChangeType(${parameters.ID}, Type.GetTypeCode(typeof(int)))"
+                          },
+                          {
+                            "name": "PatrocinioPublico",
+                            "value": "${patrociniopublico}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "path": "mostrar-patrocinio-publico",
+                            "type": "navigate",
+                            "condition": "result.StatusCode != System.Net.HttpStatusCode.PreconditionFailed"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "itemType": "TrabalhoBd.Models.Trabalho.PatrocinioPublico",
+                  "data": "${patrociniopublico}",
+                  "visible": "${patrociniopublico != null && canEdit}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "hasChanges",
+        "type": "set",
+        "value": "false",
+        "valueType": "bool"
+      },
+      {
+        "name": "canEdit",
+        "type": "set",
+        "value": "true",
+        "valueType": "bool"
+      },
+      {
+        "name": "Trabalho.getPatrocinioPublicoByID",
+        "parameters": [
+          {
+            "name": "ID",
+            "value": "Convert.ChangeType(${parameters.ID}, Type.GetTypeCode(typeof(int)))"
+          }
+        ],
+        "then": [
+          {
+            "name": "patrociniopublico",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "TrabalhoBd.Models.Trabalho.PatrocinioPublico"
+          }
+        ],
+        "error": [],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Edit Patrocinio Publico",
+  "layout": "Edit"
+}

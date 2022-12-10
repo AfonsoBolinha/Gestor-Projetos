@@ -1,0 +1,32 @@
+﻿@page "/mostrar-contem"
+@layout EditLayout
+@inherits TrabalhoBd.Pages.MostrarContemComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TrabalhoBd.Models.Trabalho
+<PageTitle>Mostrar Contem</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Contem">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenDataGrid @ref="grid0" AllowFiltering="true" FilterMode="Radzen.FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getContemsResult" TItem="TrabalhoBd.Models.Trabalho.Contem">
+          <Columns>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Contem" Property="ID_Projeto" Title="ID Projeto">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Contem" Property="ID_Investigador" Title="ID Investigador">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Contem" Property="Papel" Title="Papel">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Contem" Property="Tempo_Gasto" Title="Tempo Gasto">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.Contem" Property="Tempo_Limite" Title="Tempo Limite">
+            </RadzenDataGridColumn>
+          </Columns>
+        </RadzenDataGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

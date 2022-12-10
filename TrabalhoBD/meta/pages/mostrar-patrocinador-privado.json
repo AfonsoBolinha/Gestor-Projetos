@@ -1,0 +1,74 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "PatrocinadorPrivado"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "name": "grid0",
+                  "allowFiltering": true,
+                  "filterMode": "advanced",
+                  "allowPaging": true,
+                  "allowSorting": true,
+                  "data": "${getPatrocinadorPrivadosResult}",
+                  "events": {
+                    "loadData": []
+                  },
+                  "title": "",
+                  "columns": [
+                    {
+                      "property": "ID_Patrocinador",
+                      "title": "ID Patrocinador"
+                    },
+                    {
+                      "property": "ID_Projeto",
+                      "title": "ID Projeto"
+                    },
+                    {
+                      "property": "Montante",
+                      "title": "Montante"
+                    }
+                  ],
+                  "type": "datagrid",
+                  "itemType": "TrabalhoBd.Models.Trabalho.PatrocinadorPrivado"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "Trabalho.getPatrocinadorPrivados",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getPatrocinadorPrivadosResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.PatrocinadorPrivado>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Mostrar PatrocinadorPrivado",
+  "layout": "Edit"
+}
