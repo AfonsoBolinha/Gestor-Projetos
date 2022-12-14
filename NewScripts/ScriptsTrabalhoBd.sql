@@ -308,7 +308,7 @@ INSERT INTO Instituição VALUES ('Universidade do Minho','Largo do paço' ,'gcii@r
 INSERT INTO Instituição VALUES ('Universidade de Coimbra','Rua Larga Edifício Faculdade de Medicina' ,'gabadmin@uc.pt' ,239859900);
 INSERT INTO Instituição VALUES ('Instituto Superior de Estatística e Gestão de Informação - NOVA Information Management School','Travessa Estêvão Pinto' ,'magic@novaims.unl.pt' , 213880382);
 INSERT INTO Instituição VALUES ('Universidade Aberta','Rua Almirante Barroso, nº38' ,'gcri@uab.pt' ,300002812);
-INSERT INTO Instituição VALUES ('Instituto Politécnico de Bragança','Campus de Santa Apolónia' ,'saipd.pt' ,275319700);
+INSERT INTO Instituição VALUES ('Instituto Politécnico de Bragança','Campus de Santa Apolónia' ,'saipb@ipb.pt' ,273330850);
 INSERT INTO Instituição VALUES ('Instituto de Telecomunicações','R. Marquês de Ávila e Bolama' ,'ubiserct@ubi.pt' ,275319700);
 
 INSERT INTO Investigador VALUES('João', 1, 'abcd123', 1);
