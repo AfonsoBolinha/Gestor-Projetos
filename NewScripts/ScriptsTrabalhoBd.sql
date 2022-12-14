@@ -333,7 +333,7 @@ INSERT INTO Unidade_de_Investigação VALUES('Laboratório de Educação a Distância 
 INSERT INTO Unidade_de_Investigação VALUES('Centro de Investigação em Digitalização e Robótica Inteligente', 9);
 INSERT INTO Unidade_de_Investigação VALUES('Instituto de Telecomonicações', 10);
 
-INSERT INTO Projeto VALUES();
+INSERT INTO Projeto VALUES('Braço mecânico para industrias','Braço mecânico','Desenvolvimento de um braço mecânico com aplicação na industria para efeitos de automação', 1, 40000, 36000, 'abcdefg123', 'concluído', '2021-06-20', '2022-07-26', 'Sistemas de Automação e Robótica', 1);
 INSERT INTO Projeto VALUES();
 INSERT INTO Projeto VALUES();
 INSERT INTO Projeto VALUES();
@@ -344,16 +344,16 @@ INSERT INTO Projeto VALUES();
 INSERT INTO Projeto VALUES();
 INSERT INTO Projeto VALUES();
 
-INSERT INTO Responsavel VALUES();
-INSERT INTO Responsavel VALUES();
-INSERT INTO Responsavel VALUES();
-INSERT INTO Responsavel VALUES();
-INSERT INTO Responsavel VALUES();
-INSERT INTO Responsavel VALUES();
-INSERT INTO Responsavel VALUES();
-INSERT INTO Responsavel VALUES();
-INSERT INTO Responsavel VALUES();
-INSERT INTO Responsavel VALUES();
+INSERT INTO Responsavel VALUES(1,1,20);
+INSERT INTO Responsavel VALUES(2,2,20);
+INSERT INTO Responsavel VALUES(3,3,20);
+INSERT INTO Responsavel VALUES(4,4,20);
+INSERT INTO Responsavel VALUES(5,5,20);
+INSERT INTO Responsavel VALUES(6,6,20);
+INSERT INTO Responsavel VALUES(7,7,20);
+INSERT INTO Responsavel VALUES(8,8,20);
+INSERT INTO Responsavel VALUES(9,9,20);
+INSERT INTO Responsavel VALUES(10,10,20);
 
 
 INSERT INTO Instituição_proj VALUES();
@@ -367,7 +367,9 @@ INSERT INTO Instituição_proj VALUES();
 INSERT INTO Instituição_proj VALUES();
 INSERT INTO Instituição_proj VALUES();
 
-INSERT INTO KeyWords VALUES();
+INSERT INTO KeyWords VALUES('Braço',1);
+INSERT INTO KeyWords VALUES('Mecânico',1);
+INSERT INTO KeyWords VALUES('Industria',1);
 INSERT INTO KeyWords VALUES();
 INSERT INTO KeyWords VALUES();
 INSERT INTO KeyWords VALUES();
