@@ -1,0 +1,87 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Patrocinios",
+          "type": "heading"
+        },
+        {
+          "colorScheme": "ColorScheme.Pastel",
+          "name": "chart0",
+          "series": [
+            {
+              "categoryProperty": "Nome",
+              "data": "${getPesoPatrocinioPublicosResult}",
+              "title": "Patrocinios Publicos",
+              "type": "Donut",
+              "valueProperty": "Financiamento"
+            }
+          ],
+          "style": {
+            "float": "left",
+            "width": "49%"
+          },
+          "type": "chart",
+          "visible": true
+        },
+        {
+          "colorScheme": "ColorScheme.Pastel",
+          "name": "chart1",
+          "series": [
+            {
+              "categoryProperty": "Nome",
+              "data": "${getPesoPatrocinioPrivadosResult}",
+              "title": "Patrocinios Privados",
+              "type": "Donut",
+              "valueProperty": "Financiamento"
+            }
+          ],
+          "style": {
+            "display": "inline-block",
+            "float": "right",
+            "width": "49%"
+          },
+          "type": "chart",
+          "visible": true
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "Trabalho.getPesoPatrocinioPublicos",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getPesoPatrocinioPublicosResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.PesoPatrocinioPublico>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "Trabalho.getPesoPatrocinioPrivados",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getPesoPatrocinioPrivadosResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.PesoPatrocinioPrivado>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Estatisticas",
+  "name": "PesoPatrocinios"
+}

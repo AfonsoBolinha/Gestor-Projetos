@@ -1,0 +1,26 @@
+﻿@page "/peso-patrocinios"
+@layout EstatisticasLayout
+@inherits TrabalhoBd.Pages.PesoPatrociniosComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TrabalhoBd.Models.Trabalho
+<PageTitle>PesoPatrocinios</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Patrocinios">
+    </RadzenHeading>
+    <RadzenChart ColorScheme="ColorScheme.Pastel" style="float: left; width: 49%">
+      <ChildContent>
+        <RadzenDonutSeries CategoryProperty="Nome" Data="@getPesoPatrocinioPublicosResult" Title="Patrocinios Publicos" ValueProperty="Financiamento">
+        </RadzenDonutSeries>
+      </ChildContent>
+    </RadzenChart>
+    <RadzenChart ColorScheme="ColorScheme.Pastel" style="display: inline-block; float: right; width: 49%">
+      <ChildContent>
+        <RadzenDonutSeries CategoryProperty="Nome" Data="@getPesoPatrocinioPrivadosResult" Title="Patrocinios Privados" ValueProperty="Financiamento">
+        </RadzenDonutSeries>
+      </ChildContent>
+    </RadzenChart>
+  </ChildContent>
+</RadzenContent>

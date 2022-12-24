@@ -1,0 +1,87 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "name": "label0",
+          "style": {
+            "width": "20%"
+          },
+          "text": "Nome do Projeto",
+          "type": "label"
+        },
+        {
+          "name": "textbox0",
+          "style": {
+            "marginBottom": "10px",
+            "width": "80%"
+          },
+          "type": "textbox",
+          "value": ""
+        },
+        {
+          "name": "label1",
+          "style": {
+            "width": "20%"
+          },
+          "text": "Patrocinio",
+          "type": "label"
+        },
+        {
+          "name": "textbox1",
+          "style": {
+            "marginBottom": "20px",
+            "width": "80%"
+          },
+          "type": "textbox",
+          "value": ""
+        },
+        {
+          "allowFiltering": true,
+          "allowPaging": true,
+          "allowSorting": true,
+          "columns": [
+            {
+              "property": "NomeProj",
+              "title": "Nome Proj"
+            },
+            {
+              "property": "NomePatrocinio",
+              "title": "Nome Patrocinio"
+            },
+            {
+              "property": "Montante",
+              "title": "Montante"
+            }
+          ],
+          "data": "${getProjetoPatrocinioProgramasResult}",
+          "itemType": "TrabalhoBd.Models.Trabalho.ProjetoPatrocinioPrograma",
+          "name": "datagrid0",
+          "pageSize": 10,
+          "type": "datagrid"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "Trabalho.getProjetoPatrocinioProgramas",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getProjetoPatrocinioProgramasResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.ProjetoPatrocinioPrograma>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Estatisticas",
+  "name": "ProjPatrocinioPublic"
+}

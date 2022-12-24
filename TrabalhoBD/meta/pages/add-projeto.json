@@ -346,7 +346,8 @@
                               },
                               "type": "datepicker",
                               "value": "${projeto.Data_Init}",
-                              "valueType": "DateTime"
+                              "valueType": "DateTime",
+                              "yearRange": "2021:2050"
                             },
                             {
                               "component": "Data_Init",
@@ -394,7 +395,8 @@
                               },
                               "type": "datepicker",
                               "value": "${projeto.Data_Fin}",
-                              "valueType": "DateTime?"
+                              "valueType": "DateTime?",
+                              "yearRange": "2021:2050"
                             }
                           ],
                           "type": "col"

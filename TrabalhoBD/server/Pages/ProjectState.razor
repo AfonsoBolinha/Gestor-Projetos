@@ -1,0 +1,35 @@
+﻿@page "/project-state"
+@layout EditLayout
+@inherits TrabalhoBd.Pages.ProjectStateComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TrabalhoBd.Models.Trabalho
+<PageTitle>ProjectState</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenLabel style="width: 20%" Text="Nome do Projeto">
+    </RadzenLabel>
+    <RadzenTextBox style="width: 80%" Name="NomeProj" TValue="dynamic" Value=@nome @bind-nome=@nomeBind Change='@(args=>getNome(args))'>
+    </RadzenTextBox>
+    <RadzenDataGrid @ref="datagrid0" Data="@getProjectStatesResult.Where(s=>(s.Nome.Contains(nome)))" TItem="TrabalhoBd.Models.Trabalho.ProjectState">
+      <Columns>
+        <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.ProjectState" Property="Nome" Title="Nome">
+        </RadzenDataGridColumn>
+        <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.ProjectState" Property="State" Title="Estado">
+        </RadzenDataGridColumn>
+        <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.ProjectState" Property="Total_Cost" Title="Custo Atual">
+        </RadzenDataGridColumn>
+        <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.ProjectState" Property="Pessoas" Title="Numero de Investigadores">
+        </RadzenDataGridColumn>
+      </Columns>
+    </RadzenDataGrid>
+  </ChildContent>
+  @code{
+    string nome="",nomeBind;
+
+    public void getNome(object value){
+      nome=value as string;
+    }
+  }
+</RadzenContent>

@@ -168,9 +168,73 @@
       "x-table": "dbo.Investigador_Instituicao",
       "resource": "InvestigadorInstituicaos",
       "required": [
+        "Nome_Investigador",
+        "ID_Investigador",
         "Nome",
-        "NomeInst",
         "ID"
+      ],
+      "properties": {
+        "Nome_Investigador": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "ID_Investigador": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Nome": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "ID": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      }
+    },
+    "InvestigadorProjeto": {
+      "x-view": true,
+      "x-table": "dbo.Investigador_Projeto",
+      "resource": "InvestigadorProjetos",
+      "required": [
+        "NomeInvestigador",
+        "NomeProjeto",
+        "ORCID"
+      ],
+      "properties": {
+        "NomeInvestigador": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "NomeProjeto": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "ORCID": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        }
+      }
+    },
+    "InvestigadorStatus": {
+      "x-view": true,
+      "x-table": "dbo.InvestigadorStatus",
+      "resource": "InvestigadorStatuses",
+      "required": [
+        "Nome",
+        "Papel",
+        "Tempo_Gasto"
       ],
       "properties": {
         "Nome": {
@@ -180,13 +244,17 @@
           "x-key": true,
           "x-virtual": true
         },
-        "NomeInst": {
+        "Papel": {
           "x-nullable": false,
           "type": "string",
           "length": 50
         },
-        "ID": {
+        "Tempo_Gasto": {
           "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Tempo_Total": {
           "x-precision": 10,
           "type": "integer"
         }
@@ -403,6 +471,52 @@
         }
       }
     },
+    "PatrociniosPrivado": {
+      "x-view": true,
+      "x-table": "dbo.Patrocinios_Privados",
+      "resource": "PatrociniosPrivados",
+      "required": [
+        "Nome",
+        "Montante"
+      ],
+      "properties": {
+        "Nome": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "Montante": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      }
+    },
+    "PatrociniosPublico": {
+      "x-view": true,
+      "x-table": "dbo.Patrocinios_Publicos",
+      "resource": "PatrociniosPublicos",
+      "required": [
+        "Nome",
+        "Montante"
+      ],
+      "properties": {
+        "Nome": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "Montante": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      }
+    },
     "Pertence1": {
       "x-table": "dbo.Pertence1",
       "resource": "Pertence1s",
@@ -455,6 +569,48 @@
       },
       "x-view": true
     },
+    "PesoPatrocinioPrivado": {
+      "x-view": true,
+      "x-table": "dbo.PesoPatrocinioPrivado",
+      "resource": "PesoPatrocinioPrivados",
+      "required": [
+        "Nome"
+      ],
+      "properties": {
+        "Nome": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "Financiamento": {
+          "x-precision": 10,
+          "type": "integer"
+        }
+      }
+    },
+    "PesoPatrocinioPublico": {
+      "x-view": true,
+      "x-table": "dbo.PesoPatrocinioPublico",
+      "resource": "PesoPatrocinioPublicos",
+      "required": [
+        "Nome"
+      ],
+      "properties": {
+        "Nome": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "Financiamento": {
+          "x-precision": 10,
+          "type": "integer"
+        }
+      }
+    },
     "ProjectState": {
       "x-view": true,
       "x-table": "dbo.Project_State",
@@ -476,7 +632,7 @@
         "State": {
           "x-nullable": false,
           "type": "string",
-          "length": 10
+          "length": 50
         },
         "Total_Cost": {
           "x-nullable": false,
@@ -485,6 +641,10 @@
         },
         "Max_Cost": {
           "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Pessoas": {
           "x-precision": 10,
           "type": "integer"
         }
@@ -575,6 +735,64 @@
         }
       }
     },
+    "ProjetoPatrocinioPrivado": {
+      "x-view": true,
+      "x-table": "dbo.ProjetoPatrocinioPrivado",
+      "resource": "ProjetoPatrocinioPrivados",
+      "required": [
+        "NomeProj",
+        "NomePatrocinio",
+        "Montante"
+      ],
+      "properties": {
+        "NomeProj": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "NomePatrocinio": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Montante": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      }
+    },
+    "ProjetoPatrocinioPrograma": {
+      "x-view": true,
+      "x-table": "dbo.ProjetoPatrocinioPrograma",
+      "resource": "ProjetoPatrocinioProgramas",
+      "required": [
+        "NomeProj",
+        "NomePatrocinio",
+        "Montante"
+      ],
+      "properties": {
+        "NomeProj": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "NomePatrocinio": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Montante": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      }
+    },
     "Publicacao": {
       "x-table": "dbo.Publicacao",
       "resource": "Publicacaos",
@@ -613,6 +831,78 @@
         },
         "ID_Investigador": {
           "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      }
+    },
+    "PublicacaoProjeto": {
+      "x-view": true,
+      "x-table": "dbo.Publicacao_Projeto",
+      "resource": "PublicacaoProjetos",
+      "required": [
+        "ID",
+        "Nome_Investigador",
+        "Nome_Projeto",
+        "Titulo",
+        "URL"
+      ],
+      "properties": {
+        "ID": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "Nome_Investigador": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Nome_Projeto": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Titulo": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "URL": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        }
+      }
+    },
+    "RatingProj": {
+      "x-view": true,
+      "x-table": "dbo.RatingProj",
+      "resource": "RatingProjs",
+      "required": [
+        "Nome",
+        "Total_Cost"
+      ],
+      "properties": {
+        "Nome": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "Total_Cost": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Participantes": {
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "NumPublicacoes": {
           "x-precision": 10,
           "type": "integer"
         }
@@ -800,6 +1090,27 @@
           "x-nullable": false,
           "type": "string",
           "length": 50
+        }
+      }
+    },
+    "UcRank": {
+      "x-view": true,
+      "x-table": "dbo.UCRank",
+      "resource": "UcRanks",
+      "required": [
+        "Nome"
+      ],
+      "properties": {
+        "Nome": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "NumPessoas": {
+          "x-precision": 10,
+          "type": "integer"
         }
       }
     },
@@ -1189,6 +1500,120 @@
         }
       }
     },
+    "/InvestigadorProjetos": {
+      "get": {
+        "operationId": "getInvestigadorProjetos",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/InvestigadorProjeto"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/InvestigadorStatuses": {
+      "get": {
+        "operationId": "getInvestigadorStatuses",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/InvestigadorStatus"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/KeyWords": {
       "get": {
         "operationId": "getKeyWords",
@@ -1522,6 +1947,120 @@
         }
       }
     },
+    "/PatrociniosPrivados": {
+      "get": {
+        "operationId": "getPatrociniosPrivados",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/PatrociniosPrivado"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/PatrociniosPublicos": {
+      "get": {
+        "operationId": "getPatrociniosPublicos",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/PatrociniosPublico"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/Pertence1s": {
       "get": {
         "operationId": "getPertence1s",
@@ -1621,6 +2160,120 @@
                 "value": {
                   "items": {
                     "$ref": "#/definitions/Pertence2"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/PesoPatrocinioPrivados": {
+      "get": {
+        "operationId": "getPesoPatrocinioPrivados",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/PesoPatrocinioPrivado"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/PesoPatrocinioPublicos": {
+      "get": {
+        "operationId": "getPesoPatrocinioPublicos",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/PesoPatrocinioPublico"
                   },
                   "type": "array"
                 }
@@ -1774,6 +2427,120 @@
         }
       }
     },
+    "/ProjetoPatrocinioPrivados": {
+      "get": {
+        "operationId": "getProjetoPatrocinioPrivados",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/ProjetoPatrocinioPrivado"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/ProjetoPatrocinioProgramas": {
+      "get": {
+        "operationId": "getProjetoPatrocinioProgramas",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/ProjetoPatrocinioPrograma"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/Publicacaos": {
       "get": {
         "operationId": "getPublicacaos",
@@ -1845,6 +2612,120 @@
           "201": {
             "schema": {
               "$ref": "#/definitions/Publicacao"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/PublicacaoProjetos": {
+      "get": {
+        "operationId": "getPublicacaoProjetos",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/PublicacaoProjeto"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/RatingProjs": {
+      "get": {
+        "operationId": "getRatingProjs",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/RatingProj"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
             }
           },
           "default": {
@@ -2203,6 +3084,63 @@
                 "value": {
                   "items": {
                     "$ref": "#/definitions/Uc"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/UcRanks": {
+      "get": {
+        "operationId": "getUcRanks",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/UcRank"
                   },
                   "type": "array"
                 }

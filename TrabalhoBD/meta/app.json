@@ -6,15 +6,22 @@
   "generator": "@radzen/blazor-server",
   "https": false,
   "ignore": [
-    "",
-    ""
+    "ProjectState.razor",
+    "InvestigadorStatus.razor",
+    "UcRank.cs",
+    "PesoPatrocinioPublico.cs",
+    "PesoPatrocinioPrivado.cs",
+    "ProjectRanks.razor",
+    "RatingProj.cs",
+    "ProjPatrocinioPublic.razor",
+    "ProjPatrocinioPriv.razor"
   ],
   "javaScriptFiles": [],
   "layouts": [
     "Login",
     "Mains",
     "Welcome_Page",
-    "Edit",
+    "Estatisticas",
     "Adicionar"
   ],
   "logo": "",
@@ -24,7 +31,14 @@
     "Welcome",
     "Stats",
     "Add Patrocinador_Privado",
-    "Editar"
+    "Editar",
+    "ProjectState",
+    "InvestigadorStatus",
+    "UIRank",
+    "PesoPatrocinios",
+    "ProjectRanks",
+    "ProjPatrocinioPublic",
+    "ProjPatrocinioPriv"
   ],
   "pages": [
     "Add Instituicao",
@@ -36,7 +50,14 @@
     "Add Investigador",
     "Add Projeto",
     "Add Contem",
-    "Add Publicacao"
+    "Add Publicacao",
+    "ProjectState",
+    "InvestigadorStatus",
+    "UIRank",
+    "PesoPatrocinios",
+    "ProjectRanks",
+    "ProjPatrocinioPublic",
+    "ProjPatrocinioPriv"
   ],
   "port": 8000,
   "serverLang": "cs",

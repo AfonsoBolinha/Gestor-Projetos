@@ -1,0 +1,93 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "name": "label0",
+          "style": {
+            "width": "20%"
+          },
+          "text": "Nome do Investigador",
+          "type": "label"
+        },
+        {
+          "name": "nomeInvst",
+          "style": {
+            "marginBottom": "10px",
+            "width": "80%"
+          },
+          "type": "textbox",
+          "value": ""
+        },
+        {
+          "name": "label1",
+          "style": {
+            "width": "20%"
+          },
+          "text": "Papel",
+          "type": "label"
+        },
+        {
+          "name": "Papel",
+          "style": {
+            "marginBottom": "20px",
+            "width": "80%"
+          },
+          "type": "textbox",
+          "value": ""
+        },
+        {
+          "allowFiltering": true,
+          "allowPaging": true,
+          "allowSorting": true,
+          "columns": [
+            {
+              "property": "Nome",
+              "title": "Nome"
+            },
+            {
+              "property": "Papel",
+              "title": "Papel"
+            },
+            {
+              "property": "Tempo_Gasto",
+              "title": "Tempo Gasto"
+            },
+            {
+              "format": "",
+              "property": "Tempo_Total",
+              "title": "Tempo Total",
+              "type": "integer"
+            }
+          ],
+          "data": "${getInvestigadorStatusesResult}",
+          "itemType": "TrabalhoBd.Models.Trabalho.InvestigadorStatus",
+          "name": "datagrid0",
+          "pageSize": 10,
+          "type": "datagrid"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "Trabalho.getInvestigadorStatuses",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getInvestigadorStatusesResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.InvestigadorStatus>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Estatisticas",
+  "name": "InvestigadorStatus"
+}

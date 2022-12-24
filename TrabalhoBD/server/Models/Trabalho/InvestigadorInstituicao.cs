@@ -7,13 +7,19 @@ namespace TrabalhoBd.Models.Trabalho
   [Table("Investigador_Instituicao", Schema = "dbo")]
   public partial class InvestigadorInstituicao
   {
-    public string Nome
+    public string Nome_Investigador
     {
       get;
       set;
     }
     [ConcurrencyCheck]
-    public string NomeInst
+    public int ID_Investigador
+    {
+      get;
+      set;
+    }
+    [ConcurrencyCheck]
+    public string Nome
     {
       get;
       set;

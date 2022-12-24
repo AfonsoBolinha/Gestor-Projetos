@@ -67,16 +67,12 @@
                   "text": "Bem-Vindo"
                 },
                 {
-                  "path": "stats",
+                  "path": "ui-rank",
                   "text": "Estatísticas"
                 },
                 {
                   "path": "add-investigador",
                   "text": "Adicionar"
-                },
-                {
-                  "path": "editar",
-                  "text": "Editar"
                 }
               ],
               "name": "panelmenu0",

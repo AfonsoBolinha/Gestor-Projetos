@@ -1,0 +1,55 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "UIRank",
+          "type": "heading"
+        },
+        {
+          "colorScheme": "ColorScheme.Pastel",
+          "name": "chart0",
+          "series": [
+            {
+              "categoryProperty": "Nome",
+              "data": "${getUcRanksResult}",
+              "fills": [
+                ""
+              ],
+              "type": "Donut",
+              "valueProperty": "NumPessoas"
+            }
+          ],
+          "style": {
+            "width": "80%"
+          },
+          "type": "chart",
+          "visible": true
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "Trabalho.getUcRanks",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getUcRanksResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.UcRank>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Estatisticas",
+  "name": "UIRank"
+}

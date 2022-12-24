@@ -94,7 +94,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker DateFormat="D" style="display: block; width: 100%" @bind-Value="@(projeto.Data_Init)" Name="Data_Init">
+                <RadzenDatePicker DateFormat="D" style="display: block; width: 100%" @bind-Value="@(projeto.Data_Init)" YearRange="2021:2050" Name="Data_Init">
                 </RadzenDatePicker>
                 <RadzenRequiredValidator Component="Data_Init" style="position: absolute" Text="Campo Obrigatorio">
                 </RadzenRequiredValidator>
@@ -106,7 +106,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker DateFormat="D" style="width: 100%" @bind-Value="@(projeto.Data_Fin)" Name="Data_Fin">
+                <RadzenDatePicker DateFormat="D" style="width: 100%" @bind-Value="@(projeto.Data_Fin)" YearRange="2021:2050" Name="Data_Fin">
                 </RadzenDatePicker>
               </div>
             </div>

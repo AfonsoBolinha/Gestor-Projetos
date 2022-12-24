@@ -49,3 +49,16 @@ CREATE VIEW ProjetoPatrocinioPrograma AS
 	SELECT Projeto.Nome AS NomeProj,PatrocinioPublico.Nome AS NomePatrocinio, Montante FROM Projeto
 	INNER JOIN Patrocina_Programa ON Projeto.ID=Patrocina_Programa.ID_Projeto
 	INNER JOIN PatrocinioPublico ON PatrocinioPublico.ID=Patrocina_Programa.ID_Programa_Patrocinador
+
+
+ALTER VIEW InvestigadorStatus AS
+	Select Investigador.Nome,Papel,Tempo_Gasto,Tempo_Total As NomeInvestigador FROM Investigador
+	INNER JOIN Contem ON Investigador.ID=Contem.ID_Investigador
+	INNER JOIN Projeto ON Contem.ID_Projeto=Projeto.ID
+
+
+CREATE VIEW UCRank AS
+	SELECT Unidade_Curricular.Nome,COUNT(ID_Investigador) AS NumPessoas FROM Contem
+	INNER JOIN Projeto ON Projeto.ID=Contem.ID_Projeto
+	INNER JOIN Unidade_Curricular ON Unidade_Curricular.ID=Projeto.ID_UC
+	GROUP BY Unidade_Curricular.Nome

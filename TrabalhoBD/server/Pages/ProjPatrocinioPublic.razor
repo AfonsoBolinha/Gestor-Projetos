@@ -1,0 +1,40 @@
+﻿@page "/proj-patrocinio-public"
+@layout EstatisticasLayout
+@inherits TrabalhoBd.Pages.ProjPatrocinioPublicComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TrabalhoBd.Models.Trabalho
+<PageTitle>ProjPatrocinioPublic</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenLabel style="width: 20%" Text="Nome do Projeto">
+    </RadzenLabel>
+    <RadzenTextBox style="margin-bottom: 10px; width: 80%" Name="Textbox0" TValue="dynamic" @bind-nomeBind=@nome Value=@nome Change='@(args=> getNome(args))'>
+    </RadzenTextBox>
+    <RadzenLabel style="width: 20%" Text="Patrocinio">
+    </RadzenLabel>
+    <RadzenTextBox style="margin-bottom: 20px; width: 80%" Name="Textbox1" TValue="dynamic" @bind-patrocinioBind=@patrocinio Value=@patrocinio Change='@(args=> getPatrocinio(args))'>
+    </RadzenTextBox>
+    <RadzenDataGrid @ref="datagrid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Data="@getProjetoPatrocinioProgramasResult.Where(s=>(s.NomeProj.Contains(nome)) && (s.NomePatrocinio.Contains(patrocinio)))" TItem="TrabalhoBd.Models.Trabalho.ProjetoPatrocinioPrograma" PageSize="10">
+      <Columns>
+        <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.ProjetoPatrocinioPrograma" Property="NomeProj" Title="Nome Proj">
+        </RadzenDataGridColumn>
+        <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.ProjetoPatrocinioPrograma" Property="NomePatrocinio" Title="Nome Patrocinio">
+        </RadzenDataGridColumn>
+        <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.ProjetoPatrocinioPrograma" Property="Montante" Title="Montante">
+        </RadzenDataGridColumn>
+      </Columns>
+    </RadzenDataGrid>
+  </ChildContent>
+  @code{
+    string nome="",nomeBind,patrocinio="",patrocinioBind;
+
+    public void getNome(object value){
+      nome=value as string;
+    }
+    public void getPatrocinio(object value){
+      patrocinio=value as string;
+    }
+  }
+</RadzenContent>

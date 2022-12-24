@@ -96,14 +96,14 @@
                               "columns": [
                                 {
                                   "format": "",
-                                  "property": "Nome",
-                                  "title": "Nome",
+                                  "property": "Nome_Investigador",
+                                  "title": "Nome Investigador",
                                   "type": "string"
                                 },
                                 {
                                   "format": "",
-                                  "property": "NomeInst",
-                                  "title": "Instituição",
+                                  "property": "Nome",
+                                  "title": "Nome",
                                   "type": "string"
                                 }
                               ],
@@ -113,10 +113,10 @@
                               "style": {
                                 "display": "block"
                               },
-                              "textProperty": "Nome",
+                              "textProperty": "Nome_Investigador",
                               "type": "dropdown-datagrid",
                               "value": "${contem.ID_Investigador}",
-                              "valueProperty": "ID",
+                              "valueProperty": "ID_Investigador",
                               "valueType": "int"
                             },
                             {

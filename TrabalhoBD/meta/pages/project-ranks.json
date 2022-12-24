@@ -1,0 +1,74 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "name": "label0",
+          "style": {
+            "width": "20%"
+          },
+          "text": "Nome do Projeto",
+          "type": "label"
+        },
+        {
+          "name": "textbox0",
+          "style": {
+            "marginBottom": "20px",
+            "width": "80%"
+          },
+          "type": "textbox",
+          "value": ""
+        },
+        {
+          "allowFiltering": true,
+          "allowPaging": true,
+          "allowSorting": true,
+          "columns": [
+            {
+              "property": "Nome",
+              "title": "Nome"
+            },
+            {
+              "property": "Total_Cost",
+              "title": "Total Cost"
+            },
+            {
+              "property": "Participantes",
+              "title": "Nº Participantes"
+            },
+            {
+              "property": "NumPublicacoes",
+              "title": "Nº Publicacoes"
+            }
+          ],
+          "data": "${getRatingProjsResult}",
+          "itemType": "TrabalhoBd.Models.Trabalho.RatingProj",
+          "name": "datagrid0",
+          "pageSize": 10,
+          "type": "datagrid"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "Trabalho.getRatingProjs",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getRatingProjsResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.RatingProj>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Estatisticas",
+  "name": "ProjectRanks"
+}

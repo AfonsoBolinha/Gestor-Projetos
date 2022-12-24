@@ -1,0 +1,20 @@
+﻿@page "/ui-rank"
+@layout EstatisticasLayout
+@inherits TrabalhoBd.Pages.UiRankComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TrabalhoBd.Models.Trabalho
+<PageTitle>UIRank</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="UIRank">
+    </RadzenHeading>
+    <RadzenChart ColorScheme="ColorScheme.Pastel" style="width: 80%">
+      <ChildContent>
+        <RadzenDonutSeries CategoryProperty="Nome" Data="@getUcRanksResult" Fills="@(new []{""})" ValueProperty="NumPessoas">
+        </RadzenDonutSeries>
+      </ChildContent>
+    </RadzenChart>
+  </ChildContent>
+</RadzenContent>

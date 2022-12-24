@@ -1,0 +1,78 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "name": "label0",
+          "style": {
+            "width": "20%"
+          },
+          "text": "Nome do Projeto",
+          "type": "label"
+        },
+        {
+          "name": "nomeProj",
+          "style": {
+            "marginBottom": "20px",
+            "width": "80%"
+          },
+          "type": "textbox",
+          "value": ""
+        },
+        {
+          "columns": [
+            {
+              "format": "",
+              "property": "Nome",
+              "title": "Nome",
+              "type": "string"
+            },
+            {
+              "format": "",
+              "property": "State",
+              "title": "Estado",
+              "type": "string"
+            },
+            {
+              "format": "",
+              "property": "Total_Cost",
+              "title": "Custo Atual",
+              "type": "integer"
+            },
+            {
+              "format": "",
+              "property": "Pessoas",
+              "title": "Numero de Investigadores",
+              "type": "integer"
+            }
+          ],
+          "data": "${getProjectStatesResult}",
+          "itemType": "TrabalhoBd.Models.Trabalho.ProjectState",
+          "name": "datagrid0",
+          "type": "datagrid"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "Trabalho.getProjectStates",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getProjectStatesResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.ProjectState>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Estatisticas",
+  "name": "ProjectState"
+}

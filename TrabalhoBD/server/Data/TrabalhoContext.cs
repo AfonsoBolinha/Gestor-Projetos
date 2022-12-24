@@ -28,14 +28,25 @@ namespace TrabalhoBd.Data
 
         builder.Entity<TrabalhoBd.Models.Trabalho.AreaCientifica>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.InvestigadorInstituicao>().HasNoKey();
+        builder.Entity<TrabalhoBd.Models.Trabalho.InvestigadorProjeto>().HasNoKey();
+        builder.Entity<TrabalhoBd.Models.Trabalho.InvestigadorStatus>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.KeyWord>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.PatrocinaPrograma>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.PatrocinadorPrivado>().HasNoKey();
+        builder.Entity<TrabalhoBd.Models.Trabalho.PatrociniosPrivado>().HasNoKey();
+        builder.Entity<TrabalhoBd.Models.Trabalho.PatrociniosPublico>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.Pertence1>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.Pertence2>().HasNoKey();
+        builder.Entity<TrabalhoBd.Models.Trabalho.PesoPatrocinioPrivado>().HasNoKey();
+        builder.Entity<TrabalhoBd.Models.Trabalho.PesoPatrocinioPublico>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.ProjectState>().HasNoKey();
+        builder.Entity<TrabalhoBd.Models.Trabalho.ProjetoPatrocinioPrivado>().HasNoKey();
+        builder.Entity<TrabalhoBd.Models.Trabalho.ProjetoPatrocinioPrograma>().HasNoKey();
+        builder.Entity<TrabalhoBd.Models.Trabalho.PublicacaoProjeto>().HasNoKey();
+        builder.Entity<TrabalhoBd.Models.Trabalho.RatingProj>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.Responsavel>().HasNoKey();
         builder.Entity<TrabalhoBd.Models.Trabalho.Uc>().HasNoKey();
+        builder.Entity<TrabalhoBd.Models.Trabalho.UcRank>().HasNoKey();
 
         builder.Entity<TrabalhoBd.Models.Trabalho.Contem>()
               .Property(p => p.Tempo_Gasto)
@@ -107,7 +118,19 @@ namespace TrabalhoBd.Data
               .HasPrecision(10, 0);
 
         builder.Entity<TrabalhoBd.Models.Trabalho.InvestigadorInstituicao>()
+              .Property(p => p.ID_Investigador)
+              .HasPrecision(10, 0);
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.InvestigadorInstituicao>()
               .Property(p => p.ID)
+              .HasPrecision(10, 0);
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.InvestigadorStatus>()
+              .Property(p => p.Tempo_Gasto)
+              .HasPrecision(10, 0);
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.InvestigadorStatus>()
+              .Property(p => p.Tempo_Total)
               .HasPrecision(10, 0);
 
         builder.Entity<TrabalhoBd.Models.Trabalho.KeyWord>()
@@ -154,6 +177,14 @@ namespace TrabalhoBd.Data
               .Property(p => p.Tel)
               .HasPrecision(10, 0);
 
+        builder.Entity<TrabalhoBd.Models.Trabalho.PatrociniosPrivado>()
+              .Property(p => p.Montante)
+              .HasPrecision(10, 0);
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.PatrociniosPublico>()
+              .Property(p => p.Montante)
+              .HasPrecision(10, 0);
+
         builder.Entity<TrabalhoBd.Models.Trabalho.Pertence1>()
               .Property(p => p.ID_Investigador)
               .HasPrecision(10, 0);
@@ -174,12 +205,24 @@ namespace TrabalhoBd.Data
               .Property(p => p.ID_Projeto)
               .HasPrecision(10, 0);
 
+        builder.Entity<TrabalhoBd.Models.Trabalho.PesoPatrocinioPrivado>()
+              .Property(p => p.Financiamento)
+              .HasPrecision(10, 0);
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.PesoPatrocinioPublico>()
+              .Property(p => p.Financiamento)
+              .HasPrecision(10, 0);
+
         builder.Entity<TrabalhoBd.Models.Trabalho.ProjectState>()
               .Property(p => p.Total_Cost)
               .HasPrecision(10, 0);
 
         builder.Entity<TrabalhoBd.Models.Trabalho.ProjectState>()
               .Property(p => p.Max_Cost)
+              .HasPrecision(10, 0);
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.ProjectState>()
+              .Property(p => p.Pessoas)
               .HasPrecision(10, 0);
 
         builder.Entity<TrabalhoBd.Models.Trabalho.Projeto>()
@@ -202,6 +245,14 @@ namespace TrabalhoBd.Data
               .Property(p => p.ID_IR)
               .HasPrecision(10, 0);
 
+        builder.Entity<TrabalhoBd.Models.Trabalho.ProjetoPatrocinioPrivado>()
+              .Property(p => p.Montante)
+              .HasPrecision(10, 0);
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.ProjetoPatrocinioPrograma>()
+              .Property(p => p.Montante)
+              .HasPrecision(10, 0);
+
         builder.Entity<TrabalhoBd.Models.Trabalho.Publicacao>()
               .Property(p => p.ID)
               .HasPrecision(10, 0);
@@ -212,6 +263,22 @@ namespace TrabalhoBd.Data
 
         builder.Entity<TrabalhoBd.Models.Trabalho.Publicacao>()
               .Property(p => p.ID_Investigador)
+              .HasPrecision(10, 0);
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.PublicacaoProjeto>()
+              .Property(p => p.ID)
+              .HasPrecision(10, 0);
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.RatingProj>()
+              .Property(p => p.Total_Cost)
+              .HasPrecision(10, 0);
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.RatingProj>()
+              .Property(p => p.Participantes)
+              .HasPrecision(10, 0);
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.RatingProj>()
+              .Property(p => p.NumPublicacoes)
               .HasPrecision(10, 0);
 
         builder.Entity<TrabalhoBd.Models.Trabalho.Responsavel>()
@@ -228,6 +295,10 @@ namespace TrabalhoBd.Data
 
         builder.Entity<TrabalhoBd.Models.Trabalho.Uc>()
               .Property(p => p.ID)
+              .HasPrecision(10, 0);
+
+        builder.Entity<TrabalhoBd.Models.Trabalho.UcRank>()
+              .Property(p => p.NumPessoas)
               .HasPrecision(10, 0);
 
         builder.Entity<TrabalhoBd.Models.Trabalho.UnidadeCurricular>()
@@ -271,6 +342,18 @@ namespace TrabalhoBd.Data
       set;
     }
 
+    public DbSet<TrabalhoBd.Models.Trabalho.InvestigadorProjeto> InvestigadorProjetos
+    {
+      get;
+      set;
+    }
+
+    public DbSet<TrabalhoBd.Models.Trabalho.InvestigadorStatus> InvestigadorStatuses
+    {
+      get;
+      set;
+    }
+
     public DbSet<TrabalhoBd.Models.Trabalho.KeyWord> KeyWords
     {
       get;
@@ -301,6 +384,18 @@ namespace TrabalhoBd.Data
       set;
     }
 
+    public DbSet<TrabalhoBd.Models.Trabalho.PatrociniosPrivado> PatrociniosPrivados
+    {
+      get;
+      set;
+    }
+
+    public DbSet<TrabalhoBd.Models.Trabalho.PatrociniosPublico> PatrociniosPublicos
+    {
+      get;
+      set;
+    }
+
     public DbSet<TrabalhoBd.Models.Trabalho.Pertence1> Pertence1s
     {
       get;
@@ -308,6 +403,18 @@ namespace TrabalhoBd.Data
     }
 
     public DbSet<TrabalhoBd.Models.Trabalho.Pertence2> Pertence2s
+    {
+      get;
+      set;
+    }
+
+    public DbSet<TrabalhoBd.Models.Trabalho.PesoPatrocinioPrivado> PesoPatrocinioPrivados
+    {
+      get;
+      set;
+    }
+
+    public DbSet<TrabalhoBd.Models.Trabalho.PesoPatrocinioPublico> PesoPatrocinioPublicos
     {
       get;
       set;
@@ -325,7 +432,31 @@ namespace TrabalhoBd.Data
       set;
     }
 
+    public DbSet<TrabalhoBd.Models.Trabalho.ProjetoPatrocinioPrivado> ProjetoPatrocinioPrivados
+    {
+      get;
+      set;
+    }
+
+    public DbSet<TrabalhoBd.Models.Trabalho.ProjetoPatrocinioPrograma> ProjetoPatrocinioProgramas
+    {
+      get;
+      set;
+    }
+
     public DbSet<TrabalhoBd.Models.Trabalho.Publicacao> Publicacaos
+    {
+      get;
+      set;
+    }
+
+    public DbSet<TrabalhoBd.Models.Trabalho.PublicacaoProjeto> PublicacaoProjetos
+    {
+      get;
+      set;
+    }
+
+    public DbSet<TrabalhoBd.Models.Trabalho.RatingProj> RatingProjs
     {
       get;
       set;
@@ -338,6 +469,12 @@ namespace TrabalhoBd.Data
     }
 
     public DbSet<TrabalhoBd.Models.Trabalho.Uc> Ucs
+    {
+      get;
+      set;
+    }
+
+    public DbSet<TrabalhoBd.Models.Trabalho.UcRank> UcRanks
     {
       get;
       set;

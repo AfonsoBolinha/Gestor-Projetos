@@ -64,11 +64,11 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDownDataGrid AllowFiltering="true" AllowSorting="true" Data="@getInvestigadorInstituicaosResult" style="display: block" TextProperty="Nome" @bind-Value="@(publicacao.ID_Investigador)" ValueProperty="ID" Name="ID_Investigador">
+                <RadzenDropDownDataGrid AllowFiltering="true" AllowSorting="true" Data="@getInvestigadorInstituicaosResult" style="display: block" TextProperty="Nome_Investigador" @bind-Value="@(publicacao.ID_Investigador)" ValueProperty="ID_Investigador" Name="ID_Investigador">
                   <Columns>
-                    <RadzenDropDownDataGridColumn Property="Nome" Title="Nome">
+                    <RadzenDropDownDataGridColumn Property="Nome_Investigador" Title="Nome Investigador">
                     </RadzenDropDownDataGridColumn>
-                    <RadzenDropDownDataGridColumn Property="NomeInst" Title="Instituicao">
+                    <RadzenDropDownDataGridColumn Property="Nome" Title="Nome">
                     </RadzenDropDownDataGridColumn>
                   </Columns>
                 </RadzenDropDownDataGrid>

@@ -1,0 +1,87 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "name": "label0",
+          "style": {
+            "width": "20%"
+          },
+          "text": "Nome do Projeto",
+          "type": "label"
+        },
+        {
+          "name": "textbox0",
+          "style": {
+            "marginBottom": "10px",
+            "width": "80%"
+          },
+          "type": "textbox",
+          "value": ""
+        },
+        {
+          "name": "label1",
+          "style": {
+            "width": "20%"
+          },
+          "text": "Patrocinador",
+          "type": "label"
+        },
+        {
+          "name": "textbox1",
+          "style": {
+            "marginBottom": "20px",
+            "width": "80%"
+          },
+          "type": "textbox",
+          "value": ""
+        },
+        {
+          "allowFiltering": true,
+          "allowPaging": true,
+          "allowSorting": true,
+          "columns": [
+            {
+              "property": "NomeProj",
+              "title": "Nome Proj"
+            },
+            {
+              "property": "NomePatrocinio",
+              "title": "Nome Patrocinio"
+            },
+            {
+              "property": "Montante",
+              "title": "Montante"
+            }
+          ],
+          "data": "${getProjetoPatrocinioPrivadosResult}",
+          "itemType": "TrabalhoBd.Models.Trabalho.ProjetoPatrocinioPrivado",
+          "name": "datagrid0",
+          "pageSize": 10,
+          "type": "datagrid"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "Trabalho.getProjetoPatrocinioPrivados",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getProjetoPatrocinioPrivadosResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<TrabalhoBd.Models.Trabalho.ProjetoPatrocinioPrivado>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Estatisticas",
+  "name": "ProjPatrocinioPriv"
+}

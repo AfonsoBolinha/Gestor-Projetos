@@ -30,5 +30,11 @@ namespace TrabalhoBd.Models.Trabalho
       get;
       set;
     }
+    [ConcurrencyCheck]
+    public int? Pessoas
+    {
+      get;
+      set;
+    }
   }
 }

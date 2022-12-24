@@ -1,0 +1,43 @@
+﻿@page "/investigador-status"
+@layout EstatisticasLayout
+@inherits TrabalhoBd.Pages.InvestigadorStatusComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TrabalhoBd.Models.Trabalho
+<PageTitle>InvestigadorStatus</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenLabel style="width: 20%" Text="Nome do Investigador">
+    </RadzenLabel>
+    <RadzenTextBox style="margin-bottom: 10px; width: 80%" Name="NomeInvst" Value=@nome @bind-nome=@nomeBind Change='@(args=>getNome(args))'>
+    </RadzenTextBox>
+    <RadzenLabel style="width: 20%" Text="Papel">
+    </RadzenLabel>
+    <RadzenTextBox style="margin-bottom: 20px; width: 80%" Name="Papel" Value=@papel @bind-nome=@papelBind Change='@(args=>getPapel(args))'>
+    </RadzenTextBox>
+    <RadzenDataGrid @ref="datagrid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Data="@getInvestigadorStatusesResult.Where(s=>(s.Nome.Contains(nome)) && (s.Papel.Contains(papel)))" TItem="TrabalhoBd.Models.Trabalho.InvestigadorStatus" PageSize="10">
+      <Columns>
+        <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.InvestigadorStatus" Property="Nome" Title="Nome">
+        </RadzenDataGridColumn>
+        <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.InvestigadorStatus" Property="Papel" Title="Papel">
+        </RadzenDataGridColumn>
+        <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.InvestigadorStatus" Property="Tempo_Gasto" Title="Tempo Gasto">
+        </RadzenDataGridColumn>
+        <RadzenDataGridColumn TItem="TrabalhoBd.Models.Trabalho.InvestigadorStatus" Property="Tempo_Total" Title="Tempo Total">
+        </RadzenDataGridColumn>
+      </Columns>
+    </RadzenDataGrid>
+  </ChildContent>
+  @code{
+    string nome="",papel="",nomeBind,papelBind;
+
+    public void getNome(object value){
+      nome=value as string;
+    }
+
+    public void getPapel(object value){
+      papel=value as string;
+    }
+  }
+</RadzenContent>
