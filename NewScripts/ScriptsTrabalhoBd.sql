@@ -185,7 +185,7 @@ BEGIN
 		Email nvarchar(100),
 		Tel int,
 		Morada nvarchar(100),
-		URL_Patrocinio nvarchar(100) unique,
+		URL_Patrocinio nvarchar(100),
 		Pais nvarchar(100),
 		Designacao nvarchar(200),
 
@@ -223,7 +223,7 @@ BEGIN
 		Email nvarchar(100),
 		Tel int,
 		Morada nvarchar(100),
-		URL_Patrocinio nvarchar(100) unique,
+		URL_Patrocinio nvarchar(100),
 		Pais nvarchar(100),
 		Designacao nvarchar(200),
 
