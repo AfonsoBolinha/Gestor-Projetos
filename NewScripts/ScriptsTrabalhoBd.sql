@@ -22,9 +22,9 @@ BEGIN
 
 	CREATE TABLE Instituição(
 		ID int NOT NULL IDENTITY(1,1),
-		Nome nvarchar(70),
-		Morada nvarchar(40),
-		Email nvarchar(40),
+		Nome nvarchar(200),
+		Morada nvarchar(100),
+		Email nvarchar(100),
 		Tel int,
 
 		CONSTRAINT PK_ID_IV PRIMARY KEY (ID),
