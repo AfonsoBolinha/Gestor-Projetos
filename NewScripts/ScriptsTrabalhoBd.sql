@@ -22,7 +22,7 @@ BEGIN
 
 	CREATE TABLE Instituição(
 		ID int NOT NULL IDENTITY(1,1),
-		Nome nvarchar(40),
+		Nome nvarchar(70),
 		Morada nvarchar(40),
 		Email nvarchar(40),
 		Tel int,
@@ -39,12 +39,12 @@ IF NOT EXISTS (
 BEGIN
 	CREATE TABLE Investigador(
 		ID int NOT NULL IDENTITY(1,1),
-		Nome nvarchar(40),
+		Nome nvarchar(70),
 		Num_Funcionario int,
 		ORCID nvarchar(40) unique,
 		ID_Instituicao int NOT NULL,
 
-		CONSTRAINT PK_ID_IV PRIMARY KEY (ID),
+		CONSTRAINT PK_ID_IVest PRIMARY KEY (ID),
 		CONSTRAINT FK_ID_Investigador FOREIGN KEY (ID_Instituicao) REFERENCES Instituição(ID),
 	);
 END
@@ -57,7 +57,7 @@ IF NOT EXISTS (
 BEGIN
 	CREATE TABLE Unidade_de_Investigação(
 		ID int NOT NULL IDENTITY(1,1),
-		Nome nvarchar(40),
+		Nome nvarchar(100),
 		ID_Instituicao int NOT NULL,
 
 		CONSTRAINT PK_ID_UC PRIMARY KEY (ID),
@@ -73,17 +73,17 @@ IF NOT EXISTS (
 BEGIN
 	CREATE TABLE Projeto(
 		ID int NOT NULL IDENTITY(1,1),
-		Nome nvarchar(40),
-		Short_Name nvarchar(40),
-		Descricao nvarchar(100),
+		Nome nvarchar(200),
+		Short_Name nvarchar(100),
+		Descricao nvarchar(300),
 		ID_UC int NOT NULL,
 		Max_Cost int,
 		Total_Cost int,
 		DOI nvarchar(40) UNIQUE,
-		State_Proj nvarchar(15),
+		State_Proj nvarchar(20),
 		Data_Init date default GetDate(),
 		Data_Fin date default GetDate(),
-		Cientific_Domain nvarchar(40),
+		Cientific_Domain nvarchar(200),
 		ID_IR int NOT NULL,
 
 		CONSTRAINT PK_ID_PROJ PRIMARY KEY (ID),
@@ -132,7 +132,7 @@ IF NOT EXISTS (
 )
 BEGIN
 	CREATE TABLE KeyWords(
-		PalavraChave nvarchar(40),
+		PalavraChave nvarchar(100),
 		ID_Projeto int NOT NULL,
 
 		CONSTRAINT FK_ID_Keyword FOREIGN KEY (ID_Projeto) REFERENCES Projeto(ID),
@@ -148,7 +148,7 @@ BEGIN
 	CREATE TABLE Contem(
 		ID_Projeto int NOT NULL,
 		ID_Investigador int NOT NULL,
-		Papel nvarchar(40),
+		Papel nvarchar(100),
 		Tempo_Gasto int,
 		Tempo_Limite int,
 
@@ -164,7 +164,7 @@ IF NOT EXISTS (
 )
 BEGIN
 	CREATE TABLE AreaCientifica(
-		Area nvarchar(40),
+		Area nvarchar(200),
 		ID_Projeto int NOT NULL,
 
 		CONSTRAINT FK_ID_AreaCientifica FOREIGN KEY (ID_Projeto) REFERENCES Projeto(ID),
@@ -180,14 +180,14 @@ BEGIN
 
 	CREATE TABLE PatrocinioPublico(
 		ID int NOT NULL IDENTITY(1,1),
-		Nome nvarchar(40),
-		Sigla nvarchar(20),
-		Email nvarchar(40),
+		Nome nvarchar(100),
+		Sigla nvarchar(50),
+		Email nvarchar(100),
 		Tel int,
-		Morada nvarchar(40),
-		URL_Patrocinio nvarchar(40) unique,
-		Pais nvarchar(20),
-		Designacao nvarchar(100),
+		Morada nvarchar(100),
+		URL_Patrocinio nvarchar(100) unique,
+		Pais nvarchar(100),
+		Designacao nvarchar(200),
 
 		CONSTRAINT PK_ID_PP PRIMARY KEY (ID),
 	);
@@ -218,14 +218,14 @@ BEGIN
 
 	CREATE TABLE Patrocinador(
 		ID int NOT NULL IDENTITY(1,1),
-		Nome nvarchar(40),
-		Sigla nvarchar(20),
-		Email nvarchar(40),
+		Nome nvarchar(100),
+		Sigla nvarchar(50),
+		Email nvarchar(100),
 		Tel int,
-		Morada nvarchar(40),
-		URL_Patrocinio nvarchar(40) unique,
-		Pais nvarchar(20),
-		Designacao nvarchar(100),
+		Morada nvarchar(100),
+		URL_Patrocinio nvarchar(100) unique,
+		Pais nvarchar(100),
+		Designacao nvarchar(200),
 
 		CONSTRAINT PK_ID_P PRIMARY KEY (ID),
 	);
@@ -287,9 +287,9 @@ IF NOT EXISTS (
 BEGIN
 
 	CREATE TABLE Publicacao(
-		Titulo nvarchar(40),
-		Descricao nvarchar(100),
-		URL_Publicacao nvarchar(50),
+		Titulo nvarchar(200),
+		Descricao nvarchar(300),
+		URL_Publicacao nvarchar(100),
 		ID_Projeto int NOT NULL,
 		ID_Investigador int NOT NULL,
 		CONSTRAINT FK_ID_Publicacao FOREIGN KEY (ID_Projeto) REFERENCES Projeto(ID),
