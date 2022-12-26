@@ -334,15 +334,15 @@ INSERT INTO Unidade_de_Investigação VALUES('Centro de Investigação em Digitaliza
 INSERT INTO Unidade_de_Investigação VALUES('Instituto de Telecomunicações', 10);
 
 INSERT INTO Projeto VALUES('Braço mecânico para industrias','Braço mecânico','Desenvolvimento de um braço mecânico com aplicação na industria para efeitos de automação', 1, 40000, 36000, 'abcdefg123', 'concluído', '2021-06-20', '2022-07-26', 'Sistemas de Automação e Robótica', 1);
-INSERT INTO Projeto VALUES('Inteligencia artificial de reconhecimento facial','Inteligencia artificial reconhecimento facial', 2, 30000, 26000, 'abcdefg124', 'aprovado', '2021-06-20');
-INSERT INTO Projeto VALUES('Bicicleta elétrica para uso diário', 'Bicicleta elétrica',3 ,40000, 36000, 'abcdefg125', 'cancelado', '2021-06-20');
-INSERT INTO Projeto VALUES('Reconhecimento do melhor caminho para ir de ponto a ponto', 'Reconhecimento de caminho',4 ,50000, 46000, 'abcdefg126', 'em curso', '2021-06-20');
-INSERT INTO Projeto VALUES('Painel solar mais eficiente', 'Painel solar',5 ,40000, 36000, 'abcdefg127', 'encerrado', '2021-06-20');
-INSERT INTO Projeto VALUES('Espelho que mostra informações que o utilizador possa querer', 'Espelho inteligente',6 ,40000, 36000, 'abcdefg128', 'renovado', '2021-06-20');
-INSERT INTO Projeto VALUES('Assistente virtual para uso diário', 'Assistente virtual',7 ,40000, 36000, 'abcdefg129', 'em submissão', '2021-06-20');
-INSERT INTO Projeto VALUES('Sistema de entretenimento para carros','Sistema de entretenimento',8 ,40000, 36000, 'abcdefg133', 'concluído', '2021-06-20');
-INSERT INTO Projeto VALUES('Sistema que analisa e recomenda dependendo da analise psicológica do utilizador', 'Sistema de analise psicológica',9 ,40000, 36000, 'abcdefg134', 'concluído', '2021-06-20');
-INSERT INTO Projeto VALUES('Robô para ajuda de médicos','Robô enfermeiro',10 ,40000, 36000, 'abcdefg135', 'concluído', '2021-06-20');
+INSERT INTO Projeto VALUES('Inteligencia artificial de reconhecimento facial','IA reconhecimento facial','Inteligencia artificial reconhecimento facial', 2, 30000, 26000, 'abcdefg124', 'aprovado', '2021-06-20');
+INSERT INTO Projeto VALUES('Bicicleta elétrica para uso diário', 'Bicicleta elétrica', 'Bicicleta elétrica perfeita para uso diário',3 ,40000, 36000, 'abcdefg125', 'cancelado', '2021-06-20');
+INSERT INTO Projeto VALUES('Reconhecimento do melhor caminho para ir de ponto a ponto', 'Reconhecimento de caminho','Reconhecimento do melhor caminho para ir de ponto a ponto',4 ,50000, 46000, 'abcdefg126', 'em curso', '2021-06-20');
+INSERT INTO Projeto VALUES('Painel solar mais eficiente', 'Painel solar','Painel solar mais eficiente',5 ,40000, 36000, 'abcdefg127', 'encerrado', '2021-06-20');
+INSERT INTO Projeto VALUES('Espelho que mostra informações que o utilizador possa querer', 'Espelho inteligente','Espelho que mostra informações que o utilizador possa querer',6 ,40000, 36000, 'abcdefg128', 'renovado', '2021-06-20');
+INSERT INTO Projeto VALUES('Assistente virtual para uso diário', 'Assistente virtual','Assistente virtual para uso diário',7 ,40000, 36000, 'abcdefg129', 'em submissão', '2021-06-20');
+INSERT INTO Projeto VALUES('Sistema de entretenimento para carros','Sistema de entretenimento','Sistema de entretenimento para carros',8 ,40000, 36000, 'abcdefg133', 'concluído', '2021-06-20');
+INSERT INTO Projeto VALUES('Sistema que analisa e recomenda dependendo da analise psicológica do utilizador', 'Sistema de analise psicológica','Sistema que analisa e recomenda dependendo da analise psicológica do utilizador',9 ,40000, 36000, 'abcdefg134', 'concluído', '2021-06-20');
+INSERT INTO Projeto VALUES('Robô para ajuda de médicos','Robô enfermeiro','Robô para ajuda de médicos',10 ,40000, 36000, 'abcdefg135', 'concluído', '2021-06-20');
 
 INSERT INTO Responsavel VALUES(1,1,20);
 INSERT INTO Responsavel VALUES(2,2,20);
